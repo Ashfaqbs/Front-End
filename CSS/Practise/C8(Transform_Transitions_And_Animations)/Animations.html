@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+
+            background-color: rgb(168, 244, 250);
+            height: 45vh;
+        }
+
+        .box {
+            height: 20px;
+            /* width: 300px; */
+            background-color: rgb(255, 23, 7);
+            border: 2px solid black;
+            box-sizing: border-box;
+            animation-name: myWidthanimation;
+            animation-duration: 3s;
+            animation-timing-function: ease;
+            animation-delay: 1s;
+            animation-iteration-count: 3;
+           
+            /* animation-direction: normal; */
+            animation-direction: normal;
+            /* short hand */
+            animation: myWidthanimation  3s ease 1s 3 normal ;
+
+
+        }
+
+        @keyframes myWidthanimation {
+
+            from {
+                width: 3px;
+            }
+
+            to {
+                width: 100vw;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <div class="box">
+           Progress bar
+        </div>
+    </div>
+
+
+</body>
+
+</html>

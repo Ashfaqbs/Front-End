@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .box1 {
+            border: 2px solid black;
+            height: 90px;
+            width: 90px;
+            background-color: red;
+            /* order: 4; */
+            /* align-self: flex-end; */
+        }
+
+        .box2 {
+            border: 2px solid black;
+            height: 90px;
+            width: 90px;
+            background-color: rgb(7, 224, 43);
+
+        }
+
+        .box3 {
+            border: 2px solid black;
+            height: 90px;
+            width: 90px;
+            background-color: rgb(238, 255, 4);
+
+        }
+
+        .box4 {
+            border: 2px solid black;
+            height: 90px;
+            width: 90px;
+            flex-shrink: 3;
+            background-color: rgb(58, 4, 255);
+
+        }
+
+
+        .container {
+            border: 2px solid black;
+            height: 400px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* justify-content:center ; */
+            /* justify-content:space-around ; */
+            justify-content: center;
+            align-items: center;
+            /* or with no spaces  above and below are same but diff in spaces */
+            align-content: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>Flexbox aims to provide a better way to layout , align and distribute space among items in a container</h3>
+    flexbox or we also call it flex container and elements inside it we call flex elements
+    here we have main axis i.e x axis and cross axis i.e y axis(need not to be always be vertical)
+    main axis is in which direction our elements are rendering and cross axis is just perpendicular of it.
+
+    <b> display: flex;
+        flex-direction: column-reverse or column or row-reverse or row to change in row wise or column wise and its
+        row -> flex items in row or horizontal direction and row-reverse is reverse of the 1st in horizontal manner
+        columnm -> flex items in vertical direction and ---||----
+
+    </b>
+    <br>
+    <hr>
+    <h3>Properties which we use in container and not in flex items </h3>
+    *flex-direction - row ,column , and their reverse
+    <br>
+    *flex-wrap - wrap,wrap-reverse and no wrap
+    as the screen size changes it can make the flex items to fit the screen by showing one or two flex
+    items according to the the screen size , can adjust the flex items to fit the screen size
+    useful for making responsive website
+
+    <br>
+    *Justify content - center , space around , space evenly and space between
+    easiest way to center elements /* justify-content:center ; */ horizontal center
+    <br>
+    *align-items - vertical center but will have spaces between flex items
+    <br>
+    *align-content - vertical center but will not have spaces between flex items
+    to see use flex-wrap: wrap and see both the Properties
+    <hr>
+
+    <h3>Properties which we use in flex items and not in container </h3>
+    *Order - controls the order in which the items appears in flex container
+    .box1 {
+    border: 2px solid black;
+    height: 90px;
+    width: 90px;
+    background-color: red;
+    /* order: 4; */
+    }
+
+    now 1st box will go to end
+    <br>
+    *align self -targeting individual flex items /* align-self: flex-end; */ on box1.
+    <br>
+    *flex grow - width must not ge given and now we ge give the flex grow will increase the size.
+    .box4 {
+    border: 2px solid black;
+    height: 90px;
+    /* width: 90px; */
+    flex-grow: 3;
+    background-color: rgb(58, 4, 255);
+
+    }
+    <br>
+    *flex shrink -width must not ge given and now we ge give the flex shrink will decrease the size.used when flex items
+    overflow the container
+    .box4 {
+    border: 2px solid black;
+    height: 90px;
+    /* width: 90px; */
+    flex-shrink: 3;
+    background-color: rgb(58, 4, 255);
+
+    }
+    <hr>
+
+    <small>This main container is flex container or flex box and elements inside it flexitems</small>
+    <main class="container">
+
+        <div class="box1">box 1</div>
+        <div class="box2">box 2</div>
+        <div class="box3">box 3</div>
+        <div class="box4">box 4</div>
+
+    </main>
+
+
+</body>
+
+</html>

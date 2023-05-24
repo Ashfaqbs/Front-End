@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+
+            height: 45vh;
+            background-color: red;
+
+        }
+
+        .box {
+            border: 2px solid black;
+        }
+
+        .box:hover {
+            transition-property: color;
+            transition-duration: 4s;
+            transition-timing-function: ease-in;
+            transition-delay: 2s;
+
+            /* short hand for transition */
+            /* and multiple properties too */
+            transition: color 4s ease-in 2s , width 4s ease-in ;
+
+            color: white;
+        }
+
+        .box1 {
+
+            border: 2px solid black;
+
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <div class="box">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni eveniet ipsam placeat rem a,
+            doloremque laudantium aliquam quos illo commodi numquam. Omnis facilis voluptatem deleniti unde ex! Nihil
+            molestias, corrupti minima eligendi praesentium quis dolore quibusdam veritatis alias similique? Aspernatur.
+        </div>
+        <div class="box1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni eveniet ipsam placeat rem a,
+            doloremque laudantium aliquam quos illo commodi numquam. Omnis facilis voluptatem deleniti unde ex! Nihil
+            molestias, corrupti minima eligendi praesentium quis dolore quibusdam veritatis alias similique? Aspernatur.
+        </div>
+        <button onclick="buttons()"> toggle</button>
+    </div>
+
+    <script>
+
+        function buttons() {
+            let b1 = document.getElementsByClassName('box1')
+            b1[0].style.color = 'black';
+
+        }
+    </script>
+
+</body>
+
+</html>

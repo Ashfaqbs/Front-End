@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+
+
+            background-color: yellow;
+            height: 500px;
+            display: grid;
+            gap: 5px 10px;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: 45px 65px 85px;
+        }
+
+        .box {
+
+            border: 2px solid black
+        }
+
+        .box1 {
+            grid-row: 1/3;
+            /* grid-column: 1/3; */
+
+        }
+
+
+
+        .box6 {
+            /* grid-column: 1/4; */
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <Caption>Grid Items property explained</Caption>
+    <marquee behavior="5px" direction="right">when using css grid for grid items dont give any height and width to them
+        try to give height and width by grid template rows or columns // OR by targeting to them and by grid or or
+        column
+    
+    <small> .box1{h-50px or w-150px} no dont give like this use grid columns or row </small>
+    </marquee>
+    <ul>
+        <li> grid-column
+
+            <br>
+            <pre>
+
+    .box1{
+        grid-column: 1/4; <caption><sup> The 1st bow column will expand its column till 3d column end or in front of 4th column</sup> </caption>
+                }
+
+                now for this the box1 column will expand till 4th column post , vertically column and horizontally row so
+                grid-column , if there are 4 columns and if say box1 1/4 so the box1 length will be from its position to
+                before 4th column and rest grid items will go down
+    
+                <hr>
+                <br> OR
+                .box1{
+                    /* grid-row: 1/4; */
+                    grid-column: 1/3;
+                    
+                            }
+                    
+                            .box4{
+                    /* grid-row: 1/4; */
+                    grid-column: 1/4;
+                    
+                            }
+</pre>
+
+
+        </li>
+        <li>grid-row
+            <br>
+            <pre>
+                .box1 {
+                    grid-row: 1/3;
+                    <caption><sup> The 1st box row  will expand its row till 2nd row end or in front of 3th row</sup> </caption>
+                }
+
+            <br>
+            <hr>
+            .box1 {
+                grid-row: 1/span  3;
+                /* grid-column: 1/3; */
+    
+            }
+    
+            </pre>
+            now for this the box1 row will expand till 3rd start or till 2nd row end row, vertically column and
+            horizontally row so
+            grid-column , if there are 4 rows and if say box1 1/4 so the box1 length will be from its position to before
+            4th row and rest grid items will go beside
+
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+        <div class="box box7">7</div>
+        <div class="box box8">8</div>
+        <div class="box box9">9</div>
+    </div>
+
+</body>
+
+</html>

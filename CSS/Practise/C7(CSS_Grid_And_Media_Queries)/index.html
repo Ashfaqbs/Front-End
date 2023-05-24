@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+
+            background-color: yellow;
+            display: grid;
+            gap: 20px 15px;
+            grid-template-columns: 200px 350px 400px;
+            height: 500px;
+            justify-content: right;
+        }
+
+        .box {
+            border: 2px solid black;
+            
+        }
+
+        s .box1 {
+
+            background-color: red;
+        }
+
+        .box2 {
+
+            background-color: rgb(95, 255, 32);
+        }
+
+        .box3 {
+
+            background-color: rgb(54, 255, 255);
+        }
+
+        .box4 {
+
+            background-color: rgb(255, 0, 242);
+        }
+    </style>
+</head>
+
+<body>
+    <caption>By default only column it will provide display grid</caption>
+    <marquee behavior="5px" direction="right">when using css grid for grid items dont give any height and width to them
+        try to give height and width by grid template rows or columns // OR by targeting to them and by grid or or
+        column
+    
+    <small> .box1{h-50px or w-150px} no dont give like this use grid columns or row </small>
+    </marquee>
+    <ul>
+        <li>display: grid; makes the container in single column
+        </li>
+        <li>
+            gap:20px 30px means row and column gap if there is more then one column column gap can be seen
+        </li>
+        <li>
+            grid-template-column:
+            by default display:grid gives one column to get more then one column we use this property
+            grid-template-column
+            note:
+            we can give value like 20px 30px400px and column width will be this so for grid items donot give nay width ,
+            if given the width width we give in grid-template-column will work but not more then the children/ grid-item
+            width
+            <br>
+
+            <br>
+            <br>
+
+            <br>
+            <pre> eg;
+            .container {
+
+            background-color: yellow;
+            display: grid;
+            <!-- grid-gap this is replaced by gap -->
+            gap: 20px 15px;
+            grid-template-columns: 200px 350px 400px;
+            }
+            for children we have no w and h
+        </pre>
+        </li>
+        <li>justify-content: right;</li>
+        <li> align-content: right;</li>
+    </ul>
+    These were thr property of the Grid containers
+    <hr>
+
+    <ul>
+        <Caption>Grid item property</Caption>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div class="container">
+        <div class="box1 box">1</div>
+        <div class="box2 box">2</div>
+        <div class="box3 box">3</div>
+        <div class="box4 box">4</div>
+    </div>
+
+
+</body>
+
+</html>

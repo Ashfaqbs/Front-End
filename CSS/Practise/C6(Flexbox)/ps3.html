@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            border: 2px solid black;
+            height: 400px;
+           display: flex;
+           flex-wrap: wrap;
+           justify-content:space-around;
+           align-content: center;
+
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            border: 2px solid black;
+            height: 150px;
+            width: 150px;
+            background-color: red;
+        }
+
+        .box2 {
+            border: 2px solid black;
+            height: 150px;
+            width: 150px;
+            background-color: rgb(7, 224, 43);
+        }
+
+        header {
+
+            height: 70px;
+            border: 2px solid black;
+            background-color: black;
+
+        }
+
+        li {
+            display: inline-block;
+            color: white;
+            margin-top: 20px;
+            padding: 2px;
+        }
+
+        ul {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About us</li>
+                <li>Contact us </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="box1"> box 1</div>
+        <div class="box2">box 2 </div>
+    </main>
+
+</body>
+
+</html>

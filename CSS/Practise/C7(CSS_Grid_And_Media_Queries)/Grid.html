@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>CSS Grid</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+
+            width: 100%;
+            height: 500px;
+            border: 2px solid black;
+            /* display: grid; */
+            display: grid;
+
+            /* grid-template-columns: 240px 300px auto; */
+            /* grid-template-rows: 300px 50px; */
+            gap: 20px 4px;
+
+            box-sizing: border-box;
+            background-color: paleturquoise;
+            /* grid-template-columns: auto auto; */
+            /* gap: 20px 20px; */
+            /* both column and row gap we are giving in gap property */
+            /* row-gap:40px; */
+            /* grid-template-rows: 20px 35px 50px 20px; */
+
+        }
+
+        .box {
+            /* width: 80px; */
+            /* height: 80px; */
+            border: 2px solid black;
+        }
+
+        .box1 {
+            background-color: red;
+            /* grid-column: 1 / 3;
+            grid-row: 1; */
+
+            grid-column: 1/4;
+        }
+
+        .box2 {
+            background-color: rgb(255, 240, 33);
+            grid-column: 1/4;
+        }
+
+        .box3 {
+            background-color: rgb(114, 255, 49);
+            grid-column: 1/3;
+        }
+
+        .box4 {
+            background-color: rgb(0, 4, 255);
+            grid-column: 1/.5;
+        }
+    </style>
+
+</head>
+
+<body>
+    <caption>Here grid container is grid parent and box's inside i.e direct element are grid items</caption>
+    <marquee behavior="5px" direction="right">when using css grid for grid items dont give any height and width to them
+        try to give height and width by grid template rows or columns // OR by targeting to them and by grid or or
+        column
+
+        <small> .box1{h-50px or w-150px} no dont give like this use grid columns or row </small>
+    </marquee>
+    <br>
+    Some Properties on container
+    <br>
+    <b>
+        grid-template-columns : here we have 4 grid items ,so if i give for this attribute as auto auto twice two
+        children/items will appear on top rest below and if i give auto auto auto three items will appear on top rest
+        below
+        <br>
+        eg: grid-template-columns: auto auto auto;
+
+        <br>
+        gap:150px 20px; both row and column gap we can set here and row-gap:40px; row gap only
+        gap between the grid items
+        column-gap :column gap only for width: 100% this wont work as single column will take whole space
+        <br>
+        grid-template-rows: 20px 35px 50px;
+        if /* height: 80px; */ is not specified for child /grid items we can set row height with this property
+        note this will work if height is specified but wont cross height specified height: 80px; as specified for grid
+        items
+        <br>
+        <hr>
+        eg: don't give any width and height to this grid items and give this to the parent container
+        display: grid;
+        grid-template-columns: 240px 300px auto;
+        grid-template-rows: 300px 50px;
+        gap: 20px 4px;
+        <hr>
+        <hr>
+        eg: don't give any width and height to this grid items and give this to the parent container
+        display: grid;
+        gap: 20px 4px;
+        and in child container give this grid-column: 1/4;
+        change values and see the positioning
+
+        <hr>
+
+
+    </b>
+
+
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+</body>
+
+</html>

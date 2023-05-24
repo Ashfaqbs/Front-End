@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .container {
+
+            border: 1px solid black;
+            width: 100%;
+            height: 40vh;
+        }
+
+        @media screen and (min-width:600px) {
+
+            .container {
+
+                border: 1px solid black;
+                background-color: rgb(0, 255, 55);
+                font-size: 16px;
+            
+            }
+
+        }
+        @media screen and (max-width:600px) {
+
+.container {
+
+    border: 1px solid black;
+    background-color: rgb(0, 225, 255);
+    font-size: 10px;
+    height: 20vh;
+
+}
+
+}
+
+        .navbar {
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar li {
+            margin-right: 10px;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px;
+        }
+
+
+        @media only screen and (max-width: 767px) {
+
+            /* Styles for mobile devices */
+            .navbar ul {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            .navbar li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+
+</head>
+<header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <h1>MEDIA QUERIES</h1>
+    <small>Used to make responsive layouts</small>
+
+
+    <div class="container">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, nisi quae! Blanditiis hic cum quidem, quis beatae
+        porro, accusamus corporis placeat nisi architecto assumenda consectetur quasi numquam aliquid quia unde
+        perferendis cupiditate asperiores. Omnis qui aliquam similique excepturi eos voluptates quo. Deleniti incidunt
+        similique dicta omnis quaerat nisi beatae voluptates earum molestiae, voluptatum reprehenderit voluptas facere
+        adipisci. Exercitationem eveniet voluptatibus culpa? Repudiandae laborum consectetur provident, eligendi dolorem
+        id asperiores possimus earum cupiditate! Illum sequi nihil quisquam odio? Neque ab accusamus ipsam accusantium
+        id cumque quasi illum consequuntur provident ad distinctio corrupti sunt nobis officiis perspiciatis recusandae,
+        facere, facilis esse magni exercitationem? Ducimus ipsam dicta ea deleniti? Similique odit soluta dolor,
+        reprehenderit quia quam mollitia qui voluptatibus tempore non perspiciatis. Asperiores cumque, fugit quam, eos
+        porro laboriosam sint excepturi omnis mollitia quaerat nostrum tenetur. Veniam iusto cumque laudantium, corporis
+        cum, corrupti excepturi labore tempore ad quisquam qui eum hic odio distinctio?
+
+
+    </div>
+
+
+
+    <hr>
+
+
+    <pre>
+Mobile Devices:
+Typically, mobile devices have a width less than or equal to 767 pixels. Therefore, you can use a media query with a max-width of 767 pixels to target mobile devices.
+Tablets:
+
+Tablets often have a width between 768 pixels and 1023 pixels. To target tablets, you can use a media query with a min-width of 768 pixels and a max-width of 1023 pixels.
+Computers and Laptops:
+
+Computers and laptops generally have wider screens. A commonly used width range for targeting these devices is 1024 pixels and above. You can use a media query with a min-width of 1024 pixels to apply styles specifically for computers and laptops.
+<br>
+/* Mobile devices */
+@media only screen and (max-width: 767px) {
+  /* Styles for mobile devices */
+  /* For example: */
+  body {
+    font-size: 14px;
+  }
+  
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Styles for tablets */
+  /* For example: */
+  body {
+    font-size: 16px;
+  }
+  
+  .container {
+    width: 768px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+
+/* Laptops and desktop computers */
+@media only screen and (min-width: 1024px) {
+  /* Styles for laptops and computers */
+  /* For example: */
+  body {
+    font-size: 18px;
+  }
+  
+  .container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+}
+
+In this example, media queries are used to adjust the font size and container width for different devices. Here's how it works:
+
+Mobile devices: The max-width of 767px targets mobile devices. The font size is set to 14px, and the container width spans the entire screen width (width: 100%) with some padding.
+
+Tablets: The min-width of 768px and max-width of 1023px target tablets. The font size is set to 16px, and the container width is fixed at 768px (width: 768px). The container is centered horizontally using margin: 0 auto, and it has some padding.
+
+Laptops and desktop computers: The min-width of 1024px targets larger screens. The font size is set to 18px, and the container width is fixed at 960px (width: 960px). Similar to tablets, the container is centered and has padding.
+
+These are just example values, and you can adjust the font sizes and container widths according to your specific design requirements.
+</pre>
+
+
+    <hr>
+</body>
+
+</html>

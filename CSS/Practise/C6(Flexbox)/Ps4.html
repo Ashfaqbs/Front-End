@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .img{
+            height: 200px;
+            width: 100%;
+            background-image: url(../Images/Nature.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .box1 {
+            border: 2px solid black;
+            height: 150px;
+            width: 150px;
+            background-color: red;
+        }
+
+        .box2 {
+            border: 2px solid black;
+            height: 150px;
+            width: 150px;
+            background-color: rgb(7, 224, 43);
+        }
+        .box3 {
+            border: 2px solid black;
+            height: 150px;
+            width: 150px;
+            background-color: rgb(255, 252, 56);
+        }
+
+        header {
+
+            height: 70px;
+            border: 2px solid black;
+            background-color: black;
+
+        }
+
+        li {
+            display: inline-block;
+            color: white;
+            margin-top: 20px;
+            padding: 2px;
+        }
+
+        ul {
+            text-align: right;
+        }
+        .container{
+            border: 2px solid black;
+            display: flex;
+            height: 50vh;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About us</li>
+                <li>Contact us </li>
+            </ul>
+        </nav>
+    </header>
+
+    <article class="img">
+    </article>
+
+    <main class="container">
+        <div class="box1"> box 1</div>
+        <div class="box2">box 2 </div>
+        <div class="box3">box 3 </div>
+    </main>
+
+</body>
+
+</html>

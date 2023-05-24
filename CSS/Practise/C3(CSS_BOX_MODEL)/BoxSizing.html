@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxSizing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            /* display: flex; */
+            /* justify-content: space-around; */
+            /* margin: 30px; */
+           width: 50%;
+            background-color: red;
+            /* border: 2px solid black; */
+            height: 600px;
+        }
+
+        .box2 {
+
+            width: 100%;
+            padding: 2px;
+            border: 10px solid black;
+            background-color: rgb(8, 255, 230);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>  box-sizing: border-box; is very imp to control the overflow of child elements</h1>
+
+        <div class="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, facilis. Ab dicta tempore
+            quisquam laboriosam quos, quae obcaecati omnis esse explicabo, soluta sequi. Error veritatis accusantium
+            sequi assumenda voluptatem accusamus magnam voluptates, iure aut maxime, soluta ad eaque at! Atque ut
+            numquam, debitis iste nam ex modi. Eaque, cumque deleniti!
+
+            <section class="box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quam maiores quod labore eum odit
+                tempore
+                nesciunt aut tenetur provident sint dolorem veniam pariatur ipsa, nisi saepe deserunt? Aut vero
+                cupiditate
+                adipisci nostrum, minima magnam consectetur, maiores perferendis unde placeat saepe molestiae iste
+                corrupti
+                ab odit sed obcaecati accusantium reiciendis?
+            </section>
+        </div>
+
+
+    </main>
+
+
+</body>
+
+</html>

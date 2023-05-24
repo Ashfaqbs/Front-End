@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin Collapse</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            margin: 30px;
+            height: 30px;
+
+            background-color: red;
+        }
+
+        .box2 {
+            margin: 30px;
+            height: 30px;
+            background-color: aqua;
+
+        }
+
+        .box3 {
+            margin: 30px;
+            height: 30px;
+            background-color: rgb(63, 251, 82);
+
+        }
+
+
+        .box4 {
+            margin: 70px;
+            height: 30px;
+            background-color: rgb(237, 255, 76);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <div class="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, facilis. Ab dicta tempore
+            quisquam laboriosam quos, quae obcaecati omnis esse explicabo, soluta sequi. Error veritatis accusantium
+            sequi assumenda voluptatem accusamus magnam voluptates, iure aut maxime, soluta ad eaque at! Atque ut
+            numquam, debitis iste nam ex modi. Eaque, cumque deleniti!</div>
+
+        <div class="box2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quam maiores quod labore eum odit tempore
+            nesciunt aut tenetur provident sint dolorem veniam pariatur ipsa, nisi saepe deserunt? Aut vero cupiditate
+            adipisci nostrum, minima magnam consectetur, maiores perferendis unde placeat saepe molestiae iste corrupti
+            ab odit sed obcaecati accusantium reiciendis?
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+        <hr>
+        when two elements present with one margin more then other or same then the element with higher margin will
+        overlap the
+        other element margin in same one above one margin will overlap to the below one and this is called Margin
+        collapse
+        <hr>
+        <br>
+
+
+        <section class="box3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita corrupti animi ipsum dicta sint iste nisi
+            eaque soluta officia aperiam eius quidem blanditiis aliquam, tempore vitae maxime fuga, aut delectus earum
+            sunt? In praesentium consequatur, perferendis id officiis eaque, laudantium magni inventore fugit quasi
+            voluptatum quaerat quo voluptatem! Quas, alias!
+
+        </section>
+
+
+        <section class="box4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita corrupti animi ipsum dicta sint iste nisi
+            eaque soluta officia aperiam eius quidem blanditiis aliquam, tempore vitae maxime fuga, aut delectus earum
+            sunt? In praesentium consequatur, perferendis id officiis eaque, laudantium magni inventore fugit quasi
+            voluptatum quaerat quo voluptatem! Quas, alias!
+
+        </section>
+    </main>
+
+
+</body>
+
+</html>

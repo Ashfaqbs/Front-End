@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            height: 200px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            padding: 3px;
+            margin: 20px 0px 0px 0px;
+        }
+
+        nav ul {
+            text-align: right;
+        }
+
+        header {
+            background-color: rgb(7, 0, 0);
+            color: whitesmoke;
+            height: 70px;
+
+        }
+
+        .mainbox {
+
+            background-color: aqua;
+            height: 40vh;
+            width: 45vw;
+
+        }
+
+
+        .box {
+            border: 2px solid black;
+            width: 20vw;
+            height: 22.5vh;
+            background-color: red;
+            top: 25px;
+        }
+
+
+        article {
+
+            width: 50vw;
+            height: 80vh;
+            background-color: blue;
+            /* position: static; default to test  absoulte */
+            position: relative;
+        }
+
+
+        .box1 {
+            border: 2px solid black;
+            width: 8vw;
+            height: 15vh;
+            background-color: red;
+            position: static;
+            /* static is the default */
+            top: 20px;
+            /* top bottom left right wont work */
+
+        }
+
+        .box2 {
+            border: 2px solid black;
+            width: 5vw;
+            height: 10vh;
+            background-color: red;
+            position: relative;
+
+        }
+
+        .box3 {
+            border: 2px solid black;
+            width: 5vw;
+            height: 10vh;
+            background-color: red;
+            position: absolute;
+
+        }
+
+        .box4 {
+            border: 2px solid black;
+            width: 7vw;
+            height: 10vh;
+            background-color: rgb(60, 255, 0);
+
+        }
+
+        .box5 {
+            border: 2px solid black;
+            width: 7vw;
+            height: 15vh;
+            background-color: rgb(56, 29, 121);
+            position: fixed;
+            right: 0;
+            bottom: 0;
+
+        }
+
+        .box6 {
+            background-color: tomato;
+            width: 90px;
+            height: 90px;
+            position: sticky;
+            z-index: 100;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+
+
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 style="text-align: center;">Position property FARS (fixed ,Absolute, relative , static )</h1>
+        <br>
+
+        <div class="mainbox">
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ab laudantium provident beatae, quisquam
+            quasi ullam architecto dignissimos maiores nam corporis ratione optio praesentium adipisci ea non placeat
+            officiis harum exercitationem unde et omnis! Similique iure quas deleniti libero!
+
+            <div class="box">
+                I am a box
+
+            </div>
+
+        </div>
+
+
+
+        <br>
+
+        <hr>
+
+
+
+        <b>
+            Position property is used to manipulate the position/location of the element
+            following values
+
+
+
+            <br>
+            1. static - default and top , bottom , left , right , z-index has no effect the element is in default
+            position
+            is it will be in the default flow how its written it will be displayed like that
+            <br>
+            2. relative - top , bottom , left , right , z-index has effect
+            the element will be in the normal flow but T , B ,L , R , -Z will work
+            <br>
+            3. absolute - element is removed from the normal flow and Positioned to 1st non static parent top , bottom ,
+            left , right , z-index has effect
+
+            explained
+
+            As we set the element position as absolute the element is removed from the normal flow , i.e the normal flow
+            is header and its sub elements come ,then main > h1 > div > div> br > this text and article > its sub
+            elements show render as they have added now this class box 3 position is absolute
+
+            so what will happen is article will come , inside box1 , 2 will load as box 3 is absolute the elements will
+            ignore it box 4 will take box3 flow position as box3 is now absolute and is out of flow
+            now box 4 will be in 3 position but box3 follows a a position ie non static ancestor or parent , and now if
+            we see its first parent is article and its position is static and next parent is main that is also static
+            next is body itself that is also static and next is HTMl tag itself that is also static so it will follow
+            Html position
+            now we can use top , bottom , right, and left
+            <b>
+                note :
+                if the parent is non static , i.e relative , absolute , sticky etc the position of the child container
+                is now absolute the T ,B , L ,R will change inside the parent container i,e the child container now will
+                move inside the parent container T, B ,L, R will work with respect to non static parent/Ancestor and
+                position of child container which is absolute will change w.r.t to the non static parent container </b>
+            <br>
+            4. sticky - top , bottom , left , right , z-index has effect
+
+            and positioned is fixed on the user scroll position
+
+
+
+            <br>
+            5. Fixed
+            same as absoulte but the element is positioned to browser window i.e top , bottom , left , right , z-index
+            has effect
+
+            and if we scroll down it will be there if top , bottom , left , right , z-index is activated position is
+            fixed
+
+        </b>
+        <hr>
+
+        <br>
+        <article>
+
+            <div class="box1">im a box 1 <b>position </b> default i.e static T, B, L ,R ,and Z index wont work </div>
+
+            <div class="box2">im a box 2 <b>Relative </b> </div>
+
+            <div class="box3">im a box 3 <b>absolute </b> </div>
+            <div class="box4">im a box 4 </div>
+            <div class="box5">im a box 5 fixed </div>
+
+
+
+            <aside class="box6">
+
+                Sticky box
+
+            </aside>
+
+        </article>
+
+
+
+
+
+
+
+
+        <br>
+        <!-- <div>
+
+            <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/FVZWbQH2B6ndj9UU/scene.splinecode"
+                events-target="global"></spline-viewer>
+
+
+        </div> -->
+
+
+
+    </main>
+
+
+
+</body>
+
+</html>

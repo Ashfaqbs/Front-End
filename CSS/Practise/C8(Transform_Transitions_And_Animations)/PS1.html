@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .container {
+            height: 45vh;
+            border: 2px solid black;
+        }
+
+        .box {
+            background-color: aqua;
+            border: 2px solid black;
+        }
+
+       
+
+        @keyframes MyProgressBar {
+
+            from {
+                width: 0vw;
+                height: 10px;
+                background-color: white;
+            }
+
+            to {
+                width: 100vw;
+                height: 10px;
+                background-color: #ff0000;
+            }
+        }
+
+        
+
+
+        .divt {
+            color: rgb(92, 0, 0);
+            border: 1px solid black;
+            background: red;
+            width:10px;
+            
+        }
+
+        
+
+        /* transition-property: color;
+        transition-duration: 4s;
+        transition-timing-function: ease-in;
+        transition-delay: 2s;
+
+        /* short hand for transition */
+        /* and multiple properties too */
+        /* transition: color 4s ease-in 2s,
+        width 4s ease-in; */ */
+
+        .divt:hover {
+            transition: width 2s  0s;
+            width:100%;
+            display:block;
+            background-color: red;
+
+        }
+
+        section {
+            border: 1px solid black;
+        }
+
+        img {
+            transform: rotate(0.5turn);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pbar">
+        P
+    </div>
+    <div class="container">
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam porro magni alias, illo
+            similique nemo, et iusto omnis voluptatem voluptatibus quis ex deserunt, perferendis dolor. Dolores ex
+            temporibus, neque debitis adipisci corporis reprehenderit, amet nam maxime laboriosam, laudantium ut. Enim
+            nam voluptatum omnis voluptate animi voluptatem deleniti! Non, atque assumenda.</div>
+    </div>
+
+    <div class="divt">
+        P2
+    </div>
+
+    <section class="img">
+        <img src="../Images/Nature.jpg" alt="">
+    </section>
+</body>
+
+</html>
