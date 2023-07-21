@@ -1,0 +1,2 @@
+Can perform bulk rename on files
+in  folder 200 files we can rename
