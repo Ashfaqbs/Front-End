@@ -1,0 +1,8 @@
+this project is a PDF tool where we will merge the two PDF's using javascript and bootstrap
+
+create a main.js or server.js and to make it as s server add npm init -y (Node must be installed to use init)
+and package.json will be installed
+
+to run express must be installed command npm i express
+server/project start command npm start or node server.js
+if changes is made and to show we need to restart the project so node server.js this is a file which we created  but we can also use a dependency called nodemon which will take care of ths restart  npm i -g nodemon
