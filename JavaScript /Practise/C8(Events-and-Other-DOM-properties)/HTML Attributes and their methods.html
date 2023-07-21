@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Attribute Methods</h2>
+
+    <ul>
+        <li>Element .hasAttribute</li>
+        <li>Element . getAttribute</li>
+        <li>Element . setAttribute</li>
+    </ul>
+
+
+    <span id="sp" class="card">Hey this is a span tag</span>
+
+    <pre>
+
+
+    let spn = document.getElementById('sp')
+    console.log(spn.getAttribute('class'))//this returns the attribute which exists for the tag, as we have provided the class as card so o/p is card 
+    console.log(spn.hasAttribute('class'))//check's wether the span tag has class attribute in it o/p true as we have given class to span tag 
+    // true
+    console.log(spn.hasAttribute('name'))//check's wether the span tag has name attribute in it o/p false as we have not given name to span tag 
+
+    console.log(spn.removeAttribute('class'))//removes the class attribute in the span tag
+
+
+    spn.setAttribute('height', '200px')//we can add a new attribute and define the value to it
+
+    console.log(spn.hasAttribute('style'))//check's wether the span tag has style attribute in it o/p false as we have not added style to span tag 
+    // false
+
+    console.log(spn.attributes)//returns all the attribute of the element
+
+
+</pre>
+
+
+
+    <script>
+
+        let spn = document.getElementById('sp')
+        console.log(spn.getAttribute('class'))//this returns the attribute which exists for the tag, as we have provided the class as card so o/p is card 
+        console.log(spn.hasAttribute('class'))//check's wether the span tag has class attribute in it o/p true as we have given class to span tag 
+        // true
+        console.log(spn.hasAttribute('name'))//check's wether the span tag has name attribute in it o/p false as we have not given name to span tag 
+
+        console.log(spn.removeAttribute('class'))//removes the class attribute in the span tag
+
+
+        spn.setAttribute('height', '200px')//we can add a new attribute and define the value to it
+
+        console.log(spn.hasAttribute('style'))//check's wether the span tag has style attribute in it o/p false as we have not added style to span tag 
+        // false
+
+        console.log(spn.attributes)//returns all the attribute of the element
+    </script>
+</body>
+
+</html>

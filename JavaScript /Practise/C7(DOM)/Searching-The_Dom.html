@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDYCRtCuQD4mUCX0ZH36qEjA-L7IozjevZmw&usqp=CAU"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/67031162-9cc5-481d-8ffe-7ada8f3d78bd/custom-nike-air-force-1-high-by-you-shoes.png"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/87cd0b80e0434c758b15ae9801598eb2_9366/adidas_4DFWD_2_Running_Shoes_Grey_GX9250_01_standard.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> -->
+
+    <hr>
+    <caption>Very important</caption>
+    <h1>DOM Navigation properties</h1>
+
+
+    <marquee behavior="" direction="">
+
+        <b>
+            this dom navigation return the o/p in array form and we have to use index to target the sibling </b><br>
+        document.getelementbyTagname() <br>
+        document.getelementbyclass() <br>
+        document.querySelectorAll() <br>
+        <hr>
+        <b> only return as single o/p as the id is one and unique </b> <br>
+        document.getelementbyid()
+
+
+    </marquee>
+    <ul>
+
+        <hr>
+        <li>document.getelementbyid('pass the element id')</li>
+        <span id="firstid">This is get element by id </span>
+        <pre>
+            let firstid =   document.getElementById('firstid')//since id is one and unique it will return one element
+        
+            firstid.style.color='red'
+
+        </pre>
+        <hr>
+        <li>document.getelementbyTagname('pass the element name eg: h1 , span ')</li>
+        <h6>This is by tagname</h6>
+        <h6>This is by tagname</h6>
+
+        <pre>
+
+    //tagname
+    let h6= document.getElementsByTagName('h6')
+    h6[0].style.color='yellow'
+    h6[0].style.background='red'
+    
+    h6[1].style.color='pink'
+
+    //returns in array so we need to use index to target the first element , second element , and soon and this will be same in classname, tagname , queryselectorall
+          </pre>
+        <hr>
+        <li>document.getelementbyclass('pass the element id')</li>
+        <pre>
+
+            let card_title = document.getElementsByClassName('card-title') //since  same class name can be given to multiple elements and 
+            //whenever we do select by class name as here card-title there are two elements and the o/p will be given in array
+            i.e to access the first card-title i have to use [0] index and for the second card-title [1] and soon 
+ card_title[0].style.color='blue'
+ card_title[1].style.color='green'
+
+        </pre>
+
+        <hr>
+        <li> document.querySelectorAll('pass the Css selectors')</li>
+        <div class="items item1">Item 1</div>
+        <div class="items item2">Item 2</div>
+
+        <pre>
+
+    //QuerySelectorall
+    let items=  document.querySelectorAll('.items')//returns the element with the provided css selectors ,and we have to use in index form to target
+    items[0].style.background='green'
+    items[1].style.background='blue'
+ 
+ console.log(items)
+        </pre>
+
+        <hr>
+        <li>document.querySelector('pass the Css selectors')</li>
+        same as above but return 1st element not all
+        <div class="cardx item1">Item 1</div>
+        <div class="cardx item2">Item 2</div>
+        <hr>
+        <li>document.getElementsByName('Name of the element we give in the attribute')</li>
+        <input type="text" name="Name" id="" placeholder="Enter the name">
+        <pre>
+// input type="text" name="Name" id="" placeholder="Enter the name">
+
+            //get element by the name
+            let Name = document.getElementsByName('Name')
+            console.log(Name)
+        
+        </pre>
+
+        <hr>
+    </ul>
+    <br>
+    <marquee behavior="" direction="">
+
+        <h5>We can use this Dom navigation not only on document but as well as with innerchilds as well a</h5>
+
+    </marquee>
+    <div class="container" onclick="flexFunc()">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+<script>
+
+    //id
+    let firstid = document.getElementById('firstid')
+
+    firstid.style.color = 'red'
+
+
+    //classname
+    let card_title = document.getElementsByClassName('card-title')
+    card_title[0].style.color = 'blue'
+    card_title[1].style.color = 'green'
+
+
+    //tagname
+    let h6 = document.getElementsByTagName('h6')
+    h6[0].style.color = 'yellow'
+    h6[0].style.background = 'red'
+
+    h6[1].style.color = 'pink'
+
+
+    //Queryselectorall
+    let items = document.querySelectorAll('.items')
+    items[0].style.background = 'green'
+    items[1].style.background = 'blue'
+
+    console.log(items)
+
+
+
+    //queryselector
+    let cardx = document.querySelector('.cardx')
+    cardx.style.background = 'red'
+
+    //get element by the name
+    let Name = document.getElementsByName('Name')
+    console.log(Name)
+
+
+
+    let flexFunc = () => {
+        let flexcontiner = document.getElementsByClassName('container')[0]
+
+
+        if (flexcontiner.style.display = 'block') {
+            flexcontiner.style.display = 'flex'
+
+        } else {
+            flexcontiner.style.display = 'block'
+        }
+    }
+
+    flexFunc()
+
+
+
+
+</script>
+
+
+</html>

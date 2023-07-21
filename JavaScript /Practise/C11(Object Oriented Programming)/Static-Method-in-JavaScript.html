@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Static Method in JavaScript</h1>
+    Static methods are used to implement functions that belong to a class as a whole and not to any particular objects
+    and we cannot call the static methods by objects , and we can call them by class name
+    <pre>
+    <b>
+        <h3>
+            class Shark {
+                name
+                constructor(name) {
+                    this.name = name
+                }
+    
+                //Shark specific method
+                sharklikeHunting() {
+                    console.log('Shark  is hunting')
+                }
+    
+    
+                static sleep() {
+                    console.log('Im sleeping')
+                }
+                static sing() {
+                    console.log('Im singing')
+                }
+    
+            }
+            let s1 = new Shark()
+            s1.sharklikeHunting()
+            console.log(s1.name)
+            console.log(s1)
+            Shark.sleep()
+            //to call this we have not created any object
+            // o/p
+            // Im sleeping
+    
+            Shark.sing()
+            // o/p
+            //Im singing
+            //we cannot call a static method by a object in Javascript
+            s1.sing()
+
+
+
+
+
+        </h3>
+    </b>
+</pre>
+    <script>
+        class Shark {
+            name
+            constructor(name) {
+                this.name = name
+            }
+
+            //Shark specific method
+            sharklikeHunting() {
+                console.log('Shark  is hunting')
+            }
+
+
+            static sleep() {
+                console.log('Im sleeping')
+            }
+            static sing() {
+                console.log('Im singing')
+            }
+
+        }
+        let s1 = new Shark()
+        s1.sharklikeHunting()
+        console.log(s1.name)
+        console.log(s1)
+        Shark.sleep()
+        //to call this we have not created any object
+        // o/p
+        // Im sleeping
+
+        Shark.sing()
+        // o/p
+        //Im singing
+        //we cannot call a static method by a object in Javascript
+        s1.sing()
+
+    </script>
+</body>
+
+</html>

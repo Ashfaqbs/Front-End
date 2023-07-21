@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Session Storage & related methods</h1>
+
+
+    <pre>
+        <b>
+            <h2>
+
+Used less often then localStorage , Properties and methods are same as localStorage but:
+
+<ol>
+    <li>The Session storage exists only within the current browser tab another tab with some page will have different  Storage </li>
+    <li>the data survives the page refresh , but not closing or opening the tab</li>
+
+    sessionStorage.setItem('name','sonu')//all the methods are same as localStorage
+    if you run this in console or in the script we can get the this in just below the local storage
+    if you refresh the tab the data persists but if you copy the url and open in different tab or in different browser then the session stored data will not be saved and we can not get the data 
+</ol>
+
+<u>Storage Event</u>this will be triggered  when we change localStorage or sessionStorage
+When the data gets updated in localStorage or session storage event triggers with these Properties
+
+i.e to see this 
+open two tabs on in one tab add this in console 
+localStorage.setItem('name','sonu')
+window.onstorage=(e)=>{
+    //any change in localstorage or session storage this will called    
+                alert("Changed")
+                console.log(e)
+            
+            o/p
+                //StorageEvent {isTrusted: true, key: 'name', oldValue: 'monty', newValue: 'sonu', url: 'http://127.0.0.1:5500/Practise/C10(FetchApi-cookie…ssionStorage)/SessionStorage&related-methods.html', …}
+            
+            }
+
+
+    
+            //now we change the name with new data now this onstorage will be called localStorage.setItem('name','monty')
+<ol>
+    <li>key</li>
+    the key
+    <li>Old value</li>
+    the Previous value
+    <li>New value</li>
+    the new value
+    <li>URL</li>
+    Page URL
+    <li>Storage Area</li>
+    localStorage or sessionStorage
+</ol>
+We can listen the onStorage Event of the window which is triggered when updates are made to the same storage 
+from others documents
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </h2>
+        </b>
+    </pre>
+
+    <script>
+        window.onstorage = (e) => {
+            //any change in localstorage or session storage this will called    
+            alert("Changed")
+            console.log(e)
+        //o/p
+        // StorageEvent {isTrusted: true, key: 'name', oldValue: 'monty', newValue: 'sonu', url: 'http://127.0.0.1:5500/Practise/C10(FetchApi-cookie…ssionStorage)/SessionStorage&related-methods.html', …}
+        
+        }
+
+        //now we change the name with new data now this onstorage will be called localStorage.setItem('name','monty')
+    </script>
+</body>
+
+</html>

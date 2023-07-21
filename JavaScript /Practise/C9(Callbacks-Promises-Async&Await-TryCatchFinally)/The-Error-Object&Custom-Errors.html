@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>The Error Object & Custom Errors</h1>
+
+    <pre>
+
+
+        try {
+
+            randomVariable
+        } catch (error) {
+            console.log(error + " is the error")
+            //since the variable is not defined so we will ge this respective error
+            // ReferenceError: randomVariable is not defined is the error
+
+            console.log(error.name)//ReferenceError
+            console.log(error.message)//randomVariable is not defined
+
+        }
+        console.log('-----------------------------------------')
+
+        //2
+        try {
+            throw new Error('Incorrect password')
+
+        } catch (error) {
+            console.log(error)
+        }
+        //     o/p
+        //     Error: Incorrect password
+        // at http://127.0.0.1:5500/Practise/C9(Callbacks-Promises-Async&Await-TryCatchFinally)/The-Error-Object&Custom-Errors.html:42:19
+
+        //3 specific error
+        try {
+            throw new ReferenceError('The variable is not defined please check')
+
+        } catch (error) {
+            console.log(error)
+        }
+        // o/p
+        //     ReferenceError: The variable is not defined please check
+        // at http://127.0.0.1:5500/Practise/C9(Callbacks-Promises-Async&Await-TryCatchFinally)/The-Error-Object&Custom-Errors.html:53:19
+
+
+
+
+
+        //throwing custom error
+
+        try {
+
+            let age = Number.parseInt(prompt('enter your age'))
+            if (age > 18 && age <= 100) {
+                console.log('welcome')
+            } else if (age < 18) {
+                throw new Error('please enter a valid age')
+
+            } else if (age > 110) {
+                throw new Error('please enter a valid age')
+            }
+
+        } catch (error) {
+            console.log(error.message)
+            console.log(error.name)
+            console.log(error.stack)
+
+        }
+
+        console.log('this script is still running')
+
+</pre>
+
+
+    <script>
+
+
+
+
+
+        try {
+
+            randomVariable
+        } catch (error) {
+            console.log(error + " is the error")
+            //since the variable is not defined so we will ge this respective error
+            // ReferenceError: randomVariable is not defined is the error
+
+            console.log(error.name)//ReferenceError
+            console.log(error.message)//randomVariable is not defined
+
+        }
+        console.log('-----------------------------------------')
+
+        //2
+        try {
+            throw new Error('Incorrect password')
+
+        } catch (error) {
+            console.log(error)
+        }
+        //     o/p
+        //     Error: Incorrect password
+        // at http://127.0.0.1:5500/Practise/C9(Callbacks-Promises-Async&Await-TryCatchFinally)/The-Error-Object&Custom-Errors.html:42:19
+
+        //3 specific error
+        try {
+            throw new ReferenceError('The variable is not defined please check')
+
+        } catch (error) {
+            console.log(error)
+        }
+        // o/p
+        //     ReferenceError: The variable is not defined please check
+        // at http://127.0.0.1:5500/Practise/C9(Callbacks-Promises-Async&Await-TryCatchFinally)/The-Error-Object&Custom-Errors.html:53:19
+
+
+
+
+
+        //throwing custom error
+
+        try {
+
+            let age = Number.parseInt(prompt('enter your age'))
+            if (age > 18 && age <= 100) {
+                console.log('welcome')
+            } else if (age < 18) {
+                throw new Error('please enter a valid age')
+
+            } else if (age > 110) {
+                throw new Error('please enter a valid age')
+            }
+
+        } catch (error) {
+            console.log(error.message)
+            console.log(error.name)
+            console.log(error.stack)
+
+        }
+
+        console.log('this script is still running')
+
+    </script>
+
+</body>
+
+</html>

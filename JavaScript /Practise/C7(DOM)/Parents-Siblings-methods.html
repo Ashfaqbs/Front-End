@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>First</div>
+        <div>Second</div>
+    </div>
+
+
+
+
+    <pre>
+//body
+        let value = document.body.firstChild
+        console.log(value)//first child is Div
+        console.log(value.parentElement)//gives us the parent of the child here parent of the div is body
+        console.log(value.parentNode)
+
+
+        //Getting the children of the 1st child i.e Div tag those are two div tags note: text can also be the child , so remove the spaces
+        console.log(value.firstChild)//op <div>First</div>
+        console.log(value.lastChild)//op <div>Second</div>
+
+        //specific child
+        
+        console.log(value.childNodes[0])//op <div>First</div>
+        console.log(value.childNodes[1])//op <div>Second</div>
+        console.log(value.childNodes[2])//undefined as we only two sibling
+
+    </pre>
+    <script>
+        let value = document.body.firstChild
+        console.log(value)//first child is Div
+        console.log(value.parentElement)//gives us the parent of the child here parent of the div is body
+        console.log(value.parentNode)
+
+
+        console.log(value.firstChild)//op <div>First</div>
+        console.log(value.lastChild)//op <div>Second</div>
+
+        //specific child
+
+        console.log(value.childNodes[0])//op <div>First</div>
+        console.log(value.childNodes[1])//op <div>Second</div>
+        console.log(value.childNodes[2])//undefined as we only two sibling
+
+
+    </script>
+</body>
+
+</html>

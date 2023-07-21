@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Inheritance & extends Keyword in JavaScript</h1>
+
+    <pre>
+    <b>
+        <h3>
+Class Inheritance
+
+Class Inheritance is a way for one class to extend another class, this is done by using extend keyword
+
+
+The extend keyword
+
+extends keyword is used to extend another class
+
+Important
+In JavaScript, when you define a derived class using the extends keyword, you are required to explicitly call the super() method within the constructor of the derived class. This is necessary because JavaScript does not automatically call the base class constructor for you.
+<br>
+In Java, the super() keyword is used implicitly to call the base class constructor. It is added by the compiler if you don't explicitly specify a call to the base class constructor using super() or this().
+
+i.e we need to call super() or this keyword explicitly in JavaScript
+<marquee behavior="" direction="">
+Note: <br>
+we will get one error while extending a Class <br>
+Inheritance-&-extends-Keyword-in-JavaScript.html:53 Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+    at new dolphin (http://127.0.0.1:5500/Practise/C11(Object%20Oriented%20Programming)/Inheritance-%26-extends-Keyword-in-JavaScript.html:53:17)
+    at http://127.0.0.1:5500/Practise/C11(Object%20Oriented%20Programming)/Inheritance-%26-extends-Keyword-in-JavaScript.html:75:19
+
+    to resolve this add super() in child classes
+
+</marquee>
+<hr>
+//main class 1
+
+class Fish {
+    constructor() {
+
+    }
+    swim() {
+        console.log('im swimming')
+    }
+}
+
+class dolphin extends Fish {
+
+    name
+    constructor(name) {
+        super();
+
+        this.name = name
+    }
+    //dolphin specific method
+    dolphinDance() {
+        console.log('dolphin is dancing')
+    }
+
+}
+class Shark extends Fish {
+    name
+    constructor(name) {
+        super();
+        this.name = name
+    }
+
+    //Shark specific method
+    sharklikeHunting() {
+        console.log('Shark  is hunting')
+    }
+
+}
+
+
+let dol = new dolphin('dolphin');
+let shark = new Shark('sharky');
+dol.swim()
+dol.dolphinDance()
+shark.swim()
+shark.sharklikeHunting()
+
+//op
+// im swimming
+// Inheritance-&-extends-Keyword-in-JavaScript.html:59 dolphin is dancing
+// Inheritance-&-extends-Keyword-in-JavaScript.html:45 im swimming
+// Inheritance-&-extends-Keyword-in-JavaScript.html:72 Shark  is hunting
+
+
+
+
+        </h3>
+    </b>
+</pre>
+
+    <script>
+
+        //main class 1
+
+        class Fish {
+            constructor() {
+
+            }
+            swim() {
+                console.log('im swimming')
+            }
+        }
+
+        class dolphin extends Fish {
+
+            name
+            constructor(name) {
+                super();
+
+                this.name = name
+            }
+            //dolphin specific method
+            dolphinDance() {
+                console.log('dolphin is dancing')
+            }
+
+        }
+        class Shark extends Fish {
+            name
+            constructor(name) {
+                super();
+                this.name = name
+            }
+
+            //Shark specific method
+            sharklikeHunting() {
+                console.log('Shark  is hunting')
+            }
+
+        }
+
+
+        let dol = new dolphin('dolphin');
+        let shark = new Shark('sharky');
+        dol.swim()
+        dol.dolphinDance()
+        shark.swim()
+        shark.sharklikeHunting()
+
+//op
+// im swimming
+// Inheritance-&-extends-Keyword-in-JavaScript.html:59 dolphin is dancing
+// Inheritance-&-extends-Keyword-in-JavaScript.html:45 im swimming
+// Inheritance-&-extends-Keyword-in-JavaScript.html:72 Shark  is hunting
+
+
+    </script>
+
+</body>
+
+</html>

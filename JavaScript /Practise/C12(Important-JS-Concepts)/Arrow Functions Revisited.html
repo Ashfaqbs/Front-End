@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Arrow Functions Revisited</h1>
+
+    <pre>
+    <b>
+        <h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </h3>
+    </b>
+</pre>
+
+
+
+
+
+    <script>
+
+
+
+        // let sayHello = () => {
+        //     console.log('Hello ')
+        // }
+
+        // sayHello()
+        //Hello
+        // or
+        // let sayHello = () => console.log('Hello ')
+
+        // sayHello()
+        //Hello
+
+        // let sayHello = (name) => console.log('Hello ' + name)
+
+        // sayHello('sonu')
+        //Hello sonu
+
+        // or
+        // let sayHello = name => console.log('Hello ' + name)
+
+        // sayHello('sonu')
+        //Hello sonu
+
+
+
+        // passing functions in object and to understand this
+
+
+
+
+        //     let user = {
+        //         name: 'sonu',
+        //         place: 'india',
+        //         exp: 10,
+        //         showname: function showname() {
+        //             console.log(`hello ${this.name}\nfrom ${this.place}`)
+        //         }
+        //     }
+        //     console.log(user.name, user.place, user.exp)
+
+        //     user.showname()
+        //    //hello sonu , this keyword calling the current invoking object
+
+
+
+        // understanding this keyword
+
+        //checking this globally
+        console.log(this)
+        //window object
+        //Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+
+        //inside user object
+        let user = {
+            name: 'sonu',
+            place: 'india',
+            exp: 10,
+
+            // console.log(this) //user object
+            showname: function showname() {
+                // console.log(this) //user object
+
+                let Userthis = this
+                setTimeout(function () {
+
+                    //checking in setimeout
+                    console.log(this)//here this is window object and we cannot get the value for this.name and this.place  to fix this call this in user objects and assign it to a dummy variable
+                    // console.log(`hello ${this.name}\nfrom ${this.place}`)
+                    //o/p
+                    // hello 
+                    // from undefined
+
+                    //fixing 
+                    console.log(`hello ${Userthis.name}\nfrom ${Userthis.place}`)
+                    //op
+                    // hello sonu
+                    // from india
+
+
+                }, 2000)
+            }
+        }
+        console.log(user.name, user.place, user.exp)
+
+        user.showname()
+        //hello sonu , this keyword calling the current invoking object
+
+        //we used to fix by earlier way now we can use arrow function to fix this 
+
+        //inside user object
+        let user1 = {
+            name: 'sonu',
+            place: 'india',
+            exp: 10,
+
+            // console.log(this) //user object
+            showname: function showname() {
+                console.log(this) //user object
+                //{name: 'sonu', place: 'india', exp: 10, showname: ƒ}
+                //using arrow function will help us to get the user object and not window object
+                setTimeout(() => {
+                    console.log(this)
+                    console.log(`hello ${this.name}\nfrom ${this.place}`)
+                    //sonu india 10
+                }, 2000)
+            }
+        }
+        console.log(user.name, user.place, user.exp)
+
+        user1.showname()
+
+
+    </script>
+
+</body>
+
+</html>

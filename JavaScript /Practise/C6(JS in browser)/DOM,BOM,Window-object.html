@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        When Javascript runs on a browser there will be window function, DOM,BOM, Javascript core feature
+        <ul>
+            <li>Window Object</li>
+            window is a global object
+            <pre>
+                console.table(window)
+                window.alert("alert from window ")
+            </pre>
+
+            <li>BOM</li>
+            Browser object model
+            this represents the additional objects provided browser alert, prompt and confirm are BOM objects
+
+            
+            Location.href = "https://website"
+
+            <li>DOM</li>
+            Document object model , whole html page is converted in Javascript Object and named as Document
+            <pre>
+                //here this current page converted into a Object and by default named as document
+                console.log(document)
+                console.log(document.body)
+
+                 // document.body.style.backgroundColor='blue'
+            </pre>
+
+
+        </ul>
+    </h1>
+
+    <script>
+
+
+        console.log(window)
+        window.alert("alert from window ")
+        //here this current page converted into a Object and by default named as document
+        console.log(document)
+        console.log(document.body)
+
+        // document.body.style.backgroundColor='blue'
+
+        Location.href = "https://website"
+
+    </script>
+</body>
+
+</html>

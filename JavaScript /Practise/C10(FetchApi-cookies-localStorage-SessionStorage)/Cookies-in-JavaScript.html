@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cookies in JavaScript</h1>
+
+    <pre>
+<b>
+    <h3>
+Cookies are small string of data stored directly in the browser
+In JavaScript, document.cookie provides access to cookies
+
+Cookies are set by a web sever by using the set-cookie http-header , Next time when the request is sent to the same domain
+, the browser sends the cookie using the cookie http-header
+That way the serer knows who sent the request
+
+We can also access cookies using document.cookie property:
+
+alert(document.cookie)
+
+this contains key-value pair delimited/ended by a ;semicolon 
+
+<hr>
+writing a cookie
+We can more then one cookie at a time 
+eg:
+go to a browser and document.cookie we can see cookies , and to add cookie we can document.cookie ="user=sonu" so user with his data will be added as cookie 
+
+An assignment to document.cookie is treated specifically in a way that a write operation doesn't touch other cookies 
+
+document.cookie ="user=sonu"
+updates only cookie named user to sonu
+<hr>
+
+//adding a cookie
+
+console.log(document.cookie)
+
+document.cookie = "name=sonu";
+document.cookie = "id=546546";
+console.log(document.cookie)
+
+
+// eg: github
+// document.cookie
+// '_octo=GH1.1.422074605.1686369307; preferred_color_mode=light; tz=Asia%2FCalcutta'
+// document.cookie = "name=sonu"
+// 'name=sonu'
+// document.cookie
+// '_octo=GH1.1.422074605.1686369307; preferred_color_mode=light; tz=Asia%2FCalcutta; name=sonu'
+
+<hr>
+<h1>Encode URI Component</h1>
+
+<h2>Encode</h2>
+this function helps to  keep the valid formatting , It is used like this :
+
+document.cookie =encodeURIComponent(name)+'='+encodeURIComponent(value)
+so we need to use this way of setting cookie
+
+
+<h2>Decode</h2>
+let key = prompt("Enter your key")
+let value= prompt("Enter your value")
+//this will encode the value
+document.cookie=encodeURIComponent(key)+'='+encodeURIComponent(value)
+console.log(document.cookie)
+// o/p in console
+// document.cookie
+// 'name=sonu; id=546546; user69%20=Monty2'
+
+//Decode pass the encoded string
+//i gave key as song and value as PSY@ is encoded as PSY%40 to decode  
+// decodeURIComponent('PSY%40')
+// 'PSY@'
+
+
+<h2>Cookie options</h2>
+Cookies have several options which can be provided after key = value to a set call  like this :
+Note:
+set call means   document.cookie=encodeURIComponent(key)+'='+encodeURIComponent(value) or // document.cookie = "name=sonu"
+
+document.cookie ="user=bhr;path=/a;expires=Tue,29 March 2023 03:18:22 GMT"
+this is one cookie with different options 
+path options makes the cookie visible at /a , /a/b , etc..
+expires sets the cookie expiration time
+
+NOTE:
+1. The name = value pair, after encodeURIComponent, should not exceed 4kb
+2.Total no of Cookies per domain  is limited to around 20+ i.e 21 ,22,23 (Exact number is dependent on the browser) try to use 15-17 a safe number
+
+
+    </h3>
+</b>
+
+     </pre>
+
+    <script>
+        //adding a cookie
+
+        // console.log(document.cookie)
+
+        // document.cookie = "name=sonu";
+        // document.cookie = "id=546546";
+        // console.log(document.cookie)
+
+
+        // eg: github
+        // document.cookie
+        // '_octo=GH1.1.422074605.1686369307; preferred_color_mode=light; tz=Asia%2FCalcutta'
+        // document.cookie = "name=sonu"
+        // 'name=sonu'
+        // document.cookie
+        // '_octo=GH1.1.422074605.1686369307; preferred_color_mode=light; tz=Asia%2FCalcutta; name=sonu'
+
+
+
+        let key = prompt("Enter your key")
+        let value = prompt("Enter your value")
+        //this will encode the value
+        document.cookie = encodeURIComponent(key) + '=' + encodeURIComponent(value)
+        console.log(document.cookie)
+// o/p in console
+// document.cookie
+// 'name=sonu; id=546546; user69%20=Monty2'
+
+//Decode pass the encoded string
+//i gave key as song and value as PSY@ is encoded as PSY%40 to decode  
+// decodeURIComponent('PSY%40')
+// 'PSY@'
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

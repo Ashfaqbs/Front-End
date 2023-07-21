@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Handling errors in callback</h1>
+
+
+    now modifying the url to create error and then handling the error
+
+    <pre>
+
+       
+        function loadScript(src, callback) {
+
+            let script = document.createElement('script');
+            script.src = src;
+
+
+            //success scenario
+            script.onload = () => {
+                // callback(src, 'loadScript calling this function');
+                callback(null, 'loadScript calling this function and src url is'+src);
+                //when script is loaded is successfully we will pass null for 1st argument
+
+            }
+
+
+            //Failure  scenario
+            script.onerror = () => {
+                // callback(src, 'loadScript calling this function but error is seen');
+                callback(new Error('Src is not loaded pl check the URL'), src);
+                //when script is not loaded successfully we will pass errorObject for 1st argument
+
+            }
+
+
+            document.head.append(script)
+
+        }
+
+
+        // let funOne = (a, b) => {
+        //     console.log('hello there from one' + a + b)
+        // }
+        let funOne = (error, data) => {
+
+            //handling error in function
+
+            if(error){
+                //if null means false , if error is there true
+                console.log('we have ' +error)
+
+
+           return error;
+            }else{
+
+                console.log('src is loaded successfully ')
+
+
+            }
+           
+        }
+
+
+        //modifying the URL to cause error
+        loadScript('https://cdn.js1delivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+// when passed with error url ref.onerror is seen executed 
+
+// loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+// when passed with error url ref.onload is seen executed 
+
+</pre>
+
+
+    <script>
+
+
+
+
+        function loadScript(src, callback) {
+
+            let script = document.createElement('script');
+            script.src = src;
+
+
+            //success scenario
+            script.onload = () => {
+                // callback(src, 'loadScript calling this function');
+                callback(null, 'loadScript calling this function and src url is'+src);
+                //when script is loaded is successfully we will pass null for 1st argument
+
+            }
+
+
+            //Failure  scenario
+            script.onerror = () => {
+                // callback(src, 'loadScript calling this function but error is seen');
+                callback(new Error('Src is not loaded pl check the URL'), src);
+                //when script is not loaded successfully we will pass errorObject for 1st argument
+
+            }
+
+
+            document.head.append(script)
+
+        }
+
+
+        // let funOne = (a, b) => {
+        //     console.log('hello there from one' + a + b)
+        // }
+        let funOne = (error, data) => {
+
+            //handling error in function
+
+            if(error){
+                //if null means false , if error is there true
+                console.log('we have ' +error)
+
+
+           return error;
+            }else{
+
+                console.log('src is loaded successfully ')
+
+
+            }
+           
+        }
+
+
+        //modifying the URL to cause error
+        loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+// when passed with error url ref.onerror is seen executed 
+
+// loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+// when passed with error url ref.onload is seen executed 
+    
+        // let funTwo = () => {
+        //     console.log('hello there from Two')
+        // }
+
+        // 1 without argument for callback function
+
+        // loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funTwo)
+
+        //2 with arguments for callback function
+        // loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+        //passing a function as a variable or reference so it will go and execute there in loadscript function
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

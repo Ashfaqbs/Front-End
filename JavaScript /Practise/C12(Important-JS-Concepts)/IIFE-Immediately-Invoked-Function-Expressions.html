@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>IIFE - Immediately Invoked Function Expressions</h1>
+    <marquee behavior="" direction=""> It is used to avoid polluting the global namespace, execute an async - await
+        etc...</marquee>
+    <caption>IIFE helps in Async await Function</caption>
+    there are some Javascript concepts which makes the life of a developer extremely simple
+    we will discuss some of those in this chapter
+    <h1>IIFE</h1>
+    <h2>IIFE is a Javascript Function that runs as soon as it is defined</h2>
+    <u>Syntax</u> <br>
+    (Function(){
+    .....
+    })(); <br>
+    It is used to avoid polluting the global namespace, execute an async - await etc...
+
+
+    <pre>
+        <b>
+            <h3>
+                <hr>
+
+                // lets understand IIFE
+                //code 1
+                // let a = () => {
+                //     return new Promise((resolve, reject) => {
+                //         setTimeout(() => {
+                //             resolve(456);
+                //         }, 4000)
+                //     })
+                // }
+                // async function doTask() {
+                //     let b = await a();
+                //     console.log(b)
+                //     let c = await a();
+                //     console.log(c)
+                //     let d = await a();
+                //     console.log(d)
+                // }
+        
+        
+                // doTask()
+                //since we are calling a() which is a function now in a async function now and three time we have called now b,c,d will have the same result but each will be printed after 4 secs so total 12 secs , as we called the a()
+        
+                //this is how we normally handle promise
+        
+                //IIFE just remove all the methods and add the whole login in async arrow function and pass in (async ()=>{})();
+                //Using IIFE
+        
+                let a = () => {
+                    return new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            resolve(456);
+                        }, 4000)
+                    })
+                }
+                (async () => {
+                    let b = await a();
+                    console.log(b)
+                    let c = await a();
+                    console.log(c)
+                    let d = await a();
+                    console.log(d)
+                })();
+                
+        //         o / p
+        // // 456
+        //         // 456
+        //         // 456
+<hr>
+
+
+    <marquee behavior="" direction="">
+
+
+
+
+
+
+
+        note : see the code once and compare with 1st code , to see the difference in o/p for calling a promise and a function returning a promise <br>
+
+
+        // let a = new Promise((resolve, reject) => {
+            //     setTimeout(() => {
+            //         resolve(456);
+            //     }, 4000)
+            // })
+        <br>
+
+            // async function doTask() {
+            //     let b = await a;
+            //     console.log(b)
+            //     let c = await a;
+            //     console.log(c)
+            //     let d = await a;
+            //     console.log(d)
+            // }
+        
+        <br>
+            // doTask()
+            //as usual the since we are calling the await to  promise  we will get the response all at once after 4 sec
+            // 456
+            // 456
+            // 456
+<br>
+
+
+
+
+    </marquee>
+
+            </h3>
+        </b>
+    </pre>
+
+    <script>
+
+        // let a = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve(456);
+        //     }, 4000)
+        // })
+
+        // async function doTask() {
+        //     let b = await a;
+        //     console.log(b)
+        //     let c = await a;
+        //     console.log(c)
+        //     let d = await a;
+        //     console.log(d)
+        // }
+
+
+        // doTask()
+        //as usual the since we are calling the await to  promise  we will get the response all at once after 4 sec
+        // 456
+        // 456
+        // 456
+
+
+        // lets understand IIFE
+        //code 1
+        // let a = () => {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve(456);
+        //         }, 4000)
+        //     })
+        // }
+        // async function doTask() {
+        //     let b = await a();
+        //     console.log(b)
+        //     let c = await a();
+        //     console.log(c)
+        //     let d = await a();
+        //     console.log(d)
+        // }
+
+
+        // doTask()
+        //since we are calling a() which is a function now in a async function now and three time we have called now b,c,d will have the same result but each will be printed after 4 secs so total 12 secs , as we called the a()
+
+        //this is how we normally handle promise
+
+
+        //Using IIFE 
+
+        let a = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(456);
+                }, 4000)
+            })
+        }
+
+        //IIFE just remove all the methods and add the whole login in async arrow function and pass in (async ()=>{})();
+        // (async () => {
+        //     let b = await a();
+        //     console.log(b)
+        //     let c = await a();
+        //     console.log(c)
+        //     let d = await a();
+        //     console.log(d)
+        // })();
+
+//         o / p
+// // 456
+//         // 456
+//         // 456
+
+
+
+
+    </script>
+</body>
+
+</html>

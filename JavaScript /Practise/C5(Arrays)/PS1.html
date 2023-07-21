@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //1
+        let arr = [1, 2, 3, 4]
+        // arr[4] = Number.parseInt(prompt("Enter a number"))
+        alert(arr.toString() + " " + arr.length)
+
+
+        //2
+        arr.push(0)
+        console.log(arr)
+
+
+        //3
+        let arr1 = [10, 12, 14, 15, 17, 20, 24, 26, 38, 40]
+
+
+        let filtrar = arr1.filter(value =>
+            value % 10 == 0)
+        console.log(filtrar)
+
+
+        //4
+        let arr4 = [2, 3, 4, 5, 6]
+        let maparr4 = arr4.map(value => value * value)
+        console.log(maparr4.toString())
+
+
+
+        //5 
+        let arr5 = [1, 2, 3, 4]
+
+        function fact(a1, a2) {
+            return a1 * a2;
+        }
+
+        let num = arr5.reduce(fact)//1*2, 2*3, 6*4 => 24
+        console.log(num)
+
+    </script>
+</body>
+
+</html>

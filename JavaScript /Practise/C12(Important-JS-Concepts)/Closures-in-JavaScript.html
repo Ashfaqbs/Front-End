@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Closures in JavaScript </h1>
+    <ul>
+        <li>This is a features in JavaScript</li>
+        <li>They are used in Design pattern</li>
+    </ul>
+    <caption>Closures is the combination of a function bundled together (enclosed) with references to its surroundings
+        state (the lexical environment) ,In other words , a closure gives you access to a outer function's scope from a
+        inner function</caption>
+
+    <pre>
+        <b>
+            <h3>
+Used in the scenario where a
+ function outer() {
+function inner()
+{
+
+}
+return inner or call inner()
+}
+
+outer()
+
+eg:
+
+
+
+            </h3>
+        </b>
+    </pre>
+
+
+
+    <script>
+
+        // eg:1
+        // function human() {
+
+        //     let name = 'sonu';
+        //     function sayhi() {
+
+        //         console.log(`Hi my name is ${name}`)
+
+
+        //     }
+        //     sayhi()
+
+
+        // }
+
+
+        // human()
+        //Hi my name is sonu
+
+        // this can be done wihtout having a sayhi() function
+        // lets see one more Eg: 2
+
+
+        // function human() {
+
+        //     let name = 'sonu';
+        //     function sayhi() {
+
+        //         console.log(`Hi my name is ${name}`)
+
+
+        //     }
+        //     function howareyourFeeling() {
+
+        //         console.log(`${name} is feeling good`)
+
+
+        //     }
+
+        //     sayhi()
+        //     howareyourFeeling()
+
+
+        // }
+
+
+        // human()
+
+        // o/p      // Hi my name is sonu
+        //     sonu is feeling good
+
+
+        // now if you see both inner functions have access to outer scope  and variable is reusable
+
+
+        // eg:3
+        // now lets see one more eg: by making more dynamic
+
+        // function human(name) {
+        //     function sayhi() {
+        //         console.log(`Hi my name is ${name}`)
+        //     }
+        //     function howareyourFeeling() {
+        //         console.log(`${name} is feeling good`)
+        //     }
+        //     sayhi()
+        //     howareyourFeeling()
+        // }
+        // const sonu = human('sonu')
+        // const monty = human('monty')
+        //Hi my name is sonu
+        // Closures -in -JavaScript.html: 109 sonu is feeling good
+        // Closures -in -JavaScript.html: 106 Hi my name is monty
+        // Closures -in -JavaScript.html: 109 monty is feeling good
+
+
+        // NOte: we can have a global variable outside a functon and pass in those inner function
+        //     but note we cannot reuse it
+        // eg:
+
+
+        // let name = "sonu"
+        // function sayhi() {
+        //     console.log(`Hi my name is ${name}`)
+        // }
+        // function howareyourFeeling() {
+        //     console.log(`${name} is feeling good`)
+        // }
+        // sayhi()
+        // howareyourFeeling()
+
+        // Hi my name is sonu
+        // Closures-in-JavaScript.html:132 sonu is feeling good
+        // now we cannot reuse it  like how we did it with outerfunction there we used to call once and provided once both used , made dynamic too once  
+        //that is why we are wrapping with  this function with a outer function
+
+
+        //Now to understand closures we will returns those innerfunctions
+
+
+        function human(name) {
+            function sayhi() {
+                console.log(`Hi my name is ${name}`)
+            }
+            function howareyourFeeling() {
+                console.log(`${name} is feeling good`)
+            }
+            // sayhi()
+            // howareyourFeeling()
+
+            // since there are more then two function we will return it as a Object
+
+
+
+            //we will return functions like this if more then two and this is called factory function way 
+            return {
+
+                sayhi,
+                howareyourFeeling
+            }
+        }
+
+
+        //note we are calling human function  and this will not call those inner functions but will return those inner functions  
+
+
+        const sonu = human('sonu')
+
+        sonu.sayhi()
+        // Hi my name is sonu
+        sonu.howareyourFeeling()
+        // sonu is feeling good
+
+
+        const monty = human('monty')
+
+
+        monty.sayhi()
+        // Hi my name is monty
+        monty.howareyourFeeling()
+        // monty is feeling good
+
+
+        // Note: Important
+        // If you saw we called the human function and passed the data thats all after calling it returns and data must be gone
+        // but if you see it we called those innerfunctions and we got the data which we passed to human function this is the beauty of closures
+
+        // Important Closures remember the outer function scope even after creation time
+
+        // Real life eg of closures
+
+        // document.getElementById('div1').onclick = function changeStyle() {
+
+        //     document.body.style.fontSize = '12px'
+        // }
+        // document.getElementById('div2').onclick = function changeStyle() {
+
+        //     document.body.style.fontSize = '13px'
+        // }
+        // document.getElementById('div3').onclick = function changeStyle() {
+
+        //     document.body.style.fontSize = '14px'
+        // }
+
+        // since we dont have div elementrs with those id's we will get this error
+        // Closures-in-JavaScript.html:197 Uncaught TypeError: Cannot set properties of null (setting 'onclick') ignore this
+
+
+        function clickHandler(size) {
+            //this will return the function which will invoke the action
+            return function () {
+                document.body.style.fontSize = `${size}px`
+            }
+        }
+
+        document.getElementById('div1').onclick = clickHandler(12)
+        document.getElementById('div2').onclick = clickHandler(13)
+        document.getElementById('div3').onclick = clickHandler(14)
+//Uncaught TypeError: Cannot set properties of null (setting 'onclick') is expected as explained above
+// we save repeating our logic
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

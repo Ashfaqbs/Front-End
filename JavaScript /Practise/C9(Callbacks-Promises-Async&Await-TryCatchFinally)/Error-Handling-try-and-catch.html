@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Error Handling: try and catch</h1>
+    //in Async /await we dont have .catch() so we will use try catch blocks , and any rejects will be collected in catch
+    block
+    <br>
+    First the try is executed and if no error then catch block is ignored
+
+    <pre>
+
+        //1 basic
+
+
+        let arr = [1, 2, 4]
+        try {
+            console.log(arr[4].toString().charAt[1])
+            //         error if not handled
+            //         Error-Handling-try-and-catch.html:21 Uncaught TypeError: Cannot read properties of undefined (reading 'toString')
+            // at http://127.0.0.1:5500/Practise/C9(Callbacks-Promises-Async&Await-TryCatchFinally)/Error-Handling-try-and-catch.html:21:32
+
+        }
+        catch (error) {
+            console.log(error + " is the error")
+        }
+        //if error was not handled then the code will stop executing after error
+        console.log("Hello ")
+
+        <hr>
+//2 with async /wait functions
+
+let demo = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('rejecting..')
+
+            reject("Rejecting the promise to handle error")
+            // or
+            // reject(new Error('this is a error from error object'))
+            //                 o / p
+            //                 Error: this is a error from error object
+            // at http://127.0.0.1:5500/Practise/C9(Callbacks-Promises-Async&Await-TryCatchFinally)/Error-Handling-try-and-catch.html:67:28
+
+        })
+    })
+}
+async function doTask() {
+    try {
+        let response = await demo()
+
+        console.log(response)
+    } catch (error) {
+        console.log(error)
+    }
+}
+doTask()
+
+    </pre>
+
+    <script>
+        //1 basic
+
+
+        let arr = [1, 2, 4]
+        try {
+            console.log(arr[4].toString().charAt[1])
+            //         error if not handled
+            //         Error-Handling-try-and-catch.html:21 Uncaught TypeError: Cannot read properties of undefined (reading 'toString')
+            // at http://127.0.0.1:5500/Practise/C9(Callbacks-Promises-Async&Await-TryCatchFinally)/Error-Handling-try-and-catch.html:21:32
+
+        }
+        catch (error) {
+            console.log(error + " is the error")
+        }
+        //if error was not handled then the code will stop executing after error
+        console.log("Hello ")
+
+
+        //2 
+
+        let demo = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log('rejecting..')
+
+                    reject("Rejecting the promise to handle error")
+                    // or
+                    // reject(new Error('this is a error from error object'))
+                    //                 o / p
+                    //                 Error: this is a error from error object
+                    // at http://127.0.0.1:5500/Practise/C9(Callbacks-Promises-Async&Await-TryCatchFinally)/Error-Handling-try-and-catch.html:67:28
+
+                })
+            })
+        }
+        async function doTask() {
+            try {
+                let response = await demo()
+
+                console.log(response)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        doTask()
+    </script>
+</body>
+
+</html>

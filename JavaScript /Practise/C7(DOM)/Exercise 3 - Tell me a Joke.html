@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            bottom: 0;
+        }
+
+        .container {
+            margin-top: 30px;
+            border: 2px solid black;
+            min-height: 81px;
+            width: 349px;
+            text-align: center;
+        }
+
+
+        .title {
+            font-size: 12px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        button{
+            border-radius: 12px;
+            min-width: 60px
+        }
+    </style>
+</head>
+
+
+<div class="container">
+    <span class="title">Random Jokes</span>
+    <br>
+    <span class="joke"> </span>
+</div>
+<button onclick="reload()">Reload</button>
+
+
+<body>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+        let joke = document.body.getElementsByClassName('joke')
+        console.log(joke[0])
+
+
+        let jokearr = ['Once, my father came home and found me in front of a roaring fire. That made my father very mad, as we didn’t have a fireplace',
+            'Your mother has been with us for 20 years,” said John. Isn’t it time she got a place of her own My mother replied Helen. I thought she was your mother'
+            ,
+            'Why don’t pirates take a shower before they walk the plank?They just wash up on shore',
+            'One of the oddities of Wall Street is that it is the dealer and not the customer who is called broker',
+            'At a party, a young wife admonished her husband, “That’s the fourth time you’ve gone back for ice cream and cake. Doesn’t it embarrass you?”“Why should it?” answered her spouse. “I keep telling them it’s for you.'
+        ]
+
+        console.log('size od the joke array is ', jokearr.length)
+        let random_index = Math.floor(Math.random() * jokearr.length)
+
+        joke[0].innerHTML = jokearr[random_index]
+
+
+        function reload() {
+            // let b= document.getElementsByTagName('button')
+            location.reload()
+        }
+    </script>
+
+
+</body>
+
+
+</html>

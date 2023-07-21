@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <img src="./Test-image.avif" onload="myFunction1()" onerror="myFunction()">
+
+    if we give wrong automaically onerror will triger else if image is loaded the onload will trigger
+
+    <p>A function is triggered if an error occurs when loading the image. The function shows an alert box with a text.
+        In this example we refer to an image that does not exist, therefore the onerror event occurs.</p>
+
+    <script>
+        function myFunction() {
+            alert('The image could not be loaded.');
+        }
+
+        function myFunction1() {
+            alert('The image has loaded.');
+        }
+    </script>
+
+</body>
+
+</html>

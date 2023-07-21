@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Handling Browser Events</h1>
+    <h1>Events indicating /signaling something has occurred</h1>
+    <h3>Browser Events</h3>
+    An Event is a signal that something has happened and the <b>DOM Nodes</b> generates such signals
+    <hr>
+    <br> eg:
+
+    <pre>
+
+    <div onclick="alert('hey u clicked right div so calling a alert')">click me</div>//single click this 
+    <br>
+    <button ondblclick="confirm('hey u clicked twice on the button so calling confirm')">click me</button>//double click this 
+<hr>
+
+
+
+</pre>
+
+    <h1>AddEventListener</h1>
+
+
+    <button id="btn">Can you Click me</button>
+    for this button we have not used onclick to provide functions as it can take only one function , but its is calling
+    two functions for same actions for now i.e click and we were able to call two functions by addEventListener
+    <pre>
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click', function () {
+            alert('hello world')
+        })
+
+        btn = document.getElementById('btn')
+        btn.addEventListener('click', function () {
+            alert('hello world1')
+        })
+
+
+</pre>
+    <br>
+    <button id="btn1">Can you Click me 1</button>//passing arrow functions/anonymous functions to the AddEventListener
+
+    <pre>
+
+        let x = () => {
+            alert('this is a alert 1')
+        }
+        let y = () => {
+
+            alert('this is a alert 2')
+        }
+
+        let btn1 = document.getElementById('btn1')
+
+btn1.addEventListener('click', x)
+btn1.addEventListener('click', y)
+
+
+</pre>
+    <hr>
+
+    <h1>removeEventListener</h1>
+    removing the event with some conditions,
+    Note: try to pass the functions as variable and not as the same whole fictions as it will be treated as different
+    function object
+    <button id="btn2">Can you click me 3</button>
+
+
+
+    <pre>
+
+        let num = Number.parseInt(prompt('Please enter the num'))
+        let btn2 = document.getElementById('btn2')
+
+
+        let a = () => {
+            alert('hello world')
+        }
+
+        let b = () => {
+
+            alert('hello world2')
+
+        }
+        btn2.addEventListener('click', a);
+        btn2.addEventListener('click', b);
+
+        if(num===2)
+        {
+            btn2.removeEventListener('click', b);
+        }
+
+    </pre>
+
+
+
+    <hr>
+    <h1>The Event Object</h1>
+
+    when a event occurs the browser creates a event object puts details into it and passes it as an argument to the
+    handler
+
+    btn.onclick = function(e){
+    .....
+    here e is the event Object
+    }
+
+    <ul>
+        <li>e.type :</li>
+        event type
+        <li>e.currentTarget :</li>
+        Element that handled the event Object , i.e button
+        <li>e.clientX/e.clientY : </li>
+        Coordinates of the cursor
+    </ul>
+
+
+    <pre>
+        let a = (e) => {
+console.log(e.target)
+console.log(e.event)
+
+
+            alert('hello world')
+        }
+
+        btn2.addEventListener('click', a);
+
+    </pre>
+
+
+
+
+    <hr>
+    <h4>Some important DOM Events are :</h4>
+    <ul>
+        <li>Mouse Events</li>
+        click , context menu (right click ) , mouseover/mouse out , mouse down and mouse up/ mouse move
+
+        <hr>
+        <li>KeyBoards Events</li>
+        key up and key down
+
+
+        <hr>
+        <li></li>
+
+        <hr>
+        <li></li>
+    </ul>
+
+    <script>
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click', function () {
+            alert('hello world')
+        })
+
+        btn = document.getElementById('btn')
+        btn.addEventListener('click', function () {
+            alert('hello world1')
+        })
+
+        btn.removeEventListener
+
+        let x = () => {
+            alert('this is a alert 1')
+        }
+        let y = () => {
+            alert('this is a alert 2')
+        }
+
+        let btn1 = document.getElementById('btn1')
+
+        btn1.addEventListener('click', x)
+        btn1.addEventListener('click', y)
+
+
+
+        let num = Number.parseInt(prompt('Please enter the num'))
+        let btn2 = document.getElementById('btn2')
+
+
+        let a = () => {
+            alert('hello world')
+        }
+
+        let b = () => {
+
+            alert('hello world2')
+
+        }
+        btn2.addEventListener('click', a);
+        btn2.addEventListener('click', b);
+
+        if (num === 2) {
+            btn2.removeEventListener('click', b);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

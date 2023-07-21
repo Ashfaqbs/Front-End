@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Alert, confirm , prompt</h1>
+
+
+    <pre>
+    alert('this is alert ,this is used to alert user eg: right clicked is disabled')
+
+    let name = prompt('To take value from user we use prompt ,eg: enter you name')
+     alert(name)
+
+    let value = confirm("this is used to confirm from the user,eg: Are you sure you want to delete this ")
+
+    alert(value + " if ok then true else false")
+
+
+
+</pre>
+
+    <script>
+
+        // alert('this is alert ,this is used to alert user eg: right clicked is disabled')
+
+        // let name = prompt('To take value from user we use prompt ,eg: enter you name')
+        // alert(name)
+
+        // let value = confirm("this is used to confirm from the user,eg: Are you sure you want to delete this ")
+
+        // alert(value + " if ok then true else false")
+
+        alert("Enter a number ")
+        let a = Number.parseInt(prompt("Enter value : "))
+
+        let value = confirm("do you want to write the number")
+
+        if (value) {
+            document.write(a + " and type of a is " + typeof a)
+        } else {
+            document.write('Please allow me to write')
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hoisting in JavaScript</h1>
+    <caption>Hoisting refers to the process where by the interpreter appear to move the declarations to the top of the
+        code before execution </caption>
+
+    Variables can thus be referenced before they are decided in JavaScript
+
+    <br>
+
+
+
+    Important Note:
+    JavaScript only hoists declarations , not initializations The variable will be undefined until
+    the line where its initialized is reached
+    and Functions expressions and class expressions can not be hoisted
+    <hr>
+    <h2>Functions</h2>
+    <ul>
+        <li>normal function</li>
+        can be called before or after declaring the Function
+
+        demo()//hello from above
+        function demo() {
+        console.log("hello from above")
+        }
+        demo()
+        //same o/p
+
+        <li>Anonymous/Arrow function(Functions expressions and class expressions can not be hoisted) </li>
+        <b><u>We can Anonymous / arrow Functions by let or const </u></b>
+        can only be called after initializing as we declare the Functions variable with let or const
+
+        demo1()//: Cannot access 'demo1' before initialization
+
+        let demo1 = () => {
+
+        console.log("hello from above by arrow function")
+
+
+        }
+        // demo1() // hello from above by arrow function
+    </ul>
+
+
+    <hr>
+    <h2>Hoisting in LET and Const vs VAR</h2>
+    <ul>
+        variables
+        <li>VAR</li>
+        //ODD scenario
+        console.log(x1)
+        //will not throw any error but it will be undefined , and it will be undefined till line no 54 as its be
+        initialized there
+        var x1 = 5;
+        console.log(x1)
+        <li>LET or Const</li>
+        //in let and const we cannot call before initialization
+        console.log(a)//Cannot access 'a' before initialization
+        let a = 12;
+        // const a = 12;
+        console.log(a)
+    </ul>
+
+
+    <pre>
+    <b>
+        <h3>
+
+
+
+
+
+        </h3>
+    </b>
+</pre>
+
+
+    <script>
+
+        // demo()//hello from above
+        // function demo() {
+        //     console.log("hello from above")
+        // }
+        // demo()
+        //same o/p
+
+        // demo1()
+
+        // let demo1 = () => {
+
+        //     console.log("hello from above by arrow function")
+
+
+        // }
+        // demo1()
+
+
+
+        //ODD scenario
+        // console.log(x1)
+        // //will not throw any error but it will be undefined , and it will be undefined till line no 54 as its be initialized there
+        // var x1 = 5;
+        // console.log(x1)
+
+
+
+
+
+        //in let and const we cannot call before initialization
+        // console.log(a)//Cannot access 'a' before initialization
+        // let a = 12;
+        // const a = 12;
+        // console.log(a)
+
+
+    </script>
+
+</body>
+
+</html>

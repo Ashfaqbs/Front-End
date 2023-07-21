@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Promise Chaining</h1>
+
+    <b>
+        <pre>
+Scenario 1
+
+<br>
+let promise = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+        resolve('Completed')
+    }, 2000)
+
+})
+console.log(promise)
+
+
+promise.then((response) => { console.log(response) }, (error) => {
+    console.error(error)})
+
+    <hr>
+
+<br>
+Scenario 2 
+<caption>Note : use return  to return the promise , for inner successful promises to get the value as used below</caption>
+<br>
+If 1st promise is successful calling one more promise and returning and getting that from .then as usual 
+
+let promise = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+        resolve('Completed')
+    }, 2000)
+
+})
+console.log(promise)
+
+
+promise.then((response) => {
+    console.log(response)
+
+    let promise2 = new Promise((resolve, reject) => {
+
+        resolve("Inner promise completed")
+    })
+    return promise2;
+}, (error) => {
+    console.error(error)
+}).then((response) => { console.log(response) }, (error) => { console.log(error) })
+
+<br>
+<hr>
+then((response) => {
+
+    console.log(response)
+    // return new Promise((resolve, reject) => {
+
+    // or the variable we can return
+    let promises3 = new Promise((resolve, reject) => {
+
+        //process
+        resolve('3rd inner promise is resolved')
+        // reject('3rd inner promise is resolved')
+
+    })
+    return promises3;
+<hr>
+Scenario 3 (we can solve the callback hell  issue)
+<br>
+Calling again .then for the 2nd inner promises and similarly the this goes on , just we need to return the inner promise and use /get it by .then()
+
+<br>
+let promise = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+        resolve('Completed')
+    }, 2000)
+
+})
+console.log(promise)
+
+
+promise.then((response) => {
+    console.log(response)
+
+    let promise2 = new Promise((resolve, reject) => {
+
+        resolve("Inner promise completed")
+    })
+    return promise2;
+}, (error) => {
+    console.error(error)
+}).then((response) => {
+
+    console.log(response)
+    let promises3 = new Promise((resolve, reject) => {
+
+        //process
+        resolve('3rd inner promise is resolved')
+        // reject('3rd inner promise is resolved')
+
+    })
+    return promises3;
+
+}, (error) => { console.log(error) }).then((response) => { console.log(response) }, (error) => { console.log(error + ' is the error') });
+
+
+<hr>
+
+    </pre>
+    </b>
+
+    <script>
+
+        let promise = new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                resolve('Completed')
+            }, 2000)
+
+        })
+        console.log(promise)
+
+
+        promise.then((response) => {
+            console.log(response)
+
+            let promise2 = new Promise((resolve, reject) => {
+
+                resolve("Inner promise completed")
+            })
+            return promise2;
+        }, (error) => {
+            console.error(error)
+        }).then((response) => {
+
+            console.log(response)
+            // return new Promise((resolve, reject) => {
+
+            // or the variable we can return
+            let promises3 = new Promise((resolve, reject) => {
+
+                //process
+                resolve('3rd inner promise is resolved')
+                // reject('3rd inner promise is resolved')
+
+            })
+            return promises3;
+
+        }, (error) => { console.log(error) }).then((response) => { console.log(response) }, (error) => { console.log(error + ' is the error') });
+
+
+    </script>
+</body>
+
+</html>

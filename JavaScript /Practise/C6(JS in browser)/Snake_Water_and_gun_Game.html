@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+
+        // alert("Are you ready to play Snake ,water , Gun")
+        // let userch = prompt("Enter Snake ,Water, Gun")
+
+        // let jsch = ['snake', 'water', 'gun']
+
+
+        let jsch = ['snake', 'water', 'gun']
+        // const randomIndex = Math.floor(Math.random() * arr.length);
+
+        let random;
+        console.log(random)
+
+        function play() {
+            alert("Are you ready to play Snake ,water , Gun")
+            let userCh = prompt("Enter Snake ,Water, Gun")
+            if (userCh == jsch[random]) {
+                alert("your succesfull")
+
+            } else {
+                alert("your failed")
+            }
+            console.log(jsch[Math.floor(Math.random() * jsch.length)])
+        }
+
+        let i = 0;
+        while (i <= 9) {
+            play();
+            i++;
+        }
+
+    </script>
+</body>
+
+</html>

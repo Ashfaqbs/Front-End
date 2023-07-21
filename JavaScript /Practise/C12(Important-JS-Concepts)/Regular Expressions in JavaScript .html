@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Regular Expressions in JavaScript </h1>
+
+    <pre>
+        <b>
+            <h3>
+
+
+            </h3>
+        </b>
+    </pre>
+
+    <script>
+
+        let data = "sonu is a very very good very boy"
+        console.log(data.replace("very", "mostly"))
+        //all very should be replaced
+        // o/p sonu is a mostly very good very boy see here only one will be replaced
+        // not all changed so we need to use regex
+        let regex = /very/g
+        //this means change ver globally
+        console.log(data.replace(regex, "mostly"))
+// o/p sonu is a mostly mostly good mostly boy
+
+    </script>
+</body>
+
+</html>

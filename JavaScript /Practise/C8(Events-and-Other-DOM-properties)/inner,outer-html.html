@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Inner HTML and Outer HTML</h1>
+
+    <span id="first"> Hey iam SPAN 1</span><br>
+    <span id="second"> Hey iam SPAN 2</span>
+
+
+
+    <pre>
+        console.dir(document.getElementsByTagName('span')[0])
+     span //as an object it will be showed 
+        console.log(document.getElementsByTagName('span')[0])
+       <span>​Hey iam SPAN​</span>​ //it will be shown as tag
+       <hr>
+
+
+
+
+       function innerHTML() {
+        document.getElementById('first')
+        let s = document.getElementById('first')
+        //seeing the text inside the tag
+        console.log(s.innerHTML, "before assigning")
+
+
+        //assigning text by innerhtml
+        s.innerHTML = '<b>hey this is bold tag</b> Hey im modified span tag  <i>Hey this is italic tag</i>'
+        '<b>hey this is bold tag</b> Hey im modified span tag  <i>Hey this is italic tag</i>'
+
+        console.log(s.innerHTML, "after assigning")
+
+    }
+
+    innerHTML()
+
+    function outerHTML() {
+        //not only change the  text/content inside the tag but will change/alter the associated tag with it. 
+        let s = document.getElementById('second')
+        console.log(s.outerHTML)//this will not only give the text but also the  associated tag too
+
+        console.log(s.outerHTML = 'this is modified by outer html', 'now the text will be replaced by this text but the span tag will also be removed too')//this will change the text and tag too 
+
+        // or 
+        // s.outerHTML = '<div> this is now a div tag</div>'
+        console.log(s.outerHTML)
+    }
+
+    outerHTML()
+
+       <hr>
+
+
+    </pre>
+
+
+
+
+    <h2>Text content</h2>
+
+    this will return the page text content as a string
+
+    <pre>
+
+        console.log(document.body.textContent)
+
+
+    </pre>
+
+<!-- 
+<aside hidden> hello</aside> -->
+
+    <script>
+
+        function innerHTML() {
+            document.getElementById('first')
+            let s = document.getElementById('first')
+            //seeing the text inside the tag
+            console.log(s.innerHTML, "before assigning")
+
+
+            //assigning text by innerhtml
+            s.innerHTML = '<b>hey this is bold tag</b> Hey im modified span tag  <i>Hey this is italic tag</i>'
+            '<b>hey this is bold tag</b> Hey im modified span tag  <i>Hey this is italic tag</i>'
+
+            console.log(s.innerHTML, "after assigning")
+
+        }
+
+        innerHTML()
+
+        function outerHTML() {
+            //not only change the  text/content inside the tag but will change/alter the associated tag with it. 
+            let s = document.getElementById('second')
+            console.log(s.outerHTML)//this will not only give the text but also the  associated tag too
+
+            console.log(s.outerHTML = 'this is modified by outer html', 'now the text will be replaced by this text but the span tag will also be removed too')//this will change the text and tag too 
+
+            // or 
+            // s.outerHTML = '<div> this is now a div tag</div>'
+            console.log(s.outerHTML)
+        }
+
+        outerHTML()
+
+
+        // console.log(document.body.textContent)
+
+    </script>
+</body>
+
+</html>

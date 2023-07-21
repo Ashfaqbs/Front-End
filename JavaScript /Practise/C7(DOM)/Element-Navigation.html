@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        bottom: 0;
+
+    }
+
+    ul {
+        display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        align-self: center;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    header nav ul li {
+        list-style: none;
+        margin: 0px 20px;
+    }
+</style>
+
+<body>
+    <!--     -->
+
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Contact us </li>
+                <li>About us</li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Here while accessing child's we were seeing text's those were caused by spaces , no we will only select element
+        nodes and not comment or text nodes</h1>
+
+    <h2>
+        To only get element we will use firstElementChild , lastElementChild from document .body
+
+
+    </h2>
+
+    <b><!-- Important -->
+        note:
+        When ever we use document.body.firstChild we will get text nodes ,element nodes , and comment nodes
+    </b><br>
+    <pre>
+
+        console.log(document.body.firstChild)//op text nodes , as it selects text nodes ,comment node and element node o/p -> #text
+        console.log(document.body.firstElementChild)//will only select the element the element nodes o/p -> header tag with its childs
+
+        console.log(document.body.firstChild)
+        console.log(document.body.firstElementChild)
+        console.log(document.body.childNodes)
+        console.log(document.body.childNodes[0])// we will get text
+        console.log(document.body.childNodes[1])//we will get the comment 
+
+
+    </pre>
+
+
+    <script>
+        console.log(document.body.firstChild)
+        console.log(document.body.firstElementChild)
+        console.log(document.body.childNodes)
+        console.log(document.body.childNodes[0])// we will get text
+        console.log(document.body.childNodes[1])//we will get the comment 
+
+        console.log(document.body.lastChild)
+        console.log(document.body.lastElementChild)
+
+
+        // CSS manipulations bu accessing elements
+        const changenavbar = () => {
+
+            document.body.firstElementChild.style.border = '2px solid black'
+            document.body.firstElementChild.style.background = 'grey'
+            let header = document.body.firstElementChild
+            console.log(header.childNodes)
+
+            let nav = header.childNodes[1]
+            let ul = nav.childNodes[1]
+
+
+        }
+        changenavbar()
+
+
+    </script>
+
+
+    <!--  -->
+</body>
+
+</html>

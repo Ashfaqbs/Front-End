@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Introduction to Promises </h1>
+    <caption>Promises are also used in network calls and these are Asynchronous programs/task just like setTimeout</caption>
+    <h3>The solution to the callback hell is promises ,A promises is a promise of code execution , the code either
+        executes or fails in both the cases i.r success or failure case the subscriber will be notified if success then
+        resolve function will executes else reject function will executes and both this callback functions are provided
+        by JS
+        engines </h3>
+
+
+    <marquee behavior="" direction=""> // This resolve and reject are predefined in JS and and they are callback
+        functions resolve will give value/data
+        and reject will give error's</marquee>
+
+
+
+    <pre>
+        <b>
+Syntax : 
+let promise =  new promise(function(resolve ,reject){
+    // this resolve and reject are predefined in JS and resolve will give value/data and reject will give error's
+    //execution
+
+})
+resolve and reject are two callback provided by javascript itself they are called like this:
+
+Promise has two variables too , ie PromiseState and PromiseResult if the promise is resolved /success then the PromiseState is fulfilled and  <br>PromiseResult is what we give in resolve() argument and is the promise is rejected the PromiseState is rejected and PromiseResult is what we give in resolve() argument else the PromiseState will be in Pending
+
+
+
+              let promise = new Promise(function (resolve, reject) {
+
+      alert('This is from promise')
+     console.log('Hello from promise')
+
+     // resolve('Does not have issues')
+     // reject('Has i ssues')
+
+     if anyone is not called/executed the PromiseState will be in pending 
+                    })
+
+                </b> </pre>
+
+
+    <script>
+        let promise = new Promise(function (resolve, reject) {
+
+            alert('This is from promise')
+            console.log('Hello from promise')
+
+            // resolve('Does not have issues')
+            // reject('Has issues')
+
+        })
+
+        console.log(promise)
+
+        console.log('Hello One')
+
+
+        console.log('Hello Two')
+
+    </script>
+</body>
+
+</html>

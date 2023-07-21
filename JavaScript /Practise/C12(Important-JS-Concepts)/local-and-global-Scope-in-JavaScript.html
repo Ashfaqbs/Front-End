@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>local and global Scope in JavaScript </h1>
+    <ul>
+        JavaScript has three types of scope and here local scope are block and function scope and global scope
+        <li>Block scope</li>
+        let and const provide block level scope which means that the variables declared inside a {}
+        cannot be accessed from outside the block
+        {
+        let a =2;
+        }
+        console.log(a)
+        //undefined as a is not available here
+
+        <li>Function scope</li>
+        Variables declared in the JavaScript Function become local to the Function
+        //function scope
+        function demo() {
+        let ax = 9;
+        console.log(ax)
+        }
+
+
+        demo()
+        console.log(ax)
+        //Uncaught ReferenceError: ax is not defined
+
+        <li>global scope</li>
+        A variable declared outside a Function becomes global
+
+        //Global scope can be accessed in function and also in outside
+        let g = 8;
+
+        function demo1() {
+        console.log(g)
+
+
+        }
+
+        demo1()//8
+        console.log(g)//8
+    </ul>
+    <pre>
+        <b>
+            <h3>
+
+
+
+
+
+            </h3>
+        </b>
+    </pre>
+
+
+    <script>
+        // {
+        //     let a = 10;
+        // }
+        // console.log(a)
+        // // error Uncaught ReferenceError: a is not defined as let is blocked scope
+
+
+        // //function scope
+        // function demo() {
+        //     let ax = 9;
+        //     console.log(ax)
+        // }
+
+
+        // demo()
+        // console.log(ax)
+        // //Uncaught ReferenceError: ax is not defined
+
+
+        //Global scope can be accessed in function and also in outside
+        // let g = 8;
+
+        // function demo1() {
+        //     console.log(g)
+
+
+        // }
+
+        // demo1()//8
+        // console.log(g)//8
+
+
+
+
+
+    </script>
+</body>
+
+</html>

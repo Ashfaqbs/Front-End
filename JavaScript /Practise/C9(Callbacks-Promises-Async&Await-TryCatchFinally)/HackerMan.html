@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        let func1 = () => {
+
+            return new Promise((r, j) => {
+
+                setTimeout(() => {
+
+                    console.log('initializing hack program........')
+                    r(1)
+                }, 1000)
+
+            })
+        }
+        let func2 = () => {
+
+            return new Promise((r, j) => {
+
+                setTimeout(() => {
+
+                    console.log('Hacking sonu Username....')
+                    r(1)
+                }, 2000)
+
+            })
+        }
+        let func3 = () => {
+
+            return new Promise((r, j) => {
+
+                setTimeout(() => {
+
+                    console.log('username found sonu12.....')
+                    r(1)
+                }, 3000)
+
+            })
+        }
+
+        let func4 = () => {
+
+            return new Promise((r, j) => {
+
+                setTimeout(() => {
+
+                    console.log('Connecting to Facebook.....')
+                    r(1)
+                }, 3000)
+
+            })
+        }
+
+
+
+        async function doTask() {
+            try {
+                let f1 = await func1()
+                let f2 = await func2()
+                let f3 = await func3()
+                let f4 = await func4()
+
+                console.log(f1, f2, f3, f4)
+                // let p = await Promise.all([func1(), func2(), func3(), func4()])
+                // console.log(p)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        doTask()
+    </script>
+</body>
+
+</html>

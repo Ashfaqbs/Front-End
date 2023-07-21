@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>setInterval and setTimeout in JavaScript</h1>
+    <ul>
+        <li>setInterval</li>
+        <pre>
+<caption></caption>
+
+//Set interval
+        // the syntax is same as set setTimeout, also give a timer id to control it  but whit this we can repeat a task again and again
+
+        // eg:1 
+        // calling alert for every 2s
+        // setInterval(function(){
+        // alert('set interval this will call the alert for every 2 secs i.e 2000ms ')
+        // },2000)
+
+
+        //eg 2
+        //passing a function in setinterval
+
+        // let sum = (a, b) => {
+        //     console.log('The sum is ' + (a + b));
+        // }
+        // let timerid = setInterval(sum, 4000, 2, 2)
+        // console.log(timerid)
+
+
+        //eg 3
+        //passing a function in setinterval
+        // to stop them we will use clearInterval
+
+        let result = prompt('A function will be called every 4s which add two number do u want it to proceed ? (y/n)')
+
+
+        let sum = (a, b) => {
+            console.log('The sum is ' + (a + b));
+        }
+        let timerid = setInterval(sum, 4000, 2, 2)
+        console.log(timerid)
+        if (result == 'n') {
+            clearInterval(timerid)
+        }
+        // else //let it run
+
+
+
+         </pre>
+        <hr>
+        <li>setTimeout</li>
+
+        <pre>
+            //Doing a action after some time we use Set timeout 
+            //This is Set timeout here it takes function , and time in Ms as argument , and in the function we will pass /define the logic  
+            // setTimeout(function () {
+            //     alert("This is an alert coming after 2secs")
+            // }, 2000)
+    
+    
+    
+            //settime out returns Timer id ,where we can control this timer 
+            // let timerID = setTimeout(function () {
+            //     alert("This is an alert coming after 2secs")
+            // }, 2000)
+    
+    
+            // i.e eg:
+    
+            // let result = prompt('Do u want to call the settimout? (y/n)')
+    
+    
+    
+            // //settime out returns Timer id ,where we can control this timer 
+            // let timerID1 = setTimeout(function () {
+            //     alert("This is an setTimeout alert coming after 2secs")
+            // }, 2000)
+            // if (result == 'n') {
+            //     clearTimeout(timerID1)
+            // }
+    
+    
+            // //passing a function in Settime out 
+    
+            let sum = (a, b) => {
+                console.log('yes im running ' + (a + b))
+                return a + b;
+            }
+    
+            // set timeout takes argument like function, time , and rest function argument i.e 
+            setTimeout(sum, 5000, 3, 4)
+    
+            let looping = () => {
+                for (let i = 0; i < 10; i++) {
+    
+                    console.log(i)
+                }
+    
+            }
+            //passing with no function argument
+            setTimeout(looping,2000)
+    
+    
+        </pre>
+
+        <hr>
+    </ul>
+
+
+
+    <script>
+
+
+
+        //Doing a action after some time we use Set timeout 
+        //This is Set timeout here it takes function , and time in Ms as argument , and in the function we will pass /define the logic
+        // setTimeout(function () {
+        //     alert("This is an alert coming after 2secs")
+        // }, 2000)
+
+
+
+        //settime out returns Timer id ,where we can control this timer
+        // let timerID = setTimeout(function () {
+        //     alert("This is an alert coming after 2secs")
+        // }, 2000)
+
+
+        // i.e eg:
+
+        // let result = prompt('Do u want to call the settimout? (y/n)')
+
+
+
+        // //settime out returns Timer id ,where we can control this timer
+        // let timerID1 = setTimeout(function () {
+        //     alert("This is an setTimeout alert coming after 2secs")
+        // }, 2000)
+        // if (result == 'n') {
+        //     clearTimeout(timerID1)
+        // }
+
+
+        // //passing a function in Settime out
+
+        // let sum = (a, b) => {
+        //     console.log('yes im running ' + (a + b))
+        //     return a + b;
+        // }
+
+        // // set timeout takes argument like function, time , and rest function argument i.e
+        // setTimeout(sum, 5000, 3, 4)
+
+        // let looping = () => {
+        //     for (let i = 0; i < 10; i++) {
+
+        //         console.log(i)
+        //     }
+
+        // }
+        // //passing with no function argument
+        // setTimeout(looping, 2000)
+
+
+        //Set interval
+        // the syntax is same as set setTimeout, also give a timer id to control it  but whit this we can repeat a task again and again
+
+        // eg:1
+        // calling alert for every 2s
+        // setInterval(function(){
+        // alert('set interval this will call the alert for every 2 secs i.e 2000ms ')
+        // },2000)
+
+
+        //eg 2
+        //passing a function in setinterval
+        // to stop them we will use clearInterval
+
+        let result = prompt('A function will be called every 4s which add two number do u want it to proceed ? (y/n)')
+
+
+        let sum = (a, b) => {
+            console.log('The sum is ' + (a + b));
+        }
+        let timerid = setInterval(sum, 4000, 2, 2)
+        console.log(timerid)
+        if (result == 'n') {
+            clearInterval(timerid)
+        }
+        // else //let it run
+
+
+    </script>
+</body>
+
+</html>

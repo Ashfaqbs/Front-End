@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Introduction to Callbacks </h1>
+
+
+
+    <b>
+        <caption> Synchronous Programming and Asynchronous Programming</caption> <br>
+        <hr>
+        Asynchronous actions are the actions that we initiate now and they finish later , for eg: SetTimeout, does not
+        follow the program flow
+        <pre>
+
+            //Asynchronous Programming
+            console.log('Start')
+            let message = () => {
+                console.log('Hey im here')
+            }
+            setTimeout(message, 3000)
+            console.log('End')
+    
+    
+    // output
+    // Start
+    // End
+    // Hey im here
+    // but normal program flow was Start , Hey im here, End but second function took some time to complete as it had some condition
+        </pre>
+        <br>
+        <hr>
+        Synchronous actions are the actions that initiate and finish one by one.
+        <pre>
+            eg:this will run/execute one by one 
+            let name = prompt('Enter your name')
+            let age = prompt('Enter your age')
+            let color = prompt('Enter your color')
+    
+            console.log(name, age, color)
+
+        </pre>
+    </b>
+
+    <hr>
+    <h1>Callback function</h1>
+    <br>
+    A Callback function is a function passed into another function as an argument which is then invoked inside the outer
+    function to complete an action
+
+    <pre>
+        //Callback
+
+      
+        function loadScript(src, callback) {
+
+            let script = document.createElement('script');
+            script.src = src;
+            script.onload = () => {
+                //here onload is used when the function is successfully loaded we should also use onerror for the ref
+                // script.onerror for error handling when the error is expected this will run  but we need to define it 
+                callback('dummy data a', 'Dummy data b');
+            }
+            document.head.append(script)
+
+        }
+        // loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')
+
+
+        //here it takes two param , one is src that will be url and one will be a callback, here is we will be passing the function ref/variable
+
+        function loadScript(src, callback) {
+
+            let script = document.createElement('script');
+            script.src = src;
+            script.onload = () => {
+                callback();
+            }
+            document.head.append(script)
+
+
+        }
+
+<hr>
+        let funOne = () => {
+            console.log('hello there from one')
+        }
+
+        let funTwo = () => {
+            console.log('hello there from Two')
+        }
+
+        // 1 without argument for callback function
+
+        loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funTwo)
+        
+        //2 with arguments for callback function
+                loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+                //passing a function as a variable or reference so it will go and execute there in loadscript function
+        
+            
+
+        loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+//passing a function as a variable or reference so it will go and execute there in loadscript function 
+
+// OR
+
+loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', () => {
+    console.log("hey im calling from call back function and passed in the callback as a function")
+})
+    </pre>
+
+    <script>
+
+        // let name = prompt('Enter your name')
+        // let age = prompt('Enter your age')
+        // let color = prompt('Enter your color')
+
+        // console.log(name, age, color)
+
+
+        //Asynchronous Programming
+        // console.log('Start')
+        // let message = () => {
+        //     console.log('Hey im here')
+        // }
+        // setTimeout(message, 3000)
+        // console.log('End')
+
+
+        // output
+        // Start
+        // End
+        // Hey im here
+        // but normal program flow was Start , Hey im here, End but second function took some time to complete as it had some condition
+
+
+        //Callback
+
+        // function loadScript1(src) {
+
+        //     let script = document.createElement('script');
+        //     script.src = src;
+
+        //     script.onload = function () {
+        //         console.log('script is loaded' + src)
+        //     }
+        //     document.head.append(script)
+        // }
+        // loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')
+
+
+        //here it takes two param , one is src that will be url and one will be a callback, here is we will be passing the function ref/variable
+
+        function loadScript(src, callback) {
+
+            let script = document.createElement('script');
+            script.src = src;
+            script.onload = () => {
+                //here onload is used when the function is successfully loaded we should also use onerror for the ref
+                // script.onerror for error handling when the error is expected this will run  but we need to define it 
+                callback('dummy data a', 'Dummy data b');
+            }
+            document.head.append(script)
+
+        }
+
+
+        let funOne = (a, b) => {
+            console.log('hello there from one'+ a + b)
+        }
+
+        let funTwo = () => {
+            console.log('hello there from Two')
+        }
+
+// 1 without argument for callback function
+
+loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funTwo)
+
+//2 with arguments for callback function
+        loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+        //passing a function as a variable or reference so it will go and execute there in loadscript function
+
+    
+
+        // // OR
+
+        // loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', () => {
+        //     console.log("hey im calling from call back function and passed in the callback as a function")
+        // })
+
+        // //passing a variable to the callback function
+        // loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', (data) => {
+        //     console.log("hey im calling from call back function and passed in the callback as a function " + data)
+        // })
+
+    </script>
+</body>
+
+</html>

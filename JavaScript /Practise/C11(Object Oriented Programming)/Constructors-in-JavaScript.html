@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Constructors in JavaScript</h1>
+
+    <pre>
+
+
+<b>
+    <h3>
+The constructor
+the constructor() is called automatically by new keyword , so we can initialize the object there , if we dont provide our own constructor a default constructor will be provided
+
+<hr>
+
+class User {
+
+    id;
+    name;
+    place;
+    constructor(id, name, place) {
+        this.id = id;
+        this.name = name;
+        this.place = place;
+        console.log('calling constructor')
+
+    }
+
+    add(x, y) {
+        console.log(x + y)
+        return x + y;
+    }
+
+
+    sub(a, b) {
+        console.log(a - b)
+        return (a - b);
+    }
+
+}
+
+
+
+
+let user1 = new User(1, "Sonu", "Bangalore")
+let user2 = new User(2, "Monu", "Bangalore")
+let user3 = new User(3, "tony", "Bangalore")
+
+
+console.log((user1))
+console.log((user2))
+console.log((user3))
+//O/P
+//     User {id: 1, name: 'Sonu', place: 'Bangalore'}
+//     User { id: 2, name: 'Monu', place: 'Bangalore' }
+//    User { id: 3, name: 'tony', place: 'Bangalore' }
+
+
+console.log(JSON.stringify(user1))
+console.log(JSON.stringify(user2))
+console.log(JSON.stringify(user3))
+// o / p object to String
+// { "id": 1, "name": "Sonu", "place": "Bangalore" }
+// Constructors -in -JavaScript.html: 74 { "id": 2, "name": "Monu", "place": "Bangalore" }
+// Constructors -in -JavaScript.html: 75 { "id": 3, "name": "tony", "place": "Bangalore" }
+
+
+
+user1.add(1, 2)
+user1.sub(4, 2)
+// 3
+// 2
+
+
+
+
+
+
+
+
+    </h3>
+</b>
+
+
+</pre>
+
+
+    <script>
+
+        class User {
+
+            id;
+            name;
+            place;
+            constructor(id, name, place) {
+                this.id = id;
+                this.name = name;
+                this.place = place;
+                console.log('calling constructor')
+
+            }
+
+            add(x, y) {
+                console.log(x + y)
+                return x + y;
+            }
+
+
+            sub(a, b) {
+                console.log(a - b)
+                return (a - b);
+            }
+
+        }
+
+
+
+
+        let user1 = new User(1, "Sonu", "Bangalore")
+        let user2 = new User(2, "Monu", "Bangalore")
+        let user3 = new User(3, "tony", "Bangalore")
+
+
+        console.log((user1))
+        console.log((user2))
+        console.log((user3))
+        //O/P
+        //     User {id: 1, name: 'Sonu', place: 'Bangalore'}
+        //     User { id: 2, name: 'Monu', place: 'Bangalore' }
+        //    User { id: 3, name: 'tony', place: 'Bangalore' }
+
+
+        console.log(JSON.stringify(user1))
+        console.log(JSON.stringify(user2))
+        console.log(JSON.stringify(user3))
+        // o / p object to String
+        // { "id": 1, "name": "Sonu", "place": "Bangalore" }
+        // Constructors -in -JavaScript.html: 74 { "id": 2, "name": "Monu", "place": "Bangalore" }
+        // Constructors -in -JavaScript.html: 75 { "id": 3, "name": "tony", "place": "Bangalore" }
+
+
+
+        user1.add(1, 2)
+        user1.sub(4, 2)
+        // 3
+        // 2
+
+    </script>
+
+</body>
+
+</html>

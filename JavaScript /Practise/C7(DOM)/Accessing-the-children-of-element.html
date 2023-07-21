@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <h1>Child Nodes</h1>
+            Direct children for the element are children eg: head and body are child nodes for html tag, here head and
+            body are brother/sisters or can be called siblings
+        </li>
+        <li>
+            <h1>Descendant Nodes</h1>
+            all nested element, children , their children are are Descendant nodes
+        </li>
+    </ul>
+
+
+    <h1>First child , Last child and child nodes</h1>
+    <ul>
+        <li>element.first child</li>
+        First child element
+        <li>element.last child</li>
+        Last child element
+        <li>element.child nodes</li>
+        All child nodes
+    </ul>
+
+    <pre>
+    console.log(document.body.firstChild)//op <ul> ...</ul>
+    console.log(document.body.lastChild)//op script tag
+    console.log(document.body.childNodes)//op [text, ul, text, h1, text, ul, text, h1, text, h1, text, script] 
+    //Some time we can see #text  that are due to spaces
+
+<h1>We can use</h1>
+
+console.log(document.body.childNodes[0]) OR console.log(document.body.firstChild) //op will be UL
+
+console.log(document.body.childNodes[document.body.childNodes.length-1]) OR console.log(document.body.lastChild) //op will be script
+//other child nodes functions are
+console.log(document.body.hasChildNodes())//op will be true , as we have child nodes
+
+converting the child nodes to array
+let arr = Array.from(document.body.childNodes)
+arr.forEach(data => {
+     console.log(data)
+ }) we will be conveting to array as child nodes we can call array methods on them
+
+</pre>
+
+
+
+
+    <script>
+
+        console.log(document.body.firstChild)//op <ul> ...</ul>
+        console.log(document.body.lastChild)//op script tag
+        console.log(document.body.childNodes)//op [text, ul, text, h1, text, ul, text, h1, text, h1, text, script] 
+        //Some time we can see #text due to spaces
+        console.log(document.body.childNodes[0]) ===
+            console.log(document.body.firstChild)
+        console.log(document.body.childNodes[document.body.childNodes.length - 1]) ===
+            console.log(document.body.lastChild)
+
+
+        //other child nodes functions are
+        console.log(document.body.hasChildNodes())
+
+        let arr = Array.from(document.body.childNodes)
+        arr.forEach(data => {
+            console.log(data)
+        })
+
+    </script>
+</body>
+
+</html>

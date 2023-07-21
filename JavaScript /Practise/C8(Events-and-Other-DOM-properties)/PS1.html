@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+            border:2px solid black;
+            height: 150px;
+            width: 150px;
+            background-color: yellow;
+        }
+
+
+    </style>
+</head>
+1
+<button onclick="alert('this is 1st alert')"> 1st alert</button>
+
+<button onclick="dem()"> 2nd alert</button>
+<button id="btn3"> 3nd alert</button>
+
+
+2
+
+<h1>bookmarks</h1>
+<a href="https://google.com"><button>Google</button></a>
+<a href="https://Twitter.com"><button>Twitter</button></a>
+<!-- <a href="https://Facebook.com"><button>Facebook</button></a> -->
+3
+<button id="fb">Facebook</button>
+
+
+
+4. content every 5 second
+https://jsonplaceholder.typicode.com/todos/1 fake data JSON api
+
+<br>
+
+5 . bulb
+
+<aside id="bulb" class="container">
+
+    
+</aside>
+<body>
+
+    <script>
+
+
+        function dem() { alert('this is 2nd alert') }
+
+
+        let x = (e) => {
+            alert('this is 3rd alert')
+            console.log(e.target)
+            console.log(e.event)
+
+        }
+        let btn3 = document.getElementById('btn3')
+        btn3.addEventListener('click', x)
+            ;
+
+
+        let fb = document.getElementById('fb')
+
+
+        let fbopen = () => {
+
+            window.location = 'https://Facebook.com'
+
+        }
+
+        fb.addEventListener('click', fbopen)
+
+        // function dem() { alert('this is 2nd alert') }
+
+
+
+        let call5Secs = async (url) => {
+            url = 'https://jsonplaceholder.typicode.com/todos/1'
+            let data = await fetch(url)
+            let jsondata = data.json()
+            console.log('Calling api every 5 secs')
+            console.log(jsondata)
+
+            jsondata.catch(d)
+            {
+                console.log(d)
+            }
+            return jsondata;
+            // https://jsonplaceholder.typicode.com/todos/1
+
+
+
+        }
+
+        setInterval(call5Secs, 5000)
+
+
+
+      5
+    //   let bulb =document.getElementById('bulb')
+    //   bulb.classList.toggle('container')
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Map Filter Reduce</h1>
+    <h3>Higher order functions</h3>
+
+    // map has arg as map(value, index, array)
+    map return/ opertions and give new array
+
+    <pre>
+<h1>Map</h1>
+let ar = [45, 23, 21]
+let br = ar.map(value => {
+    // console.log(value)
+    return value + 1;
+
+})
+console.log(br)
+
+//3 arguments in map
+// here value, index, array are just references, and we can use any naming as we want
+//and map takes three argument, one is the data in the array i,e value ,two is the index of the array ,i.e index and third argument is the array itself i.r array 
+
+ar.map((value, index, array) => {
+    console.log(value, index, array
+    )
+})
+
+
+</pre>
+
+    <br>
+    <pre>
+    <h1>Foreach</h1>
+    // foreach has arg as map(value, index, array)
+    foreach works on old array itself
+    num.forEach(data => {
+        console.log(data + " by foreach")
+    })
+
+    // foreach has arg as map(value, index, array)
+    //3 arguments in foreach
+    // here value, index, array are just references, and we can use any naming as we want
+    //and map takes three argument, one is the data in the array i,e value ,two is the index of the array ,i.e index and third argument is the array itself i.r array 
+</pre>
+
+
+
+
+
+    <script>
+
+        let num = [1, 2, 3, 4, 5, 6, 7, 8];
+        console.log(num.toString())
+
+        let mapnum = num.map(data => data * 20)
+        console.log(mapnum.toString())
+
+        // map has arg as map(value, index, array)
+
+
+        let filternum = num.filter(data => data % 2 === 0)
+        console.log(filternum.toString())
+
+        num.forEach(data => {
+            console.log(data + " by foreach")
+        })
+
+        // foreach has arg as map(value, index, array)
+        //3 arguments in foreach
+        // here value, index, array are just references, and we can use any naming as we want
+        //and map takes three argument, one is the data in the array i,e value ,two is the index of the array ,i.e index and third argument is the array itself i.r array 
+
+        let ar = [45, 23, 21]
+        let br = ar.map(value => {
+            // console.log(value)
+            return value + 1;
+
+        })
+        console.log(br)
+
+        //3 arguments in map
+        // here value, index, array are just references, and we can use any naming as we want
+        //and map takes three argument, one is the data in the array i,e value ,two is the index of the array ,i.e index and third argument is the array itself i.r array 
+
+        ar.map((value, index, array) => {
+            console.log(value, index, array
+            )
+        })
+
+
+
+        let arr2 = [1, 2, 3, 11, 4, 55, 3, 77, 3, 8];
+        let newarr2 = arr2.filter(value => value > 5);
+        console.log(newarr2.toString())
+
+
+        //reduce
+        let arr3 = [1, 2, 3,4];
+
+let newarr3=arr3.reduce((d1,d2)=>{//here two arguments are values of array, 1+2 , then 3+3 then 6+4 =10 to a new variable
+    return (d1+d2)
+})
+console.log(newarr3)
+
+function add(h1 , h2)
+{
+    return h1+h2;
+}
+
+let newarr31= arr3.reduce(add)//passing a function as well
+console.log(newarr31)
+    </script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>The Promise API </h1> <b>
+            <small>The Promise API provides many inbuilt methods</small>
+            <h4>There are 6 static methods of Promise class, for eg we get an API as all the promise
+                completed/resolves
+                we need to run a piece of code then we can use this API methods, to wait for all the promises to
+                complete we
+                can use this API methods </h4>
+            <ul>
+                <li>Promise.all(promises)</li>
+
+                <pre>
+                let p1 = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("VALUE 1")
+                    }, 1000);
+                })
+        
+        
+                let p2 = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        // commented out as promise_All wont work reject(new Error("VALUE 2"))
+                        resolve("VALUE 2")
+                    }, 2000);
+                })
+        
+        
+                let p3 = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("VALUE 3")
+                    }, 3000);
+                })
+        
+        
+        
+                // p1.then((resolve) => { console.log(resolve) })
+        
+                // p2.then((resolve) => { console.log(resolve) })
+        
+                // p3.then((resolve) => { console.log(resolve) })
+        
+        
+                //so if these three promise once completes , then the values of this i want to see at once ,
+                 and in real time while doing network call we are not sure how much time it takes , 
+                 like here we have defined time but in real world we are not sure there might by slowness in server due to high traffic , 
+                 there might slowness due to internet etc so we are not sure how much time it may take , 
+                 some time it can complete in milliSeconds .
+                // So for this reason we will be using Promise.all()
+        
+                //commenting out .then fpr p1, p2, p3  and passing them in  a array format of all method
+                //once the values for p1.p2.p3 are resolved then we can get it from promise_All array , 
+        
+                let promise_All = Promise.all([p1, p2, p3])
+        
+                promise_All.then((resolved) => { console.log(resolved) })//at once the values are printed or
+                the three promises are resolved at same time i.e once all the promises are resolved then we see the the promise at once
+
+                <u>Note: if any one of the promise gets rejected then rest of the promises in the array will not be resolved 
+              and promise.all() will not get executed and in this type of situation we want to rest to get execute  and get resolved so we will be using promise.allSettled() and pass the promises in the array</u>
+                 
+        </pre>
+                <hr>
+                <li>Promise.allSettled(promises)</li>
+                <pre>
+                let p1 = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("VALUE 1")
+                    }, 1000);
+                })
+        
+        
+                let p2 = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        reject(new Error("VALUE 2"))
+                    }, 2000);
+                })
+        
+        
+                let p3 = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("VALUE 3")
+                    }, 3000);
+                })
+        
+                //so if these three promise once completes ,but if one of the promise gets rejected so promise.all wont 
+                run in this situation so we will use promise.settled() so here on if gets rejected others will run and gets resolved
+        
+                //commenting out .then fpr p1, p2, p3  and passing them in  a array format of all method
+                //once the values for p1.p2.p3 are resolved then we can get it from promise_All array , 
+        
+                let promise_All = Promise.allSettled([p1, p2, p3])
+        
+                promise_All.then((resolved) => { console.log(resolved), (reject) => { console.log(reject) } })//at once the values 
+                are printed  or the three promises are resolved at same time i.e once all the promises are resolved then we see the the promise at once
+        
+        
+        //         o/p
+        //         (3) [{…}, {…}, {…}]
+        // 0
+        // : 
+        // {status: 'fulfilled', value: 'VALUE 1'}
+        // 1
+        // : 
+        // {status: 'rejected', reason: Error: VALUE 2 at http://127.0.0.1:5500/Practise/C9(Callbacks-Promises-Async&Await-TryCatchFina…}
+        // 2
+        // : 
+        // {status: 'fulfilled', value: 'VALUE 3'}
+        // length
+        // : 
+        // 3
+        // [[Prototype]]
+        // : 
+        // Array(0)
+
+        </pre>
+                <hr>
+
+                <li>Promise.race(promises)</li>
+
+                <pre>
+
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("VALUE 1")
+            }, 4000);
+        })
+
+
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve("VALUE 2")
+                reject("VALUE 2")
+
+            }, 2000);
+        })
+
+
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("VALUE 3")
+            }, 3000);
+        })
+
+        //  In above which promise which will execute and get resolved/rejected fast like race so that will be given
+        let promise_All = Promise.race([p1, p2, p3])
+
+        promise_All.then((resolved) => { console.log(resolved) })
+
+//         o/p
+// VALUE 2
+            
+        </pre>
+                <hr>
+                <li>Promise.any(promises)</li>
+                <pre>
+                    let p1 = new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            resolve("VALUE 1")
+                        }, 4000);
+                    })
+            
+            
+                    let p2 = new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            // resolve("VALUE 2")
+                            reject("VALUE 2")
+            
+                        }, 2000);
+                    })
+            
+            
+                    let p3 = new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            resolve("VALUE 3")
+                        }, 3000);
+                    })
+            
+                    //  same as race but will give fasted resolved . In above which promise which will execute and get resolved  fast like race so that will be given if nothing gets resolved then will throw aggregate error 
+                    let promise_All = Promise.any([p1, p2, p3])
+            
+                    promise_All.then((resolved) => { console.log(resolved) })
+            
+            //         o/p
+            // VALUE 3
+            
+        </pre>
+                <hr>
+
+                <li>Promise.resolve(value)</li>
+                <pre>
+makes the promise as resolved , state as successful and gives an value to the promise
+let promise_All = Promise.resolve(1)
+
+        promise_All.then((resolved) => { console.log(resolved) })
+        </pre>
+                <hr>
+
+                <li>Promise.reject(error)</li>
+                <pre>
+                    makes the promise as reject , state as rejected and gives an value to the promise usually we give an Error objects
+                    let promise_All = Promise.reject(new Error('Hey'))
+        
+
+        promise_All.then((resolved) => { console.log(resolved) },(error) => { console.log(error) })
+
+
+        </pre>
+                <hr>
+            </ul>
+        </b>
+
+    </div>
+    <script>
+
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("VALUE 1")
+            }, 4000);
+        })
+
+
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve("VALUE 2")
+                reject("VALUE 2")
+
+            }, 2000);
+        })
+
+
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("VALUE 3")
+            }, 3000);
+        })
+        let promise_All = Promise.reject(new Error('Hey'))
+
+
+        promise_All.then((resolved) => { console.log(resolved) }, (error) => { console.log(error) })
+
+//         o/p
+// VALUE 3
+
+    </script>
+</body>
+
+</html>

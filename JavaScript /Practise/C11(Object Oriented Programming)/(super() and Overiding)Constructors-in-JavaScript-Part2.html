@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Constructors super() and Overriding in JavaScript Part2</h1>
+    <caption></caption>
+
+
+    <pre>
+        <b>
+            <h3>
+Super()
+This is used when ever we define a constructor in child classes we need to explicitly add super() in those constructor 
+and whenever we need to call the parent function from child class we call from super().function()
+<h1>Note
+
+when ever we Inheritance is seen , and parent class had constructor()
+ and child classes doesnot have any Constructors then while creating
+  object for the children the JavaScript engine will create a default
+   constructor and add super() in the child classes , 
+   and we can manually add this , and we should always call 
+   this keyword after super() has been called 
+
+
+
+</h1>
+
+
+
+
+
+
+
+Method Overriding(No need to add any annotation on the method just add in child class and change the logic)
+Providing custom implementation with respect to the specific class then the base/parent class 
+<hr>
+class Employee {
+
+    //adding generic methods
+    login() {
+        console.log('Employee has logged in')
+    }
+    logout() {
+        console.log('Employee has logged out')
+    }
+    working() {
+
+        console.log('employee is working')
+    }
+
+
+
+}
+
+// a manager , programmer both are employees
+
+class Manager extends Employee {
+    // id
+
+    // Note when ever we define a constructor in chile classes we need to explicitly add super() in those constructor 
+    constructor() {
+        super()
+        //   this.id= id;
+    }
+    managing() {
+        console.log('manager is managing a  team')
+    }
+
+    //defining his work in specific
+    working() {
+        console.log('Manager is working')
+    }
+
+
+}
+
+
+class Programmer extends Employee {
+    constructor() {
+        super()
+    }
+    managing() {
+        console.log('manager is managing a  team')
+    }
+
+    //defining his work in specific
+    working() {
+        console.log('Programmer is coding')
+    }
+
+
+}
+
+
+
+let m1 = new Manager()
+m1.login()
+m1.working()
+m1.logout()
+let p1 = new Programmer()
+p1.login()
+p1.working()
+p1.logout()
+
+// o / p
+// Employee has logged in
+//     Manager is working
+//  Employee has logged out
+// Employee has logged in
+//     Programmer is coding
+//  Employee has logged out
+
+
+
+
+
+
+
+
+
+
+
+</hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </h3>
+        </b>
+    </pre>
+
+    <script>
+
+        class Employee {
+
+            //adding generic methods
+            login() {
+                console.log('Employee has logged in')
+            }
+            logout() {
+                console.log('Employee has logged out')
+            }
+            working() {
+
+                console.log('employee is working')
+            }
+
+
+
+        }
+
+        // a manager , programmer both are employees
+
+        class Manager extends Employee {
+            // id
+
+            // Note when ever we define a constructor in chile classes we need to explicitly add super() in those constructor 
+            constructor() {
+                super()
+                //   this.id= id;
+            }
+            managing() {
+                console.log('manager is managing a  team')
+            }
+
+            //defining his work in specific
+            working() {
+                console.log('Manager is working')
+            }
+
+
+        }
+
+
+        class Programmer extends Employee {
+            constructor() {
+                super()
+            }
+            managing() {
+                console.log('manager is managing a  team')
+            }
+
+            //defining his work in specific
+            working() {
+                console.log('Programmer is coding')
+            }
+
+
+        }
+
+
+
+        let m1 = new Manager()
+        m1.login()
+        m1.working()
+        m1.logout()
+        let p1 = new Programmer()
+        p1.login()
+        p1.working()
+        p1.logout()
+
+        // o / p
+        // Employee has logged in
+        //     Manager is working
+        //  Employee has logged out
+        // Employee has logged in
+        //     Programmer is coding
+        //  Employee has logged out
+
+
+
+    </script>
+</body>
+
+</html>

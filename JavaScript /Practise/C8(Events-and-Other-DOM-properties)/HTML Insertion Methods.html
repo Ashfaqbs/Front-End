@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Insertion of a Node inside the DOM</h1>
+
+
+    <ul>
+        <caption>Some insertions methods are</caption>
+        <marquee behavior="" direction="">
+            1st create and add data/text to it and insert by this functions
+        </marquee>
+        <li>node.append(e) </li>
+        append at the end of the node
+
+        <hr>
+        <li>node.prepend</li>
+        insert at the beginning of the node
+
+        <hr>
+        <li>node.before(e) </li>
+        Insert before node
+        <hr>
+        <li>node.after(e) </li>
+        Insert after the node
+        <hr>
+
+        <li>node.replaceWith(e) </li>
+        Replace node with the given node
+
+        <hr>
+        <li>Other way</li>
+
+        <pre>
+            div class="container">
+
+                div id="first">This is a first DIV div
+        
+        
+        
+            /div>
+
+            //1 one way of inserting element or node inside one node
+            let container = document.getElementsByClassName('container')[0]
+            console.log(container.innerHTML)
+            container.innerHTML = container.innerHTML + 'div > This is a second DIV   /div>'
+            console.log(container.innerHTML)
+    
+
+
+
+
+            //2
+            //append , prepend, before child 
+    
+            // create a element and add text/data by inner html
+    
+            //a
+            let div = document.createElement('div')
+            div.innerHTML = 'This is  a third DIV by using append child'
+            container.appendChild(div)
+    
+    
+            //b
+            let section = document.createElement('section')
+            section.setAttribute('class', 'card')
+            section.innerHTML = 'This is a Section '
+            container.append(section)
+    
+    
+            //c
+            let firstDiv = document.createElement('div')
+            firstDiv.innerHTML = 'This is the [0] element DIV and using prepend'
+            container.prepend(firstDiv)
+    
+            //d
+            let header = document.createElement('header')
+            header.innerHTML = 'Welcome to before DIV container'
+            container.before(header)
+    
+            //e 
+            let footer = document.createElement('footer')
+            footer.innerHTML = 'Welcome to after DIV container'
+            container.after(footer)
+    
+            //f 
+            // let article = document.createElement('article')
+            // article.innerHTML='This will replace the container'
+            // container.replaceWith(article)
+    
+
+
+
+        </pre>
+    </ul>
+
+    <div class="container">
+
+        <div id="first">This is a first DIV</div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+
+        //1 one way of inserting element or node inside one node
+        let container = document.getElementsByClassName('container')[0]
+        console.log(container.innerHTML)
+        container.innerHTML = container.innerHTML + '<div> This is a second DIV </div>'
+        console.log(container.innerHTML)
+
+        //2
+        //append , prepend, before child 
+
+        // create a element and add text/data by inner html
+
+        //a
+        let div = document.createElement('div')
+        div.innerHTML = 'This is  a third DIV by using append child'
+        container.appendChild(div)
+
+
+        //b
+        let section = document.createElement('section')
+        section.setAttribute('class', 'card')
+        section.innerHTML = 'This is a Section '
+        container.append(section)
+
+
+        //c
+        let firstDiv = document.createElement('div')
+        firstDiv.innerHTML = 'This is the [0] element DIV and using prepend'
+        container.prepend(firstDiv)
+
+        //d
+        let header = document.createElement('header')
+        header.innerHTML = 'Welcome to before DIV container'
+        container.before(header)
+
+        //e 
+        let footer = document.createElement('footer')
+        footer.innerHTML = 'Welcome to after DIV container'
+        container.after(footer)
+
+        //f 
+        // let article = document.createElement('article')
+        // article.innerHTML='This will replace the container'
+        // container.replaceWith(article)
+
+
+
+
+    </script>
+</body>
+
+</html>

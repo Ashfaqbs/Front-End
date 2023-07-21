@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Introduction to Object Oriented Programming and Protypes and __proto__ </h1>
+    <caption>In Javascript we will not use OOP for web development</caption>
+    <h2>Where and all we are using classes there will be OOPS used</h2>
+    <pre>
+    <b>
+        <h2>
+In programming we often take something and then extend it for example we might want to create a user object and admin and guest will be slightly modified variants of it 
+
+[[prototype]]
+Javascript objects have a special property called prototype that is either null or references another object
+
+
+//sample object
+let user = { name: 'tommy', 'age': 1, time: '8ks' }
+console.log(user)
+//o/p
+//         { name: 'tommy', age: 1, time: '8ks' }
+//         age
+//         :
+//         1
+//         name
+//         :
+//         "tommy"
+//         time
+//         :
+//         "8ks"
+//         [[Prototype]] //this is the prototype object and it will have lot of methods
+// :
+//         Object
+
+
+//Prototype methods which inherited are
+
+user.toString()
+'[object Object]' 
+
+
+When we try to read a property from a prototype and its missing , Javascript automatically takes it 
+from the prototype this is called prototype inheritance
+
+Setting prototype
+We can set prototype by setting --proto--
+Now if we read a prototype from the object which is not in object and is present in the prototype 
+, Javascript will take from prototype
+
+If we have a method in object,it will be called from the object , If its missing in object and present 
+in prototype , its called from the prototype
+
+<hr>
+
+<h2><u>Inheritance in Objects</u></h2>
+//Inheritance of two objects in JS we can inherit variables and functions from other objects
+Note:
+if the variables or function is same in a and if we call then those will be executed
+
+let a = {
+    name: 'sonu',
+    id: 9
+}
+
+let b = {
+
+    name: 'tommy',
+    id: 9,
+    car:'lambo',
+    //function is defined like this inside object
+    dotask: () => {
+        console.log('function from b')
+    }
+}
+
+// inheriting
+a.__proto__ = b
+// calling dotask from a 
+a.dotask()
+//op
+// function from b
+console.log(a.car)//o/p lambo
+
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </h2>
+    </b>
+</pre>
+
+    <script>
+        let user = { name: 'tommy', 'age': 1, time: '8ks' }
+        console.log(user)
+        //o/p
+        //         { name: 'tommy', age: 1, time: '8ks' }
+        //         age
+        //         :
+        //         1
+        //         name
+        //         :
+        //         "tommy"
+        //         time
+        //         :
+        //         "8ks"
+        //         [[Prototype]] //this is the prototype object
+        // :
+        //         Object
+
+
+
+        //Inheritance of two objects in JS
+
+        let a = {
+            name: 'sonu',
+            id: 9
+        }
+
+        let b = {
+
+            name: 'tommy',
+            id: 9,
+            car: 'lambo',
+            //function is defined like this inside object
+            dotask: () => {
+                console.log('function from b')
+            }
+        }
+
+        // inheriting
+        a.__proto__ = b
+        // calling dotask from a 
+        a.dotask()
+        //op
+        // function from b
+        console.log(a.car)//o/p lambo
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            color: white;
+            background-color: red;
+        }
+
+        .container1 {
+            color: rgb(0, 0, 0);
+            background-color: rgb(238, 255, 0);
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>ClassName and ClassList to change the class name /add/remove ....</h1>
+
+    <ul>
+        ClassName
+        <li>We can retrieve the class name of the element</li>
+        <li>We can reassign to another class name</li>
+    </ul>
+
+
+    <div id="div1" class="container1 card-red  text-black ">
+        <span>
+            This is a span tag
+        </span>
+
+
+    </div>
+    <hr>
+    <pre>
+    //1 assigning it to a different class name
+    let div1 = document.getElementById('div1')
+    div1.className  // op 'container1 card-red  text-black ' returns the class name of the node/element
+    div1.className = 'container' //o/p 'container' assigning it to a different class
+
+</pre>
+    <hr>
+    <ul>
+        element.classlist. we can use any of the following three
+        <li>add</li>
+        <li>remove</li>
+        
+        <li>Toggle</li>
+        <pre>
+            div1.classList.toggle('container1')//now this was active as soon as we call this method it will deactivate the class so o/p as false
+            false
+            div1.classList.toggle('container1') //again if we call the method it will activate the class so o/p as true
+            true
+
+        </pre>
+        <li>Contains</li>
+        <pre>
+
+    //div1.classList.contains('text-black')
+    //true
+ </pre>
+    </ul>
+
+
+
+    <hr>
+
+
+
+
+
+
+
+    <script>
+
+        let div1 = document.getElementById('div1')
+        div1.className  // op 'container1 card-red  text-black ' returns the class name of the node/element
+        // div1.className = 'container' //o/p 'container' assigning it to a different class
+
+
+        // let bulb =document.getElementsByClassName('bulb')
+
+
+
+    </script>
+</body>
+
+</html>

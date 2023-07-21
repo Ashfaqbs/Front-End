@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Event Loop in JavaScript</h1>
+
+    <pre>
+        <b>
+            <h3>
+
+                <ul>
+                    Agenda
+                    <li>What is JavaScript</li>
+                    <pre>
+
+JavaScript is a single threaded(means one thing at a time) , non blocking ,Asynchronous concurrent language(At a time more then one thing can  happen)<br>
+IT has a call stack , an event loop , and a callback queue + other API's(fetch ,Settimeout ....) <br>
+V8  is the JavaScript runtime which has callstack and heap <br> 
+The heap is used for memory allocations(memory)and stack holds the execution context(which to call next ,and a function is called then it and the data in it will be destroyed) <br>
+DOM, Settimeout, XML, HTTPrequest, dont exist in V8 source code 
+
+
+                    </pre>
+    <li>What is Call stack</li>
+
+    <pre>
+
+        //Call stack
+
+        function greeting() {
+
+
+            hi()
+            return "greeting"
+        }
+
+        function hi() {
+
+            return "hi"
+        }
+
+
+        greeting();
+
+
+        // then greeting will be the 1st to go to the Call stack here and in greeting we alo have hi , so hi()
+        // will go next in the call stack and it will execute and will be popped and greeting will be executed and popped and as soon as a function is popped all the data init and the function will destroyed 
+
+
+
+    </pre>
+    <li>Asynchronous callback</li>
+    <pre>
+sometimes the JavaScript code can take a lot of time and this can block the page re render <br>
+JavaScript has asynchronous callbacks for non blocking behaviour <br>
+JavaScript runtime can do only one thing at a time <br>
+browser gives us other things which work along the runtme like web API's <br>
+In node Js these are available as c++ API's
+
+
+
+    </pre>
+    <li>Task Queue</li>
+    <pre>
+
+
+        JavaScript can do only thing at a time <br>
+        The rest are Queued to the task queue waiting to be executed <br>
+        when we run the setTimeout , webapi's will run timer and push the function provided the setTimeout to the task queue once timer ends <br>
+        These tasks will be pushed to the stack where they can be executed
+
+    </pre>
+    <li>Event Loop</li>
+    <pre>
+JavaScript has a runtime model based on an event loop , which is responsible for executing the code , collecting and processing events and executing Queued sub-tasks <br>
+the event loop pushes the tasks from the task queue to the call stack <br>
+        Settimeout(func1(),0) can be used to defer a function until all the pending tasks (so far) have been executed <br>
+        We can see how these things work in action by visiting
+
+
+
+
+    </pre>
+    </ul>
+
+
+    </h3>
+    </b>
+    </pre>
+
+
+    <script>
+        //Call stack
+
+        // function greeting() {
+
+
+        //     hi()
+        //     return "greeting"
+        // }
+
+        // function hi() {
+
+        //     return "hi"
+        // }
+
+
+        // greeting();
+
+
+        // then greeting will be the 1st to go to the Call stack here and in greeting we alo have hi , so hi()
+        // will go next in the call stack and it will execute and will be popped and greeting will be executed and popped and as soon as a function is popped all the data init and the function will destroyed
+
+
+        //asynchronous callbacks
+
+
+
+    </script>
+</body>
+
+</html>

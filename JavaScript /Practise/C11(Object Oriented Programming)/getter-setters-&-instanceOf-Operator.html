@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>getters, setters & instanceOf Operator </h1>
+    <caption>Used to get and set the values but as in JAva we will not make any variables private here , just for the
+        class variables we will create getters and setters methods </caption>
+
+    <h1>Instanceof Operator</h1>
+    the instanceof Operator allows to check wether an object belongs to a certain class
+
+    the syntax is :
+    obj>instanceOf class >
+    it returns true if the object belongs to the class or any other class inheriting from it
+
+    console.log(user1 instanceof User )
+    // o/p true
+    <pre>
+        <b>
+            <pre>
+                class User {
+
+                    id;
+                    name;
+                    school;
+        
+                    gotoSchool() {
+                        console.log('going to school')
+                    }
+                    getid() {
+        
+                        console.log(this.id)
+                        return this.id;
+                    }
+        
+                    getname() {
+        
+                        console.log(this.name)
+                        return this.name;
+                    }
+                    getschool() {
+        
+                        console.log(this.school)
+                        return this.school;
+                    }
+        
+        
+                    setname(name) {
+                        this.name = name;
+        
+        
+                    }
+                    setSchool(sch) {
+                        this.school = sch;
+        
+        
+                    } setId(ID) {
+                        this.id = ID;
+                    }
+        
+        
+                }
+        
+        
+        
+                let user1 = new User()
+                user1.setId(1)
+                user1.setname('sonu')
+                user1.setSchool('abc school')
+        
+        
+                console.log(user1.getid() +
+                    user1.getname() +
+                    user1.getschool())
+        
+                // o/p
+                // 1
+                //  sonu
+                //  abc school
+                //  1sonuabc school
+        
+<hr>
+
+console.log(user1 instanceof User ) 
+// o/p true
+
+
+                
+            </pre>
+    </b>
+    </pre>
+
+    <script>
+
+        class User {
+
+            id;
+            name;
+            school;
+
+            gotoSchool() {
+                console.log('going to school')
+            }
+            getid() {
+
+                console.log(this.id)
+                return this.id;
+            }
+
+            getname() {
+
+                console.log(this.name)
+                return this.name;
+            }
+            getschool() {
+
+                console.log(this.school)
+                return this.school;
+            }
+
+
+            setname(name) {
+                this.name = name;
+
+
+            }
+            setSchool(sch) {
+                this.school = sch;
+
+
+            } setId(ID) {
+                this.id = ID;
+            }
+
+
+        }
+
+
+
+        let user1 = new User()
+        user1.setId(1)
+        user1.setname('sonu')
+        user1.setSchool('abc school')
+
+
+        console.log(user1.getid() +
+            user1.getname() +
+            user1.getschool())
+
+        // o/p
+        // 1
+        //  sonu
+        //  abc school
+        //  1sonuabc school
+
+
+        console.log(user1 instanceof User)
+        // o/p true
+
+    </script>
+</body>
+
+</html>

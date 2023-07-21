@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Classes and Objects in JavaScript </h1>
+    <pre>
+    <b>
+        <h3>
+
+
+Classes and Object 
+
+In OOP a class is an extensible program-code template for creating objects , providing initial values for 
+state(member variable) and implementation of behavior (member functions)
+
+
+The basic syntax for writing a class is :
+
+class Myclass{
+//class methods
+
+//1
+constructor(){}
+
+//2
+variables
+
+//3
+method1(){}
+method2(){}
+
+
+
+}
+
+<hr>
+
+<h1>Creating class , object , calling variable and functions</h1>
+
+
+//class 1
+
+        class Myclass {
+            constructor() {
+                console.log('from constructor')
+
+            }
+
+            //variables const/let no need to use
+            a;
+            b = 5;
+
+            //functions no need to use function keyword , let ,const etc.. 
+            doTask1(params) {
+                console.log('dotask1')
+            }
+
+            doTask2(params) {
+                console.log('dotask2')
+            }
+
+
+        }
+
+
+        //creating object for the Myclass
+
+        let object1 = new Myclass()
+
+        let object2 = new Myclass()
+
+
+        //calling variables and functions of the class
+        console.log(object1.a)
+        console.log(object1.b)
+
+        console.log(object1.doTask1())
+        console.log(object2.doTask1())
+
+
+        console.log(object2.a)
+        console.log(object2.b)
+
+
+        //op
+        // from constructor two times it will be called as two times we are creating object
+        // from constructor
+        // Classes - and - Objects -in -JavaScript.html: 74 from constructor
+        // Classes - and - Objects -in -JavaScript.html: 103 undefined
+        // Classes - and - Objects -in -JavaScript.html: 104 5
+        // Classes - and - Objects -in -JavaScript.html: 84 dotask1
+        // Classes - and - Objects -in -JavaScript.html: 106 undefined
+        // Classes - and - Objects -in -JavaScript.html: 84 dotask1
+        // Classes - and - Objects -in -JavaScript.html: 107 undefined
+        // Classes - and - Objects -in -JavaScript.html: 110 undefined
+        // Classes - and - Objects -in -JavaScript.html: 111 5
+        //sonu
+
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </h3>
+    </b>
+</pre>
+
+
+
+
+    <script>
+        //class 1
+
+        class Myclass {
+            constructor() {
+                console.log('from constructor')
+
+            }
+
+            //variables const/let no need to use
+            a;
+            b = 5;
+
+            //functions no need to use function keyword , let ,const etc.. 
+            doTask1(params) {
+                console.log('dotask1')
+            }
+
+            doTask2(params) {
+                console.log('dotask2')
+            }
+            doTask3(name) {
+                console.log(name)
+                console.log(this)
+                
+            }
+
+        }
+
+
+        //creating object for the Myclass
+
+        let object1 = new Myclass()
+
+        let object2 = new Myclass()
+
+
+        //calling variables and functions of the class
+        console.log(object1.a)
+        console.log(object1.b)
+
+        console.log(object1.doTask1())
+        console.log(object2.doTask1())
+
+
+        console.log(object2.a)
+        console.log(object2.b)
+
+        console.log(object2.doTask3('sonu'))
+
+        //op
+        // from constructor two times it will be called as two times we are creating object
+        // from constructor
+        // Classes - and - Objects -in -JavaScript.html: 74 from constructor
+        // Classes - and - Objects -in -JavaScript.html: 103 undefined
+        // Classes - and - Objects -in -JavaScript.html: 104 5
+        // Classes - and - Objects -in -JavaScript.html: 84 dotask1
+        // Classes - and - Objects -in -JavaScript.html: 106 undefined
+        // Classes - and - Objects -in -JavaScript.html: 84 dotask1
+        // Classes - and - Objects -in -JavaScript.html: 107 undefined
+        // Classes - and - Objects -in -JavaScript.html: 110 undefined
+        // Classes - and - Objects -in -JavaScript.html: 111 5
+//sonu
+
+
+    </script>
+</body>
+
+</html>

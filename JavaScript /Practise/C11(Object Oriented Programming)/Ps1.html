@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //1
+        class Numbers1 {
+
+            real
+            img
+            getReal() {
+                return this.real
+            }
+            getimg() {
+                return this.img
+            }
+            setReal(r) {
+                this.real = r;
+            }
+            setimg(i) {
+                this.img = i;
+            }
+
+
+
+            constructor(r, i) {
+                this.real = r;
+                this.img = i;
+            }
+
+            add(r, i) {
+                return r + i;
+            }
+        }
+
+        //2
+        let num = new Numbers1(1, 4)
+        let num2 = new Numbers1(2, 6)
+        console.log(num.add(1, 2))
+
+        let num3 = new Numbers1(1, 2);
+        num3.setReal(3);
+        num3.setimg(4);
+
+        console.log("s " +num3.getReal() + num3.getimg()+" calling getters")
+
+
+
+        //3
+
+
+        class Human {
+
+            walk() {
+                console.log('im walking like human')
+            }
+
+
+        }
+
+        class student extends Human {
+
+
+            doSchool() {
+                console.log('im going to school')
+
+            }
+            walk() {
+                console.log('im walking like student ')
+            }
+
+
+        }
+
+        let s1 = new student();
+        s1.walk()
+        console.log(s1 instanceof student)
+        console.log(s1 instanceof Human)
+
+
+    </script>
+</body>
+
+</html>

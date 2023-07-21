@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Promise .then() and .catch()</h1>
+
+
+
+    <pre> <b>
+    let promise1 = new Promise((resolve, reject) => {
+
+        // Logic 
+        setTimeout(() => {
+            console.log('Hello promise is fulfilled  in 3s')
+            resolve(true)
+        }, 3000);
+
+    })
+
+
+
+    let promise2 = new Promise((resolve, reject) => {
+
+        // Logic 
+        setTimeout(() => {
+            console.log('Hello promise is rejected')
+            reject(false)
+        }, 3000);
+
+    })
+
+    //only handling successful scenario
+    promise1.then(
+        (value) => { console.log(value) }
+    )
+
+    //handling failure  scenarios by catch if we dont handle this errors are seen in console 
+    promise2.catch((error) => { console.log(error) })
+
+    //handling successful and failure scenario by then 
+    promise2.then((data) => { console.log(data) }, 
+    (error) => { console.log(error) })
+</b>
+
+</pre>
+
+    <script>
+
+        let promise1 = new Promise((resolve, reject) => {
+
+            // Logic 
+            setTimeout(() => {
+                console.log('Hello promise is fulfilled  in 3s')
+                resolve(true)
+            }, 3000);
+
+        })
+
+
+
+        let promise2 = new Promise((resolve, reject) => {
+
+            // Logic 
+            setTimeout(() => {
+                console.log('Hello promise is rejected')
+                reject(false)
+            }, 3000);
+
+        })
+
+        //only handling successful scenario
+        promise1.then(
+            (value) => { console.log(value) }
+        )
+
+        //handling failure  scenarios by catch if we dont handle this errors are seen in console 
+        promise2.catch((error) => { console.log(error) })
+
+        //handling successful and failure scenario by then 
+        promise2.then((data) => { console.log(data) },
+            (error) => { console.log(error) })
+
+
+
+        console.log(promise1)
+
+
+    </script>
+</body>
+
+</html>

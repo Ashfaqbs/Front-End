@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Callback Hell and Pyramid of doom <h3>To overcome this Drawback we will use Promises</h3>
+    </h1>
+    We can use callbacks if we are not nesting /calling multiple callbacks inside it
+
+    <h3>Issues/Drawbacks with the Callback functions</h3>
+    <ul>
+        <li><b>Callback Hell</b></li>
+        We don't have control of the Callback function which we will be passing and we can expect failure scenarios even
+        when function is successful. <br>
+        <h3>To overcome this Drawback we will use Promises</h3>
+        <marquee behavior="" direction="">
+            eg: here if i call the loadScript function and on success scenario also instead of null for error if i give
+            something else the funOne function will throw error while executing</marquee>
+        <pre>
+            function loadScript(src, callback) {
+
+                let script = document.createElement('script');
+                script.src = src;
+    
+    
+                //success scenario
+                script.onload = () => {
+                    // callback(src, 'loadScript calling this function');
+                    callback(null, 'loadScript calling this function and src url is'+src);
+                    //when script is loaded is successfully we will pass null for 1st argument
+    
+                }
+    
+    
+                //Failure  scenario
+                script.onerror = () => {
+                    // callback(src, 'loadScript calling this function but error is seen');
+                    callback(new Error('Src is not loaded pl check the URL'), src);
+                    //when script is not loaded successfully we will pass errorObject for 1st argument
+    
+                }
+    
+    
+                document.head.append(script)
+    
+            }
+    
+    
+            // let funOne = (a, b) => {
+            //     console.log('hello there from one' + a + b)
+            // }
+            let funOne = (error, data) => {
+    
+                //handling error in function
+    
+                if(error){
+                    //if null means false , if error is there true
+                    console.log('we have ' +error)
+    
+    
+               return error;
+                }else{
+    
+                    console.log('src is loaded successfully ')
+    
+    
+                }
+               
+            }
+    
+    
+            //modifying the URL to cause error
+            loadScript('https://cdn.js1delivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+    // when passed with error url ref.onerror is seen executed 
+    
+    // loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', funOne)
+    // when passed with error url ref.onload is seen executed 
+
+        </pre>
+        <li><b> Pyramid of doom</b></li>
+        When we have callbacks inside callbacks , the code is harder to maintain and there is no code readability,
+        ie if im calling a function , with a callback function as a argument ,and performing a logic and for successful
+        scenario im calling again the function and passing different arguments to perform for task , if we follow this
+        convention the code becomes longer so it will be harder to maintain and read
+        <pre>
+loadScript()
+{
+
+   eg: if success call loadScript again and pass diff arg for diff script 
+             loadScript.....
+
+                       loadScript.......
+    
+}
+        </pre>
+        <h3>To overcome this Drawback we will use Promises</h3>
+
+    </ul>
+
+    <script></script>
+</body>
+
+</html>

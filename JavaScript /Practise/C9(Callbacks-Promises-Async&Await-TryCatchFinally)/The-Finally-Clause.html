@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>The Finally Clause</h1>
+
+    <b>
+        <h2>
+            When we have added try catch to a code , if error is expected then it try and catch runs else only try
+            executes
+            and
+            catch is ignored, but we can also use Finally block as it will run if we get error or not
+            <br>
+            the finally will run if there are issues/ no issues anf if there is return in a function just before
+            returning the finally clause will execute and return will executed next
+
+
+        </h2>
+
+
+
+
+
+
+    </b>
+
+    <pre>
+
+        //1 with error
+
+
+        console.log('script start')
+
+        try {
+
+            //risky code may run or not based on which it has error
+            // let a = 9 / 0;
+            // console.log(a)//prints infinity  so no error 
+
+            unkownvariable
+
+        } catch (error) {
+
+            console.log('handling the error ' + error)
+            //o/p
+            //handling the error ReferenceError: unkownvariable is not defined
+
+        } finally {
+
+            console.log('this is a  finally clause')//ran fine even with error is handled
+
+        }
+
+        console.log('script end')
+
+        //2 without error
+        console.log('script start')
+
+        try {
+
+
+
+            let unkownvariable = 0;
+            console.log(unkownvariable)
+
+        } catch (error) {
+
+            console.log('handling the error ' + error)
+            //o/p
+            //    NA
+
+        } finally {
+
+            console.log('this is a  finally clause')//ran fine even with error is handled
+
+        }
+
+        console.log('script end')
+
+
+        console.log('-------------------------------------------')
+
+        //3 USE case of finally
+
+        //3 with error in catch block it self
+        console.log('script start')
+
+        try {
+
+
+            //error 1 is handled in catch block
+            unkownvariable
+            console.log(unkownvariable)
+
+        } catch (error) {
+
+            console.log('handling the error ' + error)
+
+
+            //adding one more in catch block
+            unkownvariable2
+            //if not finally block then the error while seen and script will be stopped  
+            //  console.log('this is a  finally clause') will not run now also 
+
+        }
+        finally {
+
+            console.log('this is a  finally clause')//ran fine even with error is handled
+
+        }
+
+        console.log('script end')
+
+
+    </pre>
+
+    <script>
+
+        //1 with error
+
+
+        console.log('script start')
+
+        try {
+
+            //risky code may run or not based on which it has error
+            // let a = 9 / 0;
+            // console.log(a)//prints infinity  so no error 
+
+            unkownvariable
+
+        } catch (error) {
+
+            console.log('handling the error ' + error)
+            //o/p
+            //handling the error ReferenceError: unkownvariable is not defined
+
+        } finally {
+
+            console.log('this is a  finally clause')//ran fine even with error is handled
+
+        }
+
+        console.log('script end')
+
+        //2 without error
+        console.log('script start')
+
+        try {
+
+
+
+            let unkownvariable = 0;
+            console.log(unkownvariable)
+
+        } catch (error) {
+
+            console.log('handling the error ' + error)
+            //o/p
+            //    NA
+
+        } finally {
+
+            console.log('this is a  finally clause')//ran fine even with error is handled
+
+        }
+
+        console.log('script end')
+
+
+        console.log('-------------------------------------------')
+
+        //3 USE case of finally
+
+        //3 with error in catch block it self
+        console.log('script start')
+
+        try {
+
+
+            //error 1 is handled in catch block
+            unkownvariable
+            console.log(unkownvariable)
+
+        } catch (error) {
+
+            console.log('handling the error ' + error)
+
+
+            //adding one more in catch block
+            unkownvariable2
+            //if not finally block then the error while seen and script will be stopped  
+            //  console.log('this is a  finally clause') will not run now also 
+
+        }
+        finally {
+
+            console.log('this is a  finally clause')//ran fine even with error is handled
+
+        }
+
+        console.log('script end')
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Matches , Closet , Contains how they help in DOM Manipulation</h1>
+    <ul>
+        <li>Matches</li>
+        To check if element matches the given css selectors
+        <pre>
+            div class="box" id="id1">This is ID1 div
+            div class="box" id="id2">This is ID2 div
+            let id1 = document.getElementById('id1')
+            console.log(id1)
+    
+            console.log(id1.matches(".box"))//op is true as the element has .box as css selectors
+            console.log(id1.matches(".card"))//false
+        </pre>
+
+        <li>Closest</li>
+        To look for the nearest ancestor/parent that matches the given css selectors the element it self is also checked
+        i.e returns the closet css selectors
+        <pre>
+            h4 class="xbox">
+                This is a h4 tag
+                span id="span1">This is a span tag span>
+            h4>
+            let span1 = document.getElementById('span1')
+
+            console.log(span1.closest('#span1'))//op the span tag itself
+            console.log(span1.closest('.xbox'))//op the h4 tag with css selectors .xbox
+    
+            console.log(span1.closest('.box'))//null as the parents or its ancestors wont have this css selectors
+        </pre>
+
+        <li>Contains</li>
+        returns true of element contains on the element
+
+        <pre>
+
+            let xbox = document.body.getElementsByClassName('xbox')
+            console.log(xbox[0])
+            let box1 = xbox[0]
+            console.log(box1.contains(span1))//true the span1 node exists in the node
+            console.log(box1.contains(box1))//true the box1 node exists in the box1
+            console.log(box1.contains(id1))//false the id1 node doesnot exists in the node
+        </pre>
+
+
+    </ul>
+
+
+    <div class="box" id="id1">This is ID1 </div>
+    <div class="box" id="id2">This is ID2</div>
+
+
+
+    <h4 class="xbox">
+        This is a h4 tag
+        <span id="span1">This is a span tag</span>
+    </h4>
+
+
+    <script>
+
+        let id1 = document.getElementById('id1')
+        console.log(id1)
+
+        console.log(id1.matches(".box"))//op is true as the element has .box as css selectors
+        console.log(id1.matches(".card"))//false
+
+
+        let span1 = document.getElementById('span1')
+
+        console.log(span1.closest('#span1'))//op the span tag itself
+        console.log(span1.closest('.xbox'))//op the h4 tag with css selectors .xbox
+
+        console.log(span1.closest('.box'))//null as the parents or its ancestors wont have this css selectors
+
+
+        let xbox = document.body.getElementsByClassName('xbox')
+        console.log(xbox[0])
+        let box1 = xbox[0]
+        console.log(box1.contains(span1))//true the span1 node exists in the node
+        console.log(box1.contains(box1))//true the box1 node exists in the box1
+        console.log(box1.contains(id1))//false the id1 node doesnot exists in the node
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

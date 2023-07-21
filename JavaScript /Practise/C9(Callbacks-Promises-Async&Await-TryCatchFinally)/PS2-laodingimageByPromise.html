@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let loadImage = (srcURL) => {
+
+            let promise = new Promise((resolve, reject) => {
+
+                let image = document.createElement('img')
+                image.src = srcURL
+                document.body.prepend(image)
+                image.onload = () => {
+
+                    resolve("Image src is loaded and image is displayed")
+                }
+
+                image.onerror = () => {
+                    reject("Image src is not loaded")
+
+                }
+
+            })
+
+            return promise;
+
+        }
+
+        loadImage("./Test-image.avif").then((response) => {
+            console.log(response)
+
+            return loadImage("./Test-image.aif")
+
+        }, (error) => {
+            console.log(error)
+        }).then((response) => { console.log(response) }, (error) => { console.log(error) })
+
+
+    </script>
+
+
+
+</body>
+
+</html>

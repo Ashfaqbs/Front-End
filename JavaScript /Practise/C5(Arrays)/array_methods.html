@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let ar = [1, 2, 3, 4, 5, 'monty', 'sonu', null]
+        let br = [6, 7, 8, 9, 10, 'sony']
+
+
+        console.log(ar.length)
+        // console.log(ar.toString())//converts it into String
+        // console.log(ar.concat(br,'dummy'))//takes arrayv, data and adds to ar array
+        // console.log(br.join('$'))
+        // console.log('-------------')
+        // console.log(ar.pop())
+        // console.log(ar.push('sony'))
+        // console.log(ar)
+        // console.log(ar.pop())
+        // console.log(ar)
+
+        // console.log(ar.shift())//removes 1st element of array
+        // console.log(ar.unshift(22),ar)//add a element to array and return the size 1st element of array
+        // console.log(delete ar[2])
+        // console.log(ar)
+
+
+        // console.log(ar.sort())
+
+        // console.log(ar.slice(1))
+        // console.log(ar.slice(1, 4))//same as string 4th index is not included
+
+        console.log(ar)
+        // console.log(ar.reverse())
+
+        console.log(ar.splice(2, 3, 213, 23423, 322, 345))//start from two remove 3 items after 2nd index and this items i,e 213,23423,322,345
+        console.log(ar)
+        //lambda for each
+        ar.forEach(data => console.log(data + "  is the data"))
+
+// Array.from()   converts html collection to array 
+let x="tomato"
+Array.from(x)
+console.log(x)
+
+    </script>
+</body>
+
+</html>

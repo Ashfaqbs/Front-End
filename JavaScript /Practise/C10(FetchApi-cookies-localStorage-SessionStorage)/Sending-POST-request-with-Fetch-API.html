@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Sending POST request with Fetch API</h1>
+    <pre><b>
+<h3>
+To make a POST request , we need to use fetch options
+1. Method -> HTTP-Method, eg POST
+2. body -> the request body
+
+eg:
+ let response  = await fetch('/URL',
+ {
+// 1 method
+method:'POST',
+//2 headers
+headers:{
+
+    'Content type':"application/JSON"
+},
+//3 body
+body:"{'a':'dummy'}"
+
+}
+);
+
+let result = await response.json()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</h3>
+  
+</b></pre>
+
+    <script>
+
+        // sample POST from JSONplaceholder
+        // fetch('https://jsonplaceholder.typicode.com/posts', {
+        //   method: 'POST',
+        //   body: JSON.stringify({
+        //     title: 'foo',
+        //     body: 'bar',
+        //     userId: 1,
+        //   }),
+        //   headers: {
+        //     'Content-type': 'application/json; charset=UTF-8',
+        //   },
+        // })
+        //   .then((response) => response.json())
+        //   .then((json) => console.log(json));
+
+
+        //OR pass the options as a variable
+
+        let options = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(
+                //passing a JSON object and stringify will convert it to a String
+                {
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1
+                }
+            )
+        }
+
+        // let post = fetch('https://jsonplaceholder.typicode.com/posts', options)
+
+
+        // post.then((response => {
+        //     console.log(response.status + " status with code " + response.ok)
+        //     return response.json()
+        // }), (error) => {
+        //     console.log(error)
+        // }).then((Postdata) => {
+        //     console.log(Postdata)
+        //     //we will see what we have sent to the server
+        // }, (error1) => {
+        //     console.log(error1)
+        // })
+        //op 201 status with code true
+
+        //  fetch  Promise in a function
+
+        // function postData() {
+        //     return fetch('https://jsonplaceholder.typicode.com/posts', options)
+
+        // }
+
+
+
+
+        // postData().then((response => {
+        //     console.log(response.status + " status with code " + response.ok)
+        //     return response.json()
+        // }), (error) => {
+        //     console.log(error)
+        // }).then((Postdata) => {
+
+
+
+        //     console.log(Postdata)
+        //     //we will see what we have sent to the server
+        // }, (error1) => {
+        //     console.log(error1)
+        // })
+
+        //Same o/p as above
+
+        //As async and await
+
+        // let Pdata = fetch('https://jsonplaceholder.typicode.com/posts', options)
+
+        // async function doPost() {
+
+
+        //     try {
+
+        //         let response = await Pdata;
+        //         console.log(response)
+        //         let ppdata = await response.json();
+        //         console.log(ppdata)
+        //         console.log("post completed successfully")
+
+        //         // o / p
+        //         //                 Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/posts', redirected: false, status: 201, ok: true, …}
+        //         // Sending-POST-request-with-Fetch-API.html:160 {title: 'foo', body: 'bar', userId: 1, id: 101}
+        //         // Sending-POST-request-with-Fetch-API.html:161 post completed successfully
+        //         // Sending-POST-request-with-Fetch-API.html:165 ReferenceError: o is not defined
+        //         //     at doPost (http://127.0.0.1:5500/Practise/C10(FetchApi-cookies-localStorage-SessionStorage)/Sending-POST-request-with-Fetch-API.html:162:17)
+
+
+        //     } catch (error) {
+        //         console.log("Error :" + error)
+        //     }
+
+
+        // }
+        // doPost()
+
+
+
+
+        //Same as above in fetch in function called in async
+
+
+        // let doPost = () => {
+        //     return fetch('https://jsonplaceholder.typicode.com/posts', options)
+        // }
+        // // fetch('https://jsonplaceholder.typicode.com/posts', options)
+
+
+        // async function taskPost() {
+        //     try {
+        //         let response = await doPost();
+        //         console.log(response)
+        //         console.log(response.status)
+        //         console.log(response.ok)
+
+        //         let d = await response.json();
+        //         console.log(d + " : data")
+
+        //         console.log('post done successfully')
+        //     } catch (error) {
+        //         console.log("Error: " + error)
+        //     }
+
+        // }
+
+        // taskPost()
+
+        // op
+        // Response { type: 'cors', url: 'https://jsonplaceholder.typicode.com/posts', redirected: false, status: 201, ok: true, … }
+        // Sending - POST - request -with-Fetch - API.html: 193 201
+        // Sending - POST - request -with-Fetch - API.html: 194 true
+        // Sending - POST - request -with-Fetch - API.html: 197[object Object] : data
+        // Sending - POST - request -with-Fetch - API.html: 199 post done successfully
+
+    </script>
+</body>
+
+</html>

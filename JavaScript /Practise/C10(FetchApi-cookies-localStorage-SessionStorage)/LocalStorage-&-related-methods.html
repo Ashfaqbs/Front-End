@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>localStorage & related methods </h1>
+    <caption>Local storage helps in storing the data of a particular domain,Same also stores the data as cookie as KEY
+        and value pair</caption>
+    <h2>Local Storage is a web storage object which are not sent to the server with each request, Cookie is sent to the
+        server with every request, but sometimes we dont want to send the data to the server then we use Local storage
+    </h2>
+    <h2>This data survives a full page refresh and even a full browser restart , the data will remain even if we refresh
+        or restart the browser <br>
+        eg: we want to save the user data , but we dont want to save the data and send to server everytime so we will
+        use localStorage and not cookie
+    </h2>
+
+
+    <pre>
+    <b>
+        <h3>
+
+//Setting a localStorage or we can directly run in browser console
+            localStorage.setItem('name','sonu')
+
+            //Getting a item saved in localStorage by the key 
+            localStorage.getItem('name')
+'sonu'
+
+even we refresh we will get the data , and localStorage key and value pairs are seen in browser> application> Storage >localStorage and our details will be seen
+
+copy the url where you set the localStorage in the browser i.e http://127.0.0.1:5500/Practise/C10(FetchApi-cookies-localStorage-SessionStorage)/LocalStorage-&-related-methods.html
+
+and now close the browser and open and paste the url you can see the details in localStorage
+
+<h2>Important Note</h2>
+1.Both key and value must be Strings 
+2.We can use the two JSON methods to store objects in localStorage
+JSON.Stringify(object)->Converts objects to JSON Strings
+JSON.Parse(String) -> Converts String to objects(Must be a valid JSON)
+
+
+<h2>Some Important methods are</h2>
+<ul>
+    <li>setItem(key,value)</li>
+    Store data in key value pair
+    localStorage.setItem('id',1)
+
+    <li>getItem(key)</li>
+    get the value by key
+    <li>removeItem(key)</li>
+    remove the key with the value
+    localStorage.setItem('id',1)
+localStorage.removeItem('id')
+
+localStorage
+Storage{name: 'sonu', length: 1}
+    <li>clear()</li>
+    delete all the data stored in localStorage
+  
+    localStorage.clear()
+    localStorage
+    Storage {length: 0}
+  
+    <li>key(index)</li>
+    get the key on a given position
+
+    localStorage.setItem('name','sonu')
+localStorage.key(0)
+'name'
+    <li>length</li>
+    the number of stored items 
+         localStorage.length
+       1
+
+    
+    
+    
+    We can get and set values like an object 
+    localStorage.one=1
+    alert(localStorage.one)
+//
+    localStorage.one=1
+1
+localStorage
+Storage {name: 'sonu', one: '1', length: 2}
+    
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </h3>
+    </b>
+</pre>
+
+
+    <script>
+
+
+
+
+    </script>
+</body>
+
+</html>
