@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>if {} Statement</li>
+        <li>if{} else {} Statement</li>
+        <li> if{} else if {} ...else{}Statement</li>
+    </ul>
+
+    <pre>
+
+let data = 'car'
+let numdata=983;
+
+if(true)
+{
+    console.log(true)
+}
+
+if(!false)
+{
+    console.log(!false)
+}
+
+
+if(typeof data =="string")
+{
+    console.log('action A')
+}else{
+    console.log('action B')
+}
+
+
+if(typeof numdata =="number" && numdata.valueOf==982)
+{
+    console.log('numdata Action A')
+}else if (typeof numdata =="number" || numdata.valueOf==981)
+{ console.log('numdata Action B')
+
+}else{
+    console.log('numdata Action C')
+}
+    </pre>
+
+    <h2>Ternary operator</h2>
+
+    condition ? exp1 : exp2;
+    (marks>30) ? pass : fail;
+
+    function test(val)
+{
+    return (val.startsWith('c')==true) ? 'true' : 'false';
+}
+
+console.log(test('car'))
+
+
+
+
+    <script>
+
+        let data = 'car'
+        let numdata = 983;
+
+        if (true) {
+            console.log(true)
+        }
+
+        if (!false) {
+            console.log(!false)
+        }
+
+
+        if (typeof data == "string") {
+            console.log('action A')
+        } else {
+            console.log('action B')
+        }
+
+
+        if (typeof numdata == "number" && numdata.valueOf == 982) {
+            console.log('numdata Action A')
+        } else if (typeof numdata == "number" || numdata.valueOf == 981) {
+            console.log('numdata Action B')
+
+        } else {
+            console.log('numdata Action C')
+        }
+
+
+
+        const person = {
+
+            'age': Number.parseInt(prompt('hey whats you age')),
+            'name': 'person1',
+            'license': prompt('hey do you have license'),
+
+
+
+        }
+
+        if (person.age < 20 || !person.license) {
+
+            console.log('cannot drive  car')
+        } else if (person.age > 20 && person.license) {
+            console.log("Can drive car")
+        }
+            let val = 'car'
+
+          function test(val)
+          {
+                return (val.startsWith('c')==true) ? 'true' : 'false';
+           }
+
+             console.log(test('car'))
+
+    </script>
+</body>
+
+</html>

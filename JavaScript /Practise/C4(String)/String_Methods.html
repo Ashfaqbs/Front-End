@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<h2> String methods to manipulate string</h2>
+    <pre>
+       
+
+        //String are immutable 
+        // and the operations we perform on them return a new string
+        let x = 'tomato'
+        
+        let y="ford and ferrari"
+        
+        
+        console.log('length of the x is '+x.length)
+      console.log('uppercase of the x is '+x.toUpperCase())
+        console.log('lowercase of the x is '+x.toLowerCase())
+        console.log('lowercase of the x is '+x.toLowerCase())
+        console.log('slice of the x is from 1st index '+x.slice(1))
+        console.log('slice of the x is from 1st to 5th index and 5th index char will not be included '+x.slice(1,5))
+        
+        let name =" tom "
+        
+        let sent="           this is a sentence           "
+        
+        console.log(y.replace('ferrari','lambo'))
+        console.log(y.replace('fer','per'))
+        console.log(y.replace('FERRARI','lambo')+" cap wont work here , what is the string only will work")
+        console.log(x.charAt(0)+" character by index ")
+        console.log(name.trim()+" removes whitespaces i.e spaces")
+        console.log('split of the x is'+x.split(''))
+        console.log(name.concat("has  ",x))
+        console.log('---------------------')
+        console.log(sent)
+        console.log(sent.trim())
+        
+        
+        let z="computer"
+        
+        for(let a in z)
+        {
+            console.log(z[a])
+        }
+        
+        console.log("-----------------")
+        for(let b=0;b<z.length;b++)
+        {
+            console.log(z[b]+" test for loop")
+        }
+        
+
+    </pre>
+
+    <script>
+        //String methods to manipulate string
+
+        //String are immutable 
+        // and the operations we perform on them return a new string
+        let x = 'tomato'
+
+        let y = "ford and ferrari"
+
+
+        console.log('length of the x is ' + x.length)
+        console.log('uppercase of the x is ' + x.toUpperCase())
+        console.log('lowercase of the x is ' + x.toLowerCase())
+        console.log('lowercase of the x is ' + x.toLowerCase())
+        console.log('slice of the x is from 1st index ' + x.slice(1))
+        console.log('slice of the x is from 1st to 5th index and 5th index char will not be included ' + x.slice(1, 5))
+
+        let name = " tom "
+
+        let sent = "           this is a sentence           "
+
+        console.log(y.replace('ferrari', 'lambo'))
+        console.log(y.replace('fer', 'per'))
+        console.log(y.replace('FERRARI', 'lambo') + " cap wont work here , what is the string only will work")
+        console.log(x.charAt(0) + " character by index ")
+        console.log(name.trim() + " removes whitespaces i.e spaces")
+        console.log('split of the x is' + x.split(''))
+        console.log(name.concat("has  ", x))
+        console.log('---------------------')
+        console.log(sent)
+        console.log(sent.trim())
+
+
+        let z = "computer"
+
+        for (let a in z) {
+            console.log(z[a])
+        }
+
+        console.log("-----------------")
+        for (let b = 0; b < z.length; b++) {
+            console.log(z[b] + " test for loop")
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <caption>Datatype's</caption>
+        <li>Primitive these are builtin datatypes NNSSBBU </li>
+        <ul>
+            <li>Null</li>
+            <li>Number</li>
+            <li>Symbol</li>
+            <li>String</li>
+            <li>boolean</li>
+            <li>Bigint</li>
+            <li>Undefined</li>
+        </ul>
+        <hr>
+        <pre>
+
+            let a = null;
+            let b=8912;
+            let c=Symbol("This is a symbol");
+            let d = "Javascript"
+            let f=true
+            let g=BigInt("9382")
+            let h=undefined
+
+            console.log(typeof d)
+            //op string
+
+        </pre>
+        <hr>
+        <li>Non-Primitive or Object types</li>
+        <ul>
+            <li>Object </li>
+            data Stored in keyvalue pair <br>
+            syntax:
+            <pre>
+
+                //Objects just saving data in key:value pair
+                const item = {
+                    "rate": 200,
+                    "description": "tablet",
+                    "frequency": 4
+        
+                }
+                console.table(item)
+        
+                console.table(item.description)
+        
+        
+                const car = {
+                    'price':1233,
+                    'company':'ford',
+                    'color':'white'
+        
+                }
+        
+                console.table(car)
+                console.log(car['price'])
+                // or
+                console.log(car.price)
+        
+
+            </pre>
+        </ul>
+    </ul>
+
+
+
+    <script>
+
+        let a = null;
+        let b = 8912;
+        let c = Symbol("This is a symbol");
+        let d = "Javascript"
+        let f = true
+        let g = BigInt("9382")
+        let h = undefined
+
+
+        console.table(a, b, c, d, f, g, h)
+
+        console.log(typeof d)
+        //op string
+
+
+
+        //Objects just saving data in key:value pair
+        const item = {
+            "rate": 200,
+            "description": "tablet",
+            "frequency": 4
+
+        }
+        console.table(item)
+
+        console.table(item.description)
+
+
+        const car = {
+            'price': 1233,
+            'company': 'ford',
+            'color': 'white'
+
+        }
+
+        console.table(car)
+        console.log(car['price'])
+        // or
+        console.log(car.price)
+
+
+    </script>
+</body>
+
+</html>

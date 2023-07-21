@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+const studentmarks = { 
+     'eng':70,
+     'math':55,
+     'soc':47,
+     'sci':74,
+     'hin':67
+
+
+}
+//1
+
+for(let i=0;i<Object.keys(studentmarks).length;i++) {
+console.log(Object.keys(studentmarks)[i] +" marks"+studentmarks[Object.keys(studentmarks)[i]])
+}
+
+//2
+for(let s in studentmarks)
+{
+
+    console.log(s + ' subject and marks :' +studentmarks[s] )
+}
+
+
+
+//3
+
+function tryagain()
+{
+
+    let num = Number.parseInt(prompt("Enter the number"));
+
+if(num===7)
+{
+    alert("Correct number")
+}else{
+    alert("InCorrect number")
+    tryagain()
+}
+
+}
+
+tryagain()
+
+
+//4
+
+const mean5 = (a, b, c, d, e) => { 
+let h =(a+b+c+d+e)/5;
+console.log(h)
+
+    return h+" test";
+}
+
+
+console.log(mean5(1,2, 3,4, 5))
+
+
+
+    </script>
+</body>
+</html>

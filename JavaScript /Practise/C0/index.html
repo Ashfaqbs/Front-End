@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        alert('Calling function')
+
+        console.log('Hello world');
+        console.table('1 1 1 Hello world')
+
+        function addThreeNumbers(a, b, c) {
+            return a + b + c;
+        }
+        let d = addThreeNumbers(1, 2, 3)
+        console.log(d +" Normal Function")
+
+
+let add3Num =function (a, b, c) {
+    return a + b + c;
+}
+let f2=add3Num(1,2,3)
+console.log( f2+" Anonymous function")
+
+
+let add3Arr = (a, b, c) => {
+    return a + b + c;
+}
+
+let f3= add3Arr(1,2,3)
+console.log( f3+" Arrow function => in JS")
+
+    </script>
+</body>
+
+</html>

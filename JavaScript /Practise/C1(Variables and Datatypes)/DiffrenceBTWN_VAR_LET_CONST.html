@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Difference between var , let and const</h1>
+
+
+
+
+    <ul>
+        <li>VAR</li>
+        Before ES6 var was used , but nowadays no one uses it ,as it will cause bugs in the applications and we should
+        avoid it
+
+        <li>Const</li>
+        used to declare constants and for that variable we cannot change values and this is blocked scope
+
+        <li>let</li>
+        We use let to declare block scope variables
+
+    </ul>
+<caption>
+
+    Note:
+    <br>
+    block means if block , function block , or a empty block etc
+</caption>
+
+    <script>
+        var a = 10
+        var b = 15;
+        {
+            var a = 9;
+            console.log(a);
+        }
+        console.log(a)
+        console.log('this is the issue with var as change in block scope variable is also changing the global variable')
+
+        //////////////////////////////////////////////////
+
+        let d = 11;
+        let c = 67;
+
+        {
+            let d = 99;
+            console.log(d)
+
+        }
+        console.log(d)
+        d = 990;
+        console.log(d)
+        console.log('this is how let works as block scope variable')
+
+
+        //////////////////////////////////////////////////////////////
+
+        const f = 67;
+        const h = 89;
+        {
+            const h = 78;
+            console.log(h)
+        }
+        console.log(h)
+
+ // h=99; we cannot assign to a constant variable
+// console.log(h)
+// error: DiffrenceBTWN_VAR_LET_CONST.html:69 Uncaught TypeError: Assignment to constant variable//.
+    // at http://127.0.0.1:5500/JS/Practise/C1(Variables)/DiffrenceBTWN_VAR_LET_CONST.html:69:2//
+
+    </script>
+</body>
+
+</html>

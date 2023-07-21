@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Loops</h1>
+    <ul>
+        <li>for loop</li>
+
+        <pre>
+        for(let j=1;j<=10;j++)
+{
+    console.log(2+'*'+j+ '=>'+ 2*j )
+}
+    </pre>
+
+        <li>for in loop</li>
+
+        <pre>
+
+
+    // for in loop
+
+    let marks = {
+        "monu": 89,
+        "tony": 34,
+        "chintu": 67,
+        "tinu": 22
+
+    }
+
+
+    //like for each loop for objects and array
+    for (let mark in marks) {
+        console.log("Marks of the students are " + mark + " = " + marks[mark])
+
+    }
+
+</pre>
+
+        <li>for of loop</li>
+        <pre>
+
+    // for string and array
+
+    let x='monu'
+
+
+    for(let b of x)
+    {
+        console.log(b)
+    }
+</pre>
+
+        <li>while loop</li>
+        <pre>
+
+    let i = 0;
+
+    while (i <= 10) {
+        console.log(i)
+        i++;
+    }
+
+
+
+    let n =3;
+let j=0;
+    do{
+        console.log(j)
+        j++
+
+    }while( j < n)
+
+</pre>
+
+        <li>do while loop</li>
+        <pre>
+
+let dx=0;
+do{
+console.log(dx);
+
+}while(dx!=0);
+      </pre>
+    </ul>
+
+    <script>
+        let i = 0;
+
+        while (i <= 10) {
+            console.log(i);
+            i++;
+        }
+
+        let k = 10;
+
+        while (k >= 0) {
+            console.log(k + "dec");
+            k--;
+        }
+
+        for (let j = 1; j <= 10; j++) {
+            console.log(2 + "*" + j + "=>" + 2 * j);
+        }
+
+        for (let g = 10; g >= 1; g--) {
+            console.log(2 + "*" + g + "=>" + 2 * g);
+        }
+
+        // let DD=0;
+
+        // do{
+        // console.log(DD)
+        // DD++;
+        // }while(DD>=1);
+
+        // for in loop
+
+        let marks = {
+            monu: 89,
+            tony: 34,
+            chintu: 67,
+            tinu: 22,
+        };
+
+        //like for each loop for objects and array
+        for (let mark in marks) {
+            console.log("Marks of the students are " + mark + " = " + marks[mark]);
+        }
+
+        // for string and array
+
+        let x = "monu";
+
+        for (let b of x) {
+            console.log(b);
+        }
+
+
+        let dx = 0;
+        do {
+            console.log(dx);
+
+        } while (dx != 0);
+
+    </script>
+</body>
+
+</html>
