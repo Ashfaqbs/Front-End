@@ -1,0 +1,46 @@
+API calls in React
+We have to 
+  // 1. GET the data (fetch) or axios
+    // 2. Save the data to state
+
+
+but we need to understand one side effect . call a api get the data and use setdata to update the new data for the state we will see a side effect i.e 
+
+import React from "react"
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    
+    console.log("Component rendered")
+    
+    fetch("https://swapi.dev/api/people/1")
+        .then(res => res.json())
+        .then(data => setStarWarsData(data))
+    
+    return (
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
+    )
+}
+ 
+ console.log("Component rendered") will be calleed infinity times , as we are setting state   .then(data => setStarWarsData(data)), but the issue is not seen in 
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    
+    console.log("Component rendered")
+    
+    fetch("https://swapi.dev/api/people/1")
+        .then(res => res.json())
+        .then(data => console.log(data))
+    
+    return (
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
+    )
+}
+
+ console.log("Component rendered") will be called once , this is the side effect 
+

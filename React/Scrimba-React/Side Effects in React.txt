@@ -1,0 +1,181 @@
+Side Effects in React 
+what is side effects and how to manage them 
+which and all react cannot manage or it out of reach to react those all are react side effectseg:
+api call /Database related
+local storage
+sync between 2 different states 
+websockets
+
+to resolve this side effects we will be using useeffect as this will manage all this above, this help us synchronize state to these above ones
+
+
+API calls in React
+We have to 
+  // 1. GET the data (fetch) or axios
+    // 2. Save the data to state
+
+
+but we need to understand one side effect . call a api get the data and use setdata to update the new data for the state we will see a side effect i.e when we call api to resolve this we will be using 
+useeffect
+
+import React from "react"
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    
+    console.log("Component rendered")
+    
+    fetch("https://swapi.dev/api/people/1")
+        .then(res => res.json())
+        .then(data => setStarWarsData(data))
+    
+    return (
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
+    )
+}
+ 
+ console.log("Component rendered") will be calleed infinity times , as we are setting state   .then(data => setStarWarsData(data)), but the issue is not seen in 
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    
+    console.log("Component rendered")
+    
+    fetch("https://swapi.dev/api/people/1")
+        .then(res => res.json())
+        .then(data => console.log(data))
+    
+    return (
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
+    )
+}
+
+ console.log("Component rendered") will be called once , this is the side effect 
+
+
+Syntax of useEffect 
+
+React.useEffect()
+2 parameters is takes one is a mandatory and one is a optional one 
+the mandatory one parameter is callback function ,and earlier we were making a API call which is outside a React and setting the state which caused the effect 
+React.useEffect(function(){
+)
+
+OR 
+React.useEffect(()=>{
+
+//pass the codes whihc has side effects as above the API call
+})
+
+For the above scenario we will use as ,i.e pass the fetch call inside the /use-effect 
+
+ // side effects
+    React.useEffect(function() {
+        fetch("https://swapi.dev/api/people/1")
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    })
+
+
+but this will also not help and will render the component infinity times , i.e the console.log() will see triggered infinity times same issues will be seen 
+so we need to define how many times we want it to render or a array depency 
+React.useEffect(function() {
+        fetch("https://swapi.dev/api/people/1")
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    },[a number ])
+
+
+
+import React from "react"
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    const [count, setCount] = React.useState(0)
+    
+    console.log("Component rendered")
+    
+    /**
+     * Challenge: re-write the useEffect
+     * It should run any time `count` changes
+     * For now, just console.log("Effect function ran")
+     */
+    React.useEffect(()=>{
+      
+      console.log("Effect function ran")  
+    },[count]) //called whenever we update the count, if no dependecny just put [] so it will be called once
+    
+    
+    
+    return (
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+            <h2>The count is {count}</h2>
+            <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
+        </div>
+    )
+}
+
+
+1. What is a "side effect" in React? What are some examples?
+- Any code that affects an outside system.
+- local storage, API, websockets, two states to keep in sync
+
+
+2. What is NOT a "side effect" in React? Examples?
+- Anything that React is in charge of.
+- Maintaining state, keeping the UI in sync with the data, 
+  render DOM elements
+
+
+3. When does React run your useEffect function? When does it NOT run
+   the effect function?
+- As soon as the component loads (first render)
+- On every re-render of the component (assuming no dependencies array)
+- Will NOT run the effect when the values of the dependencies in the
+  array stay the same between renders
+
+
+4. How would you explain what the "dependecies array" is?
+- Second paramter to the useEffect function
+- A way for React to know whether it should re-run the effect function
+
+
+Practice one 
+
+import React from "react"
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    const [count, setCount] = React.useState(1)
+    
+    /**
+     * Challenge: Combine `count` with the request URL
+     * so pressing the "Get Next Character" button will
+     * get a new character from the Star Wars API.
+     * Remember: don't forget to consider the dependencies
+     * array!
+     */
+    
+    React.useEffect(function() {
+        console.log("Effect ran")u
+        fetch(`https://swapi.dev/api/people/${count}`)//for eveytime we click a new count will come for that new count we will call api 
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    }, [count])//for every time the coubnt change this will be called so new thing will be rendered if,we levae it [] empty there will be no side effect but as there will be no chnage detected the api wont call and new data will not be triggered and displa///yed as well
+    
+    return (
+        <div>
+            <h2>The count is {count}</h2>
+            <button onClick={() => setCount(prevCount => prevCount + 1)}>Get Next Character</button>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
+    )
+}
+//
+
+Using 

@@ -1,0 +1,32 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function App() {
+    /**
+     * Challenge: See if you can do it all again by yourself :)
+     */
+    
+    
+    const[thingArray,setthingArray] =  React.useState(['Item 1'])
+    
+        // Build from scratch :)
+
+function addItems()
+{
+    let newItem=`Item +${thingArray.length }`
+    setthingArray((itemArray)=>[...itemArray,`Item ${thingArray.length+1 }`])
+    console.log(thingArray)
+}        
+
+    let newThingArray=thingArray.map(data=> <p>{data}</p>)
+    
+    return (
+        <div>
+            <button onClick={addItems}>Add Item</button>
+            {newThingArray}
+            
+        </div>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));

@@ -1,0 +1,61 @@
+/*
+Challenge: Starting from scratch, build and render the 
+HTML for our section project. Check the Google slide for 
+what you're trying to build.
+
+We'll be adding styling to it later.
+
+Hints:
+* The React logo is a file in the project tree, so you can
+  access it by using `src="./react-logo.png" in your image
+  element
+* You can also set the `width` attribute of the image element
+  just like in HTML. In the slide, I have it set to 40px
+ */
+
+// import React from "React" //JSX
+// import ReactDOM from "react-dom" //Render purpose 
+
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+let page = (
+    <main>
+
+        <div>
+ <img src="./react-logo.png" alt="React-LOGO" width="40px"></img>
+            <h1>Fun facts about React</h1>
+        </div>
+        <div>
+
+           
+
+        </div>
+
+
+        <h3>
+            <ul>
+                <li>
+                    Was First released in 2013
+                </li>
+                <li>
+                    Was originally created by Jordan Walke
+                </li>
+                <li>Has well over 100K stars on Github</li>
+                <li>Is maintained by Facebook</li>
+                <li>Power thousands of enterprise apps, including , mobile apps</li>
+
+
+            </ul>
+
+        </h3>
+
+
+    </main>
+       
+    
+)
+
+
+ReactDOM.render(page, document.getElementById('root'))

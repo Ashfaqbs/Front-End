@@ -1,0 +1,79 @@
+passing data to componentimport React from "react"
+import Header from "./Header"
+import Body from "./Body"
+
+export default function App() {
+    return (
+        <main>
+            <Header />
+            <Body />
+        </main>
+    )
+}
+
+import React from "react"
+
+export default function Body() {
+    return (
+        <section>
+            <h1>Welcome back, ___!</h1>
+        </section>
+    )
+}
+import React from "react"
+
+export default function Header() {
+    const [user, setUser] = React.useState("Joe")
+    
+    return (
+        <header>
+            <p>Current user: {user}</p>
+        </header>
+    )
+}
+
+
+so there is a state which i want to pass in Body , but that state is in header so we cannot pass that data 
+to pass the data we move the state from sibling i.e header and body to app and pass the data as props in this sibling custom component
+
+import React from "react"
+import Header from "./Header"
+import Body from "./Body"
+
+export default function App() {
+      const [user, setUser] = React.useState("Joe")
+    return (
+        <main>
+            <Header name={user} />
+            <Body name={user}/>
+        </main>
+    )
+}
+import React from "react"
+
+export default function Body(props) {
+    return (
+        <section>
+            <h1>Welcome back, {props.name}!</h1>
+        </section>
+    )
+}
+import React from "react"
+
+export default function Header(props) {
+    
+    /**
+     * Challenge:
+     * Raise state up a level and pass it down to both the
+     * Header and Body components through props.
+     */
+  
+    
+    return (
+        <header>
+            <p>Current user: {props.name}</p>
+        </header>
+    )
+}
+
+but we can also use React context or Redux to pass data in different siblings components 

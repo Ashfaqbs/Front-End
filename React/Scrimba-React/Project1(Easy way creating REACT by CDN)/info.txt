@@ -1,0 +1,2 @@
+--this project covers why react, basic fo JSX , what is declarative programming language
+--how ReactDOM.render() works, how to render a single , multiple , custom element , and also how to render a JSX element
