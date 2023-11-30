@@ -131,3 +131,52 @@
     </div>
 </body>
 </html>
+
+
+
+
+public class EmailTemplateBuilder {
+
+    public static String buildHtmlTemplate() {
+        StringBuilder htmlBuilder = new StringBuilder();
+
+        htmlBuilder.append("<!DOCTYPE html>");
+        htmlBuilder.append("<html lang=\"en\">");
+        htmlBuilder.append("<head>");
+        htmlBuilder.append("<meta charset=\"UTF-8\">");
+        htmlBuilder.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+        htmlBuilder.append("<title>Email Notification</title>");
+        htmlBuilder.append("<style>");
+        // ... (Paste the rest of your CSS styles here)
+        htmlBuilder.append("</style>");
+        htmlBuilder.append("</head>");
+        htmlBuilder.append("<body>");
+        htmlBuilder.append("<div class=\"container\">");
+        htmlBuilder.append("<h1>Email Notification</h1>");
+        
+        htmlBuilder.append("<div class=\"columns\">");
+        htmlBuilder.append("<div class=\"column command\">");
+        // Add your command details or API link dynamically
+        htmlBuilder.append("Command/API Link");
+        htmlBuilder.append("</div>");
+        htmlBuilder.append("<div class=\"column inactive\">");
+        htmlBuilder.append("Inactive");
+        htmlBuilder.append("</div>");
+        htmlBuilder.append("</div>");
+
+        htmlBuilder.append("<p>Click the button below to take action:</p>");
+        htmlBuilder.append("<a class=\"button\" href=\"#\">Execute Command</a>");
+        htmlBuilder.append("</div>");
+        htmlBuilder.append("</body>");
+        htmlBuilder.append("</html>");
+
+        return htmlBuilder.toString();
+    }
+
+    public static void main(String[] args) {
+        String emailTemplate = buildHtmlTemplate();
+        System.out.println(emailTemplate);
+    }
+}
+
+
