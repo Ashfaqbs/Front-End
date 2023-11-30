@@ -56,3 +56,78 @@
     </div>
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .command {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .inactive {
+            background-color: #ff3333;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Notification</h1>
+        
+        <div class="columns">
+            <div class="column command">
+                <!-- Add your command details or API link here -->
+                Command/API Link
+            </div>
+            <div class="column inactive">
+                Inactive
+            </div>
+        </div>
+
+        <p>Click the button below to take action:</p>
+        <a class="button" href="#">Execute Command</a>
+    </div>
+</body>
+</html>
