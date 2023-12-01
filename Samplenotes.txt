@@ -180,3 +180,148 @@ public class EmailTemplateBuilder {
 }
 
 
+-----
+public class EmailTemplateBuilder {
+
+    public static String buildHtmlTemplate() {
+        StringBuilder htmlBuilder = new StringBuilder();
+
+        htmlBuilder.append("<!DOCTYPE html>");
+        htmlBuilder.append("<html lang=\"en\">");
+        htmlBuilder.append("<head>");
+        htmlBuilder.append("<meta charset=\"UTF-8\">");
+        htmlBuilder.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+        htmlBuilder.append("<title>Email Notification</title>");
+        htmlBuilder.append("<style>");
+        htmlBuilder.append("body {");
+        htmlBuilder.append("    font-family: Arial, sans-serif;");
+        htmlBuilder.append("    background-color: #f0f0f0;");
+        htmlBuilder.append("    margin: 0;");
+        htmlBuilder.append("    padding: 0;");
+        htmlBuilder.append("    text-align: center;");
+        htmlBuilder.append("}");
+
+        htmlBuilder.append(".container {");
+        htmlBuilder.append("    max-width: 600px;");
+        htmlBuilder.append("    margin: 50px auto;");
+        htmlBuilder.append("    background-color: #ffffff;");
+        htmlBuilder.append("    padding: 20px;");
+        htmlBuilder.append("    border-radius: 10px;");
+        htmlBuilder.append("    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);");
+        htmlBuilder.append("}");
+
+        htmlBuilder.append("h1 {");
+        htmlBuilder.append("    color: #333333;");
+        htmlBuilder.append("}");
+
+        htmlBuilder.append(".columns {");
+        htmlBuilder.append("    display: flex;");
+        htmlBuilder.append("    justify-content: space-between;");
+        htmlBuilder.append("}");
+
+        htmlBuilder.append(".column {");
+        htmlBuilder.append("    flex: 1;");
+        htmlBuilder.append("    padding: 10px;");
+        htmlBuilder.append("}");
+
+        htmlBuilder.append(".command {");
+        htmlBuilder.append("    background-color: #4caf50;");
+        htmlBuilder.append("    color: #ffffff;");
+        htmlBuilder.append("    padding: 10px;");
+        htmlBuilder.append("    border-radius: 5px;");
+        htmlBuilder.append("}");
+
+        htmlBuilder.append(".inactive {");
+        htmlBuilder.append("    background-color: #ff3333;");
+        htmlBuilder.append("    color: #ffffff;");
+        htmlBuilder.append("    padding: 10px;");
+        htmlBuilder.append("    border-radius: 5px;");
+        htmlBuilder.append("}");
+
+        htmlBuilder.append(".button {");
+        htmlBuilder.append("    display: inline-block;");
+        htmlBuilder.append("    padding: 10px 20px;");
+        htmlBuilder.append("    font-size: 16px;");
+        htmlBuilder.append("    text-align: center;");
+        htmlBuilder.append("    text-decoration: none;");
+        htmlBuilder.append("    background-color: #4caf50;");
+        htmlBuilder.append("    color: #ffffff;");
+        htmlBuilder.append("    border-radius: 5px;");
+        htmlBuilder.append("}");
+        htmlBuilder.append("</style>");
+        htmlBuilder.append("</head>");
+        htmlBuilder.append("<body>");
+        htmlBuilder.append("<div class=\"container\">");
+        htmlBuilder.append("<h1>Email Notification</h1>");
+        
+        htmlBuilder.append("<div class=\"columns\">");
+        htmlBuilder.append("<div class=\"column command\">");
+        // Add your command details or API link dynamically
+        htmlBuilder.append("Command/API Link");
+        htmlBuilder.append("</div>");
+        htmlBuilder.append("<div class=\"column inactive\">");
+        htmlBuilder.append("Inactive");
+        htmlBuilder.append("</div>");
+        htmlBuilder.append("</div>");
+
+        htmlBuilder.append("<p>Click the button below to take action:</p>");
+        htmlBuilder.append("<a class=\"button\" href=\"#\">Execute Command</a>");
+        htmlBuilder.append("</div>");
+        htmlBuilder.append("</body>");
+        htmlBuilder.append("</html>");
+
+        return htmlBuilder.toString();
+    }
+
+    public static void main(String[] args) {
+        String emailTemplate = buildHtmlTemplate();
+        System.out.println(emailTemplate);
+    }
+}
+
+
+-----
+public class EmailTemplateBuilder {
+
+    public static String buildHtmlTemplate() {
+        StringBuilder htmlBuilder = new StringBuilder();
+
+        htmlBuilder.append("<!DOCTYPE html>");
+        htmlBuilder.append("<html lang=\"en\">");
+        htmlBuilder.append("<head>");
+        htmlBuilder.append("<meta charset=\"UTF-8\">");
+        htmlBuilder.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+        htmlBuilder.append("<title>Email Notification</title>");
+        htmlBuilder.append("</head>");
+        htmlBuilder.append("<body style=\"font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; text-align: center;\">");
+        htmlBuilder.append("<div style=\"max-width: 600px; margin: 50px auto; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\">");
+        htmlBuilder.append("<h1 style=\"color: #333333;\">Email Notification</h1>");
+        
+        htmlBuilder.append("<div style=\"display: flex; justify-content: space-between;\">");
+        htmlBuilder.append("<div style=\"flex: 1; padding: 10px; background-color: #4caf50; color: #ffffff; border-radius: 5px;\">");
+        // Add your command details or API link dynamically
+        htmlBuilder.append("Command/API Link");
+        htmlBuilder.append("</div>");
+        htmlBuilder.append("<div style=\"flex: 1; padding: 10px; background-color: #ff3333; color: #ffffff; border-radius: 5px;\">");
+        htmlBuilder.append("Inactive");
+        htmlBuilder.append("</div>");
+        htmlBuilder.append("</div>");
+
+        htmlBuilder.append("<p>Click the button below to take action:</p>");
+        htmlBuilder.append("<a style=\"display: inline-block; padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; background-color: #4caf50; color: #ffffff; border-radius: 5px;\" href=\"#\">Execute Command</a>");
+        htmlBuilder.append("</div>");
+        htmlBuilder.append("</body>");
+        htmlBuilder.append("</html>");
+
+        return htmlBuilder.toString();
+    }
+
+    public static void main(String[] args) {
+        String emailTemplate = buildHtmlTemplate();
+        System.out.println(emailTemplate);
+    }
+}
+
+
+
+
