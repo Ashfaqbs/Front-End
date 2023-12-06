@@ -1,6 +1,113 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Status Page</title>
+</head>
+<body>
+    <h1>Status for All Applications and Environments</h1>
+
+    <table border="1">
+        <tr>
+            <th>Application</th>
+            <th>Environment</th>
+            <th>Link</th>
+            <th>Status</th>
+        </tr>
+
+        <!-- Spider -->
+        <tr>
+            <td>Spider</td>
+            <td>SIT</td>
+            <td><a href="https://spider-sit.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[0][0] ? 'Active' : 'Inactive'}"></td>
+        </tr>
+        <tr>
+            <td>Spider</td>
+            <td>UAT</td>
+            <td><a href="https://spider-uat.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[0][1] ? 'Active' : 'Inactive'}"></td>
+        </tr>
+        <tr>
+            <td>Spider</td>
+            <td>PERF</td>
+            <td><a href="https://spider-perf.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[0][2] ? 'Active' : 'Inactive'}"></td>
+        </tr>
+
+        <!-- Planit -->
+        <tr>
+            <td>Planit</td>
+            <td>SIT</td>
+            <td><a href="https://planit-sit.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[1][0] ? 'Active' : 'Inactive'}"></td>
+        </tr>
+        <tr>
+            <td>Planit</td>
+            <td>UAT</td>
+            <td><a href="https://planit-uat.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[1][1] ? 'Active' : 'Inactive'}"></td>
+        </tr>
+        <tr>
+            <td>Planit</td>
+            <td>PERF</td>
+            <td><a href="https://planit-perf.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[1][2] ? 'Active' or 'Inactive'}"></td>
+        </tr>
+
+        <!-- CCS -->
+        <tr>
+            <td>CCS</td>
+            <td>SIT</td>
+            <td><a href="https://ccs-sit.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[2][0] ? 'Active' : 'Inactive'}"></td>
+        </tr>
+        <tr>
+            <td>CCS</td>
+            <td>UAT</td>
+            <td><a href="https://ccs-uat.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[2][1] ? 'Active' : 'Inactive'}"></td>
+        </tr>
+        <tr>
+            <td>CCS</td>
+            <td>PERF</td>
+            <td><a href="https://ccs-perf.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[2][2] ? 'Active' : 'Inactive'}"></td>
+        </tr>
+
+        <!-- Repeat the pattern for other environments -->
+
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
