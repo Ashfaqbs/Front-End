@@ -1,5 +1,82 @@
 
 
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class StatusController {
+
+    @GetMapping("/checkAllStatus")
+    public String checkAllStatus(Model model) {
+        String[] applications = {"spider", "planit", "ccs"};
+        String[] environments = {"sit", "uat", "perf", "perf2", "erf3", "ddte", "mve", "mve2", "uat2", "prod"};
+
+        // Store results for each combination
+        boolean[][] results = new boolean[applications.length][environments.length];
+
+        // Loop through applications and environments
+        for (int i = 0; i < applications.length; i++) {
+            for (int j = 0; j < environments.length; j++) {
+                String url = buildUrl(applications[i], environments[j]);
+                results[i][j] = checkUrl(url);
+            }
+        }
+
+        // Set model attributes for Thymeleaf template
+        model.addAttribute("applications", applications);
+        model.addAttribute("environments", environments);
+        model.addAttribute("results", results);
+
+        return "responseAll";
+    }
+
+    private String buildUrl(String application, String environment) {
+        // Build your URL based on the application and environment
+        return "https://" + application + "-" + environment + ".example.com";
+    }
+
+    private boolean checkUrl(String url) {
+        // Your existing logic to check if the URL response contains "inactive" or "red"
+        // ...
+
+        return true;  // Placeholder, replace with your actual logic
+    }
+}
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Status Page</title>
+</head>
+<body>
+    <h1>Status for All Applications and Environments</h1>
+
+    <table border="1">
+        <tr>
+            <th>Application</th>
+            <th>Environment</th>
+            <th>Status</th>
+        </tr>
+        <tr th:each="app, i : ${applications}">
+            <td th:text="${app}"></td>
+            <td th:each="env, j : ${environments}" th:text="${env}"></td>
+            <td th:each="result : ${results[i.index]}">
+                <span th:text="${result ? 'Active' : 'Inactive'}"></span>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+
+-----------------------------------------------------------------------------------------
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
