@@ -1,3 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Status Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #e1e4e8;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f1f1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .active {
+            color: #28a745;
+        }
+
+        .inactive {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <h1>Status for All Applications and Environments</h1>
+
+    <table>
+        <tr>
+            <th>Application</th>
+            <th>Environment</th>
+            <th>Link</th>
+            <th>Status</th>
+        </tr>
+
+        <!-- Spider -->
+        <tr>
+            <td>Spider</td>
+            <td>SIT</td>
+            <td><a href="https://spider-sit.example.com" target="_blank">Link</a></td>
+            <td th:text="${results[0][0] ? 'Active' : 'Inactive'}" th:class="${results[0][0] ? 'active' : 'inactive'}"></td>
+        </tr>
+        <!-- ... Repeat for other rows ... -->
+
+    </table>
+</body>
+</html>
 
 
 
